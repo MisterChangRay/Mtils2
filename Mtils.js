@@ -15,7 +15,13 @@ window.Mtils = {
 	 * @description 提供一些常量
 	 */
 	constant : {
+		/**
+		 * @description 性别常量男(0)
+		 */
 		WOMAN : 0,
+		/**
+		 * @description 性别常量女(1)
+		 */
 		MAN : 1,
 	},
 
