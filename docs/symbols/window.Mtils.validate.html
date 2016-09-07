@@ -1,0 +1,956 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - window.Mtils.validate</title>
+
+		<style type="text/css">
+			/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	width: 800px;
+}
+
+.header
+{
+	clear: both;
+	background-color: #ccc;
+	padding: 8px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 1px solid #7F8FB1;
+	height: 1px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+#index
+{
+	margin-top: 24px;
+	float: left;
+	width: 160px;
+	position: absolute;
+	left: 8px;
+	background-color: #F3F3F3;
+	padding: 8px;
+}
+
+#content
+{
+	margin-left: 190px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	font-style: italic;
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+		</style>
+	</head>
+
+	<body>
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">
+</div>
+		<!-- end static/header.html -->
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="classList">
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/window.Mtils.html">window.Mtils</a></li>
+	
+	<li><a href="../symbols/window.Mtils.security.html">window.Mtils.security</a></li>
+	
+	<li><a href="../symbols/window.Mtils.string.html">window.Mtils.string</a></li>
+	
+	<li><a href="../symbols/window.Mtils.utils.html">window.Mtils.utils</a></li>
+	
+	<li><a href="../symbols/window.Mtils.validate.html">window.Mtils.validate</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				Class window.Mtils.validate
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+				
+			
+				数据校验类
+				
+				
+					<br /><i>Defined in: </i> <a href="../symbols/src/Mtils.js.html">Mtils.js</a>.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class window.Mtils.validate.">
+				<caption>Class Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/window.Mtils.validate.html#constructor">window.Mtils.validate</a></b>()
+							</div>
+							<div class="description">提供一些数据校验函数</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class window.Mtils.validate.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isChinese">isChinese</a></b>(str_data)
+								</div>
+								<div class="description">判断数据是否全为中文</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isContainsSpecialChar">isContainsSpecialChar</a></b>(str_data)
+								</div>
+								<div class="description">判断数据是否包含特殊字符, 包含中文标点</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isDecimal">isDecimal</a></b>(str_data)
+								</div>
+								<div class="description">判断数据是否为小数</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isEmail">isEmail</a></b>(str_data)
+								</div>
+								<div class="description">判断数据是否为邮箱</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isEnglish">isEnglish</a></b>(str_data)
+								</div>
+								<div class="description">判断数据是否全为英文, 即全为字母</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isInteger">isInteger</a></b>(str_data)
+								</div>
+								<div class="description">判断数据是否为整数</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isIpV4">isIpV4</a></b>(str_data)
+								</div>
+								<div class="description">判断数据是否为IPV4地址</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isMobile">isMobile</a></b>(str_data)
+								</div>
+								<div class="description">判断数据是否为手机号</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isNumber">isNumber</a></b>(str_data)
+								</div>
+								<div class="description">判断数据是否为数字(包括小数)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isQQ">isQQ</a></b>(str_data)
+								</div>
+								<div class="description">判断数据是否为QQ</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isTelephone">isTelephone</a></b>(str_data)
+								</div>
+								<div class="description">判断数据是否为座机号(固定电话)</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isUrl">isUrl</a></b>(str_data)
+								</div>
+								<div class="description">判断数据是否为网址(URL)</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					Class Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>window.Mtils.validate</b>()
+				</div>
+				
+				<div class="description">
+					提供一些数据校验函数
+					<br /><i>Author: </i>Rui.Zhang.
+				</div>
+				
+				
+				
+				
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name=".isChinese"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isChinese</b>(str_data)
+					
+					</div>
+					<div class="description">
+						判断数据是否全为中文
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:全中文</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isContainsSpecialChar"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isContainsSpecialChar</b>(str_data)
+					
+					</div>
+					<div class="description">
+						判断数据是否包含特殊字符, 包含中文标点
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:包含特殊字符, null表示传入参数为null 或者传入参数为空串</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isDecimal"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isDecimal</b>(str_data)
+					
+					</div>
+					<div class="description">
+						判断数据是否为小数
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:是小数</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isEmail"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isEmail</b>(str_data)
+					
+					</div>
+					<div class="description">
+						判断数据是否为邮箱
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:是邮箱</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isEnglish"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isEnglish</b>(str_data)
+					
+					</div>
+					<div class="description">
+						判断数据是否全为英文, 即全为字母
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:全为字母</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isInteger"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isInteger</b>(str_data)
+					
+					</div>
+					<div class="description">
+						判断数据是否为整数
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:是整数</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isIpV4"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isIpV4</b>(str_data)
+					
+					</div>
+					<div class="description">
+						判断数据是否为IPV4地址
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:是IPV4地址</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isMobile"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isMobile</b>(str_data)
+					
+					</div>
+					<div class="description">
+						判断数据是否为手机号
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:是手机号</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isNumber"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isNumber</b>(str_data)
+					
+					</div>
+					<div class="description">
+						判断数据是否为数字(包括小数)
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:是数字</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isQQ"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isQQ</b>(str_data)
+					
+					</div>
+					<div class="description">
+						判断数据是否为QQ
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:是QQ</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isTelephone"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isTelephone</b>(str_data)
+					
+					</div>
+					<div class="description">
+						判断数据是否为座机号(固定电话)
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:是座机号</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isUrl"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isUrl</b>(str_data)
+					
+					</div>
+					<div class="description">
+						判断数据是否为网址(URL)
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:是网址</dd>
+							
+							</dl>
+						
+						
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Sun Sep 04 2016 23:18:06 GMT+0800 (CST)
+		</div>
+	</body>
+</html>
