@@ -193,9 +193,9 @@ ul.inheritsList
 	
 	<li><a href="../symbols/window.Mtils.html">window.Mtils</a></li>
 	
-	<li><a href="../symbols/window.Mtils.security.html">window.Mtils.security</a></li>
+	<li><a href="../symbols/window.Mtils.constant.html">window.Mtils.constant</a></li>
 	
-	<li><a href="../symbols/window.Mtils.string.html">window.Mtils.string</a></li>
+	<li><a href="../symbols/window.Mtils.security.html">window.Mtils.security</a></li>
 	
 	<li><a href="../symbols/window.Mtils.utils.html">window.Mtils.utils</a></li>
 	
@@ -269,6 +269,24 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isArray">isArray</a></b>(varname)
+								</div>
+								<div class="description">判断变量是否数组</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isBankCard">isBankCard</a></b>(str_cardNo)
+								</div>
+								<div class="description">判断是否为银行卡号</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
 								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isChinese">isChinese</a></b>(str_data)
 								</div>
 								<div class="description">判断数据是否全为中文</div>
@@ -314,6 +332,15 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isIdCard">isIdCard</a></b>(str_idCard, sex)
+								</div>
+								<div class="description">判断是否为身份证号码</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
 								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isInteger">isInteger</a></b>(str_data)
 								</div>
 								<div class="description">判断数据是否为整数</div>
@@ -350,9 +377,27 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isObject">isObject</a></b>(varname)
+								</div>
+								<div class="description">判断变量是否对象</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
 								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isQQ">isQQ</a></b>(str_data)
 								</div>
 								<div class="description">判断数据是否为QQ</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.validate.<b><a href="../symbols/window.Mtils.validate.html#.isString">isString</a></b>(varname)
+								</div>
+								<div class="description">判断变量是否字符串</div>
 							</td>
 						</tr>
 					
@@ -421,6 +466,92 @@ ul.inheritsList
 				<div class="sectionTitle">
 					Method Detail
 				</div>
+				
+					<a name=".isArray"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isArray</b>(varname)
+					
+					</div>
+					<div class="description">
+						判断变量是否数组
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>varname</b>
+									
+								</dt>
+								<dd>待校验的变量名</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:为数组</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isBankCard"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isBankCard</b>(str_cardNo)
+					
+					</div>
+					<div class="description">
+						判断是否为银行卡号
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_cardNo</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:是银行卡号</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
 				
 					<a name=".isChinese"> </a>
 					<div class="fixedFont">&lt;static&gt; 
@@ -637,6 +768,55 @@ ul.inheritsList
 
 					<hr />
 				
+					<a name=".isIdCard"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isIdCard</b>(str_idCard, sex)
+					
+					</div>
+					<div class="description">
+						判断是否为身份证号码
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_idCard</b>
+									
+								</dt>
+								<dd>待校验的数据</dd>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>sex</b>
+									
+								</dt>
+								<dd>同时校验性别,不加则不校验性别,此值只可能 constant.WOMAN(0) 或者 constant.MAN(1)</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:是身份证</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
 					<a name=".isInteger"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
@@ -809,6 +989,49 @@ ul.inheritsList
 
 					<hr />
 				
+					<a name=".isObject"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isObject</b>(varname)
+					
+					</div>
+					<div class="description">
+						判断变量是否对象
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>varname</b>
+									
+								</dt>
+								<dd>待校验的变量名</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:为对象</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
 					<a name=".isQQ"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
@@ -844,6 +1067,49 @@ ul.inheritsList
 							<dt class="heading">Returns:</dt>
 							
 								<dd><span class="light fixedFont">{Boolean}</span> , true:是QQ</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isString"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">window.Mtils.validate.</span><b>isString</b>(varname)
+					
+					</div>
+					<div class="description">
+						判断变量是否字符串
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>varname</b>
+									
+								</dt>
+								<dd>待校验的变量名</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> , true:为字符串</dd>
 							
 							</dl>
 						
@@ -950,7 +1216,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Sun Sep 04 2016 23:18:06 GMT+0800 (CST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Wed Sep 07 2016 14:49:49 GMT+0800 (CST)
 		</div>
 	</body>
 </html>
