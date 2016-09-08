@@ -269,9 +269,63 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.formatMoney">formatMoney</a></b>(long_data, length)
+								</div>
+								<div class="description">格式化金额, 展示位银行金额格式</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
 								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.getByteLength">getByteLength</a></b>(str_data)
 								</div>
 								<div class="description">获取字符串的字节长度</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.ltrim">ltrim</a></b>(str_data)
+								</div>
+								<div class="description">清除文本左边的空白字符,包括空格/Tab/换行等</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.replaceAll">replaceAll</a></b>(str_origin, str_target, str_replace)
+								</div>
+								<div class="description">替换源文本中的所有目标文本</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.rtrim">rtrim</a></b>(str_data)
+								</div>
+								<div class="description">清除文本右边的空白字符,包括空格/Tab/换行等</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.strIntro">strIntro</a></b>(str_data, length)
+								</div>
+								<div class="description">文本简介, 即截取字符串前几个字符</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.trim">trim</a></b>(str_data)
+								</div>
+								<div class="description">清除文本中所有的空白字符,包括空格/Tab/换行等</div>
 							</td>
 						</tr>
 					
@@ -323,6 +377,55 @@ ul.inheritsList
 					Method Detail
 				</div>
 				
+					<a name=".formatMoney"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">window.Mtils.utils.</span><b>formatMoney</b>(long_data, length)
+					
+					</div>
+					<div class="description">
+						格式化金额, 展示位银行金额格式
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{Long}</span> <b>long_data</b>
+									
+								</dt>
+								<dd>待格式化数值</dd>
+							
+								<dt>
+									<span class="light fixedFont">{Integer}</span> <b>length</b>
+									<i>Optional</i>
+								</dt>
+								<dd>可选,格式化金额精度, 即小数点位数. 如: 3 标示保留小数点后三位, 默认为2位</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> , 格式化后金额</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
 					<a name=".getByteLength"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
@@ -364,6 +467,239 @@ ul.inheritsList
 						
 						
 
+					<hr />
+				
+					<a name=".ltrim"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">window.Mtils.utils.</span><b>ltrim</b>(str_data)
+					
+					</div>
+					<div class="description">
+						清除文本左边的空白字符,包括空格/Tab/换行等
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>欲清除的文本</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> , 清除空白字符后的文本</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".replaceAll"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">window.Mtils.utils.</span><b>replaceAll</b>(str_origin, str_target, str_replace)
+					
+					</div>
+					<div class="description">
+						替换源文本中的所有目标文本
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_origin</b>
+									
+								</dt>
+								<dd>被替换的文本</dd>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_target</b>
+									
+								</dt>
+								<dd>欲替换的文本</dd>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_replace</b>
+									
+								</dt>
+								<dd>用作替换的文本</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> , 替换后的文本</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".rtrim"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">window.Mtils.utils.</span><b>rtrim</b>(str_data)
+					
+					</div>
+					<div class="description">
+						清除文本右边的空白字符,包括空格/Tab/换行等
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>欲清除的文本</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> , 清除空白字符后的文本</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".strIntro"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">window.Mtils.utils.</span><b>strIntro</b>(str_data, length)
+					
+					</div>
+					<div class="description">
+						文本简介, 即截取字符串前几个字符
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待截取文本</dd>
+							
+								<dt>
+									<span class="light fixedFont">{Integer}</span> <b>length</b>
+									
+								</dt>
+								<dd>待截取长度</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> , 文本简介</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".trim"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">window.Mtils.utils.</span><b>trim</b>(str_data)
+					
+					</div>
+					<div class="description">
+						清除文本中所有的空白字符,包括空格/Tab/换行等
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>欲清除的文本</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> , 清除空白字符后的文本</dd>
+							
+							</dl>
+						
+						
+						
+
 					
 				
 			
@@ -378,7 +714,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Wed Sep 07 2016 14:53:14 GMT+0800 (CST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Thu Sep 08 2016 14:57:27 GMT+0800 (CST)
 		</div>
 	</body>
 </html>

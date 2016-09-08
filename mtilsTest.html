@@ -10,19 +10,7 @@
 <script type="text/javascript">
 	
 window.onload = function() {
-	//先构造一个中英混合的长字符串
-	var str = "javascript 高效按字节截取字符串方法 getBlengthjavascript 高效按字节截取字符串方法 getBlength";
-	str = str.replace(/./g, str).replace(/./g, str);
-	console.log("创造的字符串长度为：",str.length)
-	console.log("-------------测试开始--------------")
-	console.log("str.Blength() >> ",str.getByteLength())
-	console.log("--效率测试开始--")
 
-	var time1 = new Date()
-	for(var i=0;i<100;i++){
-	    str.getByteLength()
-	}
-	console.log("getByteLength",new Date() - time1);
 		
 }
 

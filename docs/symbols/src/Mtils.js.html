@@ -23,11 +23,11 @@
 <span class='line'> 16</span> 	 */</span><span class="WHIT">
 <span class='line'> 17</span> </span><span class="WHIT">	</span><span class="NAME">constant</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'> 18</span> </span><span class="WHIT">		</span><span class="COMM">/**
-<span class='line'> 19</span> 		 * @description 性别常量男
+<span class='line'> 19</span> 		 * @description 性别常量男(0)
 <span class='line'> 20</span> 		 */</span><span class="WHIT">
 <span class='line'> 21</span> </span><span class="WHIT">		</span><span class="NAME">WOMAN</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT">
 <span class='line'> 22</span> </span><span class="WHIT">		</span><span class="COMM">/**
-<span class='line'> 23</span> 		 * @description 性别常量女
+<span class='line'> 23</span> 		 * @description 性别常量女(1)
 <span class='line'> 24</span> 		 */</span><span class="WHIT">
 <span class='line'> 25</span> </span><span class="WHIT">		</span><span class="NAME">MAN</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">,</span><span class="WHIT">
 <span class='line'> 26</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
@@ -476,30 +476,120 @@
 <span class='line'>469</span> </span><span class="WHIT">		        </span><span class="KEYW">return</span><span class="WHIT">  </span><span class="PUNC">(</span><span class="NAME">Zhlength</span><span class="WHIT"> </span><span class="PUNC">*</span><span class="WHIT"> </span><span class="NUMB">2</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">Enlength</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">//所占字节数</span><span class="WHIT">
 <span class='line'>470</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
 <span class='line'>471</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>472</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>472</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
 <span class='line'>473</span> 
-<span class='line'>474</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>475</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>476</span> 
-<span class='line'>477</span> 
-<span class='line'>478</span> </span><span class="NAME">String.prototype.isChinese</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isChinese</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>479</span> </span><span class="NAME">String.prototype.isContainsSpecialChar</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isContainsSpecialChar</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>480</span> </span><span class="NAME">String.prototype.isEmail</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isEmail</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>481</span> 
-<span class='line'>482</span> </span><span class="NAME">Number.prototype.isNumber</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">String.prototype.isNumber</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isNumber</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>483</span> </span><span class="NAME">Number.prototype.isDecimal</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">String.prototype.isDecimal</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isDecimal</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>484</span> </span><span class="NAME">Number.prototype.isInteger</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">String.prototype.isInteger</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isInteger</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>485</span> 
-<span class='line'>486</span> </span><span class="NAME">String.prototype.isMobile</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isMobile</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>487</span> </span><span class="NAME">String.prototype.isQQ</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isQQ</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>488</span> </span><span class="NAME">String.prototype.isTelephone</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isTelephone</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>489</span> </span><span class="NAME">String.prototype.isUrl</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isUrl</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>490</span> </span><span class="NAME">String.prototype.isEnglish</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isEnglish</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>491</span> </span><span class="NAME">String.prototype.isIdCard</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isIdCard</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>492</span> </span><span class="NAME">String.prototype.isBankCard</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isBankCard</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>493</span> 
-<span class='line'>494</span> </span><span class="NAME">String.prototype.getByteLength</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.utils.getByteLength</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>474</span> 
+<span class='line'>475</span> </span><span class="WHIT">		</span><span class="COMM">/**
+<span class='line'>476</span> 		 * @author Rui.Zhang
+<span class='line'>477</span> 		 * @description  格式化金额, 展示位银行金额格式
+<span class='line'>478</span> 		 * @param {Long} long_data     待格式化数值
+<span class='line'>479</span> 		 * @param {Integer} [length]     可选,格式化金额精度, 即小数点位数. 如: 3 标示保留小数点后三位, 默认为2位
+<span class='line'>480</span> 		 * @returns {String}, 格式化后金额
+<span class='line'>481</span> 		 **/</span><span class="WHIT">
+<span class='line'>482</span> </span><span class="WHIT">		</span><span class="NAME">formatMoney</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">long_data</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">length</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>483</span> </span><span class="WHIT">		    </span><span class="NAME">length</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">length</span><span class="WHIT"> </span><span class="PUNC">></span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">length</span><span class="WHIT"> </span><span class="PUNC">&lt;=</span><span class="WHIT"> </span><span class="NUMB">20</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">length</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">2</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>484</span> </span><span class="WHIT">		    </span><span class="NAME">long_data</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">parseFloat</span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">long_data</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">replace</span><span class="PUNC">(</span><span class="REGX">/[^\d\.-]/g</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">toFixed</span><span class="PUNC">(</span><span class="NAME">length</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>485</span> </span><span class="WHIT">		    </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">l</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">long_data.split</span><span class="PUNC">(</span><span class="STRN">"."</span><span class="PUNC">)</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">split</span><span class="PUNC">(</span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">reverse</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>486</span> </span><span class="WHIT">		        </span><span class="NAME">r</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">long_data.split</span><span class="PUNC">(</span><span class="STRN">"."</span><span class="PUNC">)</span><span class="PUNC">[</span><span class="NUMB">1</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>487</span> </span><span class="WHIT">		    </span><span class="NAME">t</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>488</span> </span><span class="WHIT">		    </span><span class="KEYW">for</span><span class="PUNC">(</span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NAME">l.length</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">++</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'>489</span> </span><span class="WHIT">		    </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>490</span> </span><span class="WHIT">		        </span><span class="NAME">t</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">l</span><span class="PUNC">[</span><span class="NAME">i</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">(</span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">%</span><span class="WHIT"> </span><span class="NUMB">3</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">i</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">l.length</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="STRN">","</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>491</span> </span><span class="WHIT">		    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>492</span> </span><span class="WHIT">		    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">t.split</span><span class="PUNC">(</span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">reverse</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">join</span><span class="PUNC">(</span><span class="STRN">""</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">"."</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">r</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>493</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>494</span> 
 <span class='line'>495</span> 
-<span class='line'>496</span> </span><span class="NAME">Object.prototype.isArray</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isArray</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>497</span> </span><span class="NAME">Object.prototype.isObject</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isObject</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>498</span> </span></pre></body></html>
+<span class='line'>496</span> </span><span class="WHIT">		</span><span class="COMM">/**
+<span class='line'>497</span> 		 * @author Rui.Zhang
+<span class='line'>498</span> 		 * @description  文本简介, 即截取字符串前几个字符
+<span class='line'>499</span> 		 * @param {String} str_data    待截取文本
+<span class='line'>500</span> 		 * @param {Integer} length     待截取长度
+<span class='line'>501</span> 		 * @returns {String}, 文本简介
+<span class='line'>502</span> 		 **/</span><span class="WHIT">
+<span class='line'>503</span> </span><span class="WHIT">		</span><span class="NAME">strIntro</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">str_data</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">length</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>504</span> </span><span class="WHIT">		    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">str_data.length</span><span class="WHIT"> </span><span class="PUNC">></span><span class="WHIT"> </span><span class="NAME">length</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>505</span> </span><span class="WHIT">		        </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">str_data.substr</span><span class="PUNC">(</span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">length</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">"..."</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>506</span> </span><span class="WHIT">		    </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>507</span> </span><span class="WHIT">		        </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">str_data</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>508</span> </span><span class="WHIT">		    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>509</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>510</span> 
+<span class='line'>511</span> 
+<span class='line'>512</span> </span><span class="WHIT">		</span><span class="COMM">/**
+<span class='line'>513</span> 		 * @author Rui.Zhang
+<span class='line'>514</span> 		 * @description  清除文本右边的空白字符,包括空格/Tab/换行等
+<span class='line'>515</span> 		 * @param {String} str_data    欲清除的文本
+<span class='line'>516</span> 		 * @returns {String}, 清除空白字符后的文本
+<span class='line'>517</span> 		 **/</span><span class="WHIT">
+<span class='line'>518</span> </span><span class="WHIT">		</span><span class="NAME">rtrim</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">str_data</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>519</span> </span><span class="WHIT">			</span><span class="NAME">str_data</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">str_data</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">String</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>520</span> </span><span class="WHIT">		    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">str_data.replace</span><span class="PUNC">(</span><span class="REGX">/(\s*|　*)$/</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>521</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>522</span> 
+<span class='line'>523</span> 
+<span class='line'>524</span> </span><span class="WHIT">		</span><span class="COMM">/**
+<span class='line'>525</span> 		 * @author Rui.Zhang
+<span class='line'>526</span> 		 * @description  清除文本左边的空白字符,包括空格/Tab/换行等
+<span class='line'>527</span> 		 * @param {String} str_data    欲清除的文本
+<span class='line'>528</span> 		 * @returns {String}, 清除空白字符后的文本
+<span class='line'>529</span> 		 **/</span><span class="WHIT">
+<span class='line'>530</span> </span><span class="WHIT">		</span><span class="NAME">ltrim</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">str_data</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>531</span> </span><span class="WHIT">			</span><span class="NAME">str_data</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">str_data</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">String</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>532</span> </span><span class="WHIT">		    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">str_data.replace</span><span class="PUNC">(</span><span class="REGX">/^(\s*|　*)/</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>533</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>534</span> 
+<span class='line'>535</span> 
+<span class='line'>536</span> </span><span class="WHIT">		</span><span class="COMM">/**
+<span class='line'>537</span> 		 * @author Rui.Zhang
+<span class='line'>538</span> 		 * @description  清除文本中所有的空白字符,包括空格/Tab/换行等
+<span class='line'>539</span> 		 * @param {String} str_data    欲清除的文本
+<span class='line'>540</span> 		 * @returns {String}, 清除空白字符后的文本
+<span class='line'>541</span> 		 **/</span><span class="WHIT">
+<span class='line'>542</span> </span><span class="WHIT">		</span><span class="NAME">trim</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">str_data</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>543</span> </span><span class="WHIT">			</span><span class="NAME">str_data</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">str_data</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">String</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>544</span> </span><span class="WHIT">		    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">str_data.replace</span><span class="PUNC">(</span><span class="REGX">/\s+/g</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>545</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>546</span> 
+<span class='line'>547</span> 
+<span class='line'>548</span> </span><span class="WHIT">		</span><span class="COMM">/**
+<span class='line'>549</span> 		 * @author Rui.Zhang
+<span class='line'>550</span> 		 * @description  替换源文本中的所有目标文本
+<span class='line'>551</span> 		 * @param {String} str_origin    被替换的文本
+<span class='line'>552</span> 		 * @param {String} str_target    欲替换的文本
+<span class='line'>553</span> 		 * @param {String} str_replace   用作替换的文本
+<span class='line'>554</span> 		 * @returns {String}, 替换后的文本
+<span class='line'>555</span> 		 **/</span><span class="WHIT">
+<span class='line'>556</span> </span><span class="WHIT">		</span><span class="NAME">replaceAll</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">str_origin</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">str_target</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">str_replace</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>557</span> </span><span class="WHIT">		    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">str_origin.replace</span><span class="PUNC">(</span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">RegExp</span><span class="PUNC">(</span><span class="NAME">str_target</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"gm"</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">str_replace</span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'>558</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>559</span> 
+<span class='line'>560</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>561</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>562</span> 
+<span class='line'>563</span> </span><span class="NAME">String.prototype.rtrim</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.utils.rtrim</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>564</span> </span><span class="NAME">String.prototype.ltrim</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.utils.ltrim</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>565</span> </span><span class="NAME">String.prototype.trim</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.utils.trim</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>566</span> 
+<span class='line'>567</span> 
+<span class='line'>568</span> </span><span class="NAME">String.prototype.isChinese</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isChinese</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>569</span> </span><span class="NAME">String.prototype.isContainsSpecialChar</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isContainsSpecialChar</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>570</span> </span><span class="NAME">String.prototype.isEmail</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isEmail</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>571</span> 
+<span class='line'>572</span> </span><span class="NAME">Number.prototype.isNumber</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">String.prototype.isNumber</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isNumber</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>573</span> </span><span class="NAME">Number.prototype.isDecimal</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">String.prototype.isDecimal</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isDecimal</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>574</span> </span><span class="NAME">Number.prototype.isInteger</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">String.prototype.isInteger</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isInteger</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>575</span> 
+<span class='line'>576</span> </span><span class="NAME">String.prototype.isMobile</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isMobile</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>577</span> </span><span class="NAME">String.prototype.isQQ</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isQQ</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>578</span> </span><span class="NAME">String.prototype.isTelephone</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isTelephone</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>579</span> </span><span class="NAME">String.prototype.isUrl</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isUrl</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>580</span> </span><span class="NAME">String.prototype.isEnglish</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isEnglish</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>581</span> </span><span class="NAME">String.prototype.isIdCard</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isIdCard</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>582</span> </span><span class="NAME">String.prototype.isBankCard</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isBankCard</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>583</span> 
+<span class='line'>584</span> </span><span class="NAME">String.prototype.getByteLength</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.utils.getByteLength</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>585</span> 
+<span class='line'>586</span> </span><span class="NAME">Object.prototype.isArray</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isArray</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>587</span> </span><span class="NAME">Object.prototype.isObject</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.validate.isObject</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>588</span> </span></pre></body></html>

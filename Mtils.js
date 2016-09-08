@@ -469,10 +469,100 @@ window.Mtils = {
 		        return  (Zhlength * 2) + Enlength; //所占字节数
 			}
 			return 0;
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  格式化金额, 展示位银行金额格式
+		 * @param {Long} long_data     待格式化数值
+		 * @param {Integer} [length]     可选,格式化金额精度, 即小数点位数. 如: 3 标示保留小数点后三位, 默认为2位
+		 * @returns {String}, 格式化后金额
+		 **/
+		formatMoney : function (long_data, length) {
+		    length = length > 0 && length <= 20 ? length : 2;
+		    long_data = parseFloat((long_data + "").replace(/[^\d\.-]/g, "")).toFixed(length) + "";
+		    var l = long_data.split(".")[0].split("").reverse(),
+		        r = long_data.split(".")[1];
+		    t = "";
+		    for(i = 0; i < l.length; i ++ )
+		    {
+		        t += l[i] + ((i + 1) % 3 == 0 && (i + 1) != l.length ? "," : "");
+		    }
+		    return t.split("").reverse().join("") + "." + r;
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  文本简介, 即截取字符串前几个字符
+		 * @param {String} str_data    待截取文本
+		 * @param {Integer} length     待截取长度
+		 * @returns {String}, 文本简介
+		 **/
+		strIntro : function (str_data, length) {
+		    if (str_data.length > length) {
+		        return str_data.substr(0, length) + "...";
+		    } else {
+		        return str_data;
+		    }
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  清除文本右边的空白字符,包括空格/Tab/换行等
+		 * @param {String} str_data    欲清除的文本
+		 * @returns {String}, 清除空白字符后的文本
+		 **/
+		rtrim : function (str_data) {
+			str_data = str_data || String(this);
+		    return str_data.replace(/(\s*|　*)$/, "");
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  清除文本左边的空白字符,包括空格/Tab/换行等
+		 * @param {String} str_data    欲清除的文本
+		 * @returns {String}, 清除空白字符后的文本
+		 **/
+		ltrim : function (str_data) {
+			str_data = str_data || String(this);
+		    return str_data.replace(/^(\s*|　*)/, "");
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  清除文本中所有的空白字符,包括空格/Tab/换行等
+		 * @param {String} str_data    欲清除的文本
+		 * @returns {String}, 清除空白字符后的文本
+		 **/
+		trim : function (str_data) {
+			str_data = str_data || String(this);
+		    return str_data.replace(/\s+/g, "");
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  替换源文本中的所有目标文本
+		 * @param {String} str_origin    被替换的文本
+		 * @param {String} str_target    欲替换的文本
+		 * @param {String} str_replace   用作替换的文本
+		 * @returns {String}, 替换后的文本
+		 **/
+		replaceAll : function (str_origin, str_target, str_replace) {
+		    return str_origin.replace(new RegExp(str_target, "gm"), str_replace)
 		}
 
 	}
 };
+
+String.prototype.rtrim = Mtils.utils.rtrim;
+String.prototype.ltrim = Mtils.utils.ltrim;
+String.prototype.trim = Mtils.utils.trim;
 
 
 String.prototype.isChinese = Mtils.validate.isChinese;
