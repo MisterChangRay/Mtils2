@@ -199,7 +199,7 @@ ul.inheritsList
 	
 	<li><a href="../symbols/window.Mtils.utils.html">window.Mtils.utils</a></li>
 	
-	<li><a href="../symbols/window.Mtils.validate.html">window.Mtils.validate</a></li>
+	<li><a href="../symbols/window.Mtils.validation.html">window.Mtils.validation</a></li>
 	
 </ul>
 <hr />
@@ -254,6 +254,96 @@ ul.inheritsList
 
 <!-- ============================== methods summary ======================== -->
 			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class window.Mtils.security.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.security.<b><a href="../symbols/window.Mtils.security.html#.base64_decode">base64_decode</a></b>(str_data)
+								</div>
+								<div class="description">对给定数据进行 base64 解码</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.security.<b><a href="../symbols/window.Mtils.security.html#.base64_encode">base64_encode</a></b>(str_data)
+								</div>
+								<div class="description">对给定数据进行 base64 编码</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.security.<b><a href="../symbols/window.Mtils.security.html#.checkerPasswordStrength">checkerPasswordStrength</a></b>(str_psw)
+								</div>
+								<div class="description">密码强度检测</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.security.<b><a href="../symbols/window.Mtils.security.html#.hex_md5">hex_md5</a></b>(str_data)
+								</div>
+								<div class="description">对给定数据进行 md5 摘要计算</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.security.<b><a href="../symbols/window.Mtils.security.html#.hex_sha1">hex_sha1</a></b>(str_data)
+								</div>
+								<div class="description">对给定数据进行 sha1 摘要计算</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.security.<b><a href="../symbols/window.Mtils.security.html#.hex_sha256">hex_sha256</a></b>(str_data)
+								</div>
+								<div class="description">对给定数据进行 hex_sha256 摘要计算</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.security.<b><a href="../symbols/window.Mtils.security.html#.random">random</a></b>(length)
+								</div>
+								<div class="description">生成一个制定长度的随机数</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.security.<b><a href="../symbols/window.Mtils.security.html#.randomBetween">randomBetween</a></b>(min, max)
+								</div>
+								<div class="description">生成一个随机数,并介于最小值和最大值之间(包括最小值和最大值).</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
 <!-- ============================== events summary ======================== -->
 			
 
@@ -292,6 +382,369 @@ ul.inheritsList
 
 <!-- ============================== method details ========================= -->		
 			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name=".base64_decode"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">window.Mtils.security.</span><b>base64_decode</b>(str_data)
+					
+					</div>
+					<div class="description">
+						对给定数据进行 base64 解码
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待解码的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> , base64 解码后的数据</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".base64_encode"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">window.Mtils.security.</span><b>base64_encode</b>(str_data)
+					
+					</div>
+					<div class="description">
+						对给定数据进行 base64 编码
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待编码的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> , base64 编码后的数据</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".checkerPasswordStrength"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Object}</span>
+					<span class="light">window.Mtils.security.</span><b>checkerPasswordStrength</b>(str_psw)
+					
+					</div>
+					<div class="description">
+						密码强度检测
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+					<pre class="code">示例：Mtils.security.passwordStrengthMeter("asd##AS123")， 您可以通过如下方法来得到密码强度等级<br /></pre>
+					
+					<pre class="code">Mtils.security.passwordStrengthMeter("asd##AS123").level;也可以如下得到密码的检测信息：<br /></pre>
+					
+					<pre class="code">Mtils.security.checkerPasswordStrength("asd##AS123").level;</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_psw</b>
+									
+								</dt>
+								<dd>待签名数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Object}</span> , 检测结果,对象应为{"level":"2", "desc" : "检测提示：您的密码强度较差！"}, level为密码强度等级, desc为默认提示信息</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".hex_md5"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">window.Mtils.security.</span><b>hex_md5</b>(str_data)
+					
+					</div>
+					<div class="description">
+						对给定数据进行 md5 摘要计算
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待计算的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> , md5 计算结果</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".hex_sha1"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">window.Mtils.security.</span><b>hex_sha1</b>(str_data)
+					
+					</div>
+					<div class="description">
+						对给定数据进行 sha1 摘要计算
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待计算的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> , sha1 计算结果</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".hex_sha256"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">window.Mtils.security.</span><b>hex_sha256</b>(str_data)
+					
+					</div>
+					<div class="description">
+						对给定数据进行 hex_sha256 摘要计算
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>str_data</b>
+									
+								</dt>
+								<dd>待计算的数据</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> , hex_sha256 计算结果</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".random"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Integer}</span>
+					<span class="light">window.Mtils.security.</span><b>random</b>(length)
+					
+					</div>
+					<div class="description">
+						生成一个制定长度的随机数
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>length</b>
+									<i>Optional</i>
+								</dt>
+								<dd>可选,生成随机数的长度, 默认为5位</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Integer}</span> , 生成的随机数</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".randomBetween"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Integer}</span>
+					<span class="light">window.Mtils.security.</span><b>randomBetween</b>(min, max)
+					
+					</div>
+					<div class="description">
+						生成一个随机数,并介于最小值和最大值之间(包括最小值和最大值). 如果不传参数, 则返回一个大于0的随机数
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>min</b>
+									<i>Optional</i>
+								</dt>
+								<dd>可选,生成随机数的最小值</dd>
+							
+								<dt>
+									<span class="light fixedFont">{Array}</span> <b>max</b>
+									<i>Optional</i>
+								</dt>
+								<dd>可选,生成随机数的最大值</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Integer}</span> , 生成的随机数</dd>
+							
+							</dl>
+						
+						
+						
+
+					
+				
+			
 			
 <!-- ============================== event details ========================= -->		
 			
@@ -303,7 +756,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Thu Sep 08 2016 14:57:27 GMT+0800 (CST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Tue Oct 18 2016 14:08:37 GMT+0800 (CST)
 		</div>
 	</body>
 </html>
