@@ -1208,7 +1208,23 @@ window.Mtils = {
 	 * @description 提供一些辅助代码封装
 	 */
 	utils : {
-
+		/**
+		 * @author Rui.Zhang
+		 * @description 去除数组中的重复元素
+		 * @param {Arr} array  待去重数组
+		 * @returns {Arr}, 去重后的数组
+		 **/
+		unique : function(arr) {
+            var _this = arr || this;
+            _this.sort();
+            var re=[_this[0]];
+            for(var i = 1; i < _this.length; i++) {
+                if( _this[i] !== re[re.length-1]) {
+                    re.push(_this[i]);
+                }
+            }
+            return re;
+        },
 
 		/**
 		 * @author Rui.Zhang
@@ -1780,3 +1796,5 @@ Math.accAdd = Mtils.utils.accAdd;
 Math.accSub = Mtils.utils.accSub;
 Math.accMul = Mtils.utils.accMul;
 Math.accDiv = Mtils.utils.accDiv;
+
+Array.prototype.unique = Mtils.utils.unique;
