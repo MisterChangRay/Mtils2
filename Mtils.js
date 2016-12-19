@@ -1210,11 +1210,43 @@ window.Mtils = {
 	utils : {
 		/**
 		 * @author Rui.Zhang
+		 * @description 时间格式化
+		 * @param {String} timestamp  时间戳
+		 * @param {String} pattern 格式化字符串,如 "yy-MM-dd hh:mm:ss"
+		 * @returns {String}, 格式化后的时间
+		 * @example Mtils.text.format(new Date().getTime(), "yy年MM月dd日  hh时mm分ss秒");
+		 **/
+		formatDate : function (timestamp, pattern) {
+		    var tmp = new Date(timestamp);
+		    var o = {
+		        "M+": tmp.getMonth() + 1, //month
+		        "d+": tmp.getDate(), //day
+		        "h+": tmp.getHours(), //hour
+		        "m+": tmp.getMinutes(), //minute
+		        "s+": tmp.getSeconds(), //second
+		        "q+": Math.floor((tmp.getMonth() + 3) / 3), //quarter
+		        "S": tmp.getMilliseconds() //millisecond
+		    }
+
+		    if (/(y+)/.test(pattern)) {
+		        pattern = pattern.replace(RegExp.$1, (tmp.getFullYear() + "").substr(4 - RegExp.$1.length));
+		    }
+
+		    for (var k in o) {
+		        if (new RegExp("(" + k + ")").test(pattern)) {
+		            pattern = pattern.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+		        }
+		    }
+		    return pattern;
+		},
+
+		/**
+		 * @author Rui.Zhang
 		 * @description 去除数组中的重复元素
 		 * @param {Arr} array  待去重数组
 		 * @returns {Arr}, 去重后的数组
 		 **/
-		unique : function(arr) {
+		uniqueArray : function(arr) {
             var _this = arr || this;
             _this.sort();
             var re=[_this[0]];
