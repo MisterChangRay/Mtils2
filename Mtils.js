@@ -23,6 +23,11 @@ window.Mtils = {
 		 * @description 性别常量男(1)
 		 */
 		MAN : 1,
+		/**
+		 * @description 进制转换基础数据
+		 */
+		BASE_DECIMAL : "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_@"
+
 	},
 
 
@@ -1208,6 +1213,47 @@ window.Mtils = {
 	 * @description 提供一些辅助代码封装
 	 */
 	utils : {
+		/**
+		 * @author Rui.Zhang
+		 * @description 提供进制转换,最大为64进制
+		 * @param {String} number  待转换进制序列
+		 * @param {number} number  待转换进制(2-64)
+		 * @param {number} number  转换到进制(2-64)
+		 * @returns {String}, 转换后的进制序列
+		 * @example 把16进制0x7b转为2进制, Mtils.utils.decimalConversion("7b",16,2);
+		 **/
+		decimalConversion : function(number, from, to) {
+			var origin = Mtils.constant.BASE_DECIMAL,  tmp, decimal = 0, result = "";
+			if(undefined == number || !String(number).replace(/ /gi,"")) return "";
+			if(!from) return "";
+
+			try {
+				if(from)
+					from = Number(from);    
+				if(to)
+					to = Number(to);
+
+				//先将其转换为10进制
+				tmp = String(number);
+				for(var i=0, j=1;i<tmp.length; i++, j++) {
+					decimal +=  origin.indexOf(tmp.charAt(i)) * Math.pow(from, tmp.length - j);
+				}
+				if(to == '10' || !to) return decimal;
+
+				//再转换为指定进制
+				while(decimal != 0) {
+					tmp = decimal % to;
+					result = origin.charAt(tmp) + result;
+					decimal = (decimal - tmp) / to;
+				}
+				return result;
+			} catch(e) {
+				console.log(e);
+				return "";
+			}
+		},
+
+
 		/**
 		 * @author Rui.Zhang
 		 * @description 时间格式化
