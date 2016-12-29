@@ -1217,8 +1217,8 @@ window.Mtils = {
 		 * @author Rui.Zhang
 		 * @description 提供进制转换,最大为64进制
 		 * @param {String} number  待转换进制序列
-		 * @param {number} number  待转换进制(2-64)
-		 * @param {number} number  转换到进制(2-64)
+		 * @param {number} from  待转换进制(2-64)
+		 * @param {number} to  转换到进制(2-64)
 		 * @returns {String}, 转换后的进制序列
 		 * @example 把16进制0x7b转为2进制, Mtils.utils.decimalConversion("7b",16,2);
 		 **/
