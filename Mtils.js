@@ -42,36 +42,6 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否数组
-		 * @param varname 待校验的变量名
-		 * @returns {Boolean}, true:为数组
-		 **/
-		isArray : function (varname) {
-			varname = varname || this;
-			if(-1 != Object.prototype.toString.call(varname).indexOf("Array")){
-				return true;
-			} else {
-				return false;
-			}
-		},
-
-		/**
-		 * @author Rui.Zhang
-		 * @description 判断变量是否对象
-		 * @param varname 待校验的变量名
-		 * @returns {Boolean}, true:为对象
-		 **/
-		isObject : function (varname) {
-			varname = varname || this;
-			if(-1 != Object.prototype.toString.call(varname).indexOf("Object")){
-				return true;
-			} else {
-				return false;
-			}
-		},
-
-		/**
-		 * @author Rui.Zhang
 		 * @description 判断变量是否字符串
 		 * @param varname 待校验的变量名
 		 * @returns {Boolean}, true:为字符串
@@ -1213,6 +1183,87 @@ window.Mtils = {
 	 * @description 提供一些辅助代码封装
 	 */
 	utils : {
+		/**
+		 * @author Rui.Zhang
+		 * @description 获取变量的数据类型
+		 * @param {varName} varName  待取数据类型的变量
+		 * @returns {string}, 变量的数据类型,只能为以下类型object,array,number,string,function,date,null,undefined
+		 **/
+        getVarType : function(varName) {
+            return Object.prototype.toString.call(varName).slice(8, -1).toLowerCase();
+        },
+        /**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为对象
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isObject : function(varName) {
+        	varName = varName || this;
+        	return Mtils.utils.getVarType(varName) === 'object';
+        },
+        /**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为数组
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+		isArray : function(varName) {
+			varName = varName || this;
+			return Mtils.utils.getVarType(varName) === 'array';
+        },
+        /**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为数字
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isNumber : function(varName) {
+        	varName = varName || this;
+        	return Mtils.utils.getVarType(varName) === 'number';
+        },
+        /**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为函数
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isFunction : function(varName) {
+        	varName = varName || this;
+        	return Mtils.utils.getVarType(varName) === 'function';
+        },
+        /**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为日期
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isDate : function(varName) {
+        	varName = varName || this;
+        	return Mtils.utils.getVarType(varName) === 'date';
+        },
+        /**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为字符串
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isSring : function(varName) {
+        	varName = varName || this;
+        	return Mtils.utils.getVarType(varName) === 'string';
+        },
+        /**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/''
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isEmpty : function(varName) {
+        	varName = varName || this;
+        	return (Mtils.utils.getVarType(varName) === 'undefined') || (Mtils.utils.getVarType(varName) === 'null') || 
+        	(JSON.stringify(varName) === '[]') || (JSON.stringify(varName) === '{}') || varName === '';
+        },
+
 
      	/**
 		 * @author Rui.Zhang
@@ -1252,8 +1303,8 @@ window.Mtils = {
 		 * @author Rui.Zhang
 		 * @description 根据指定的字段值在对象数组中找到匹配的对象集合
 		 * @param {array} sourceArr  待查找的数组
-		 * @param {number} field  匹配的字段
-		 * @param {number} val  匹配的值
+		 * @param {number} field  待匹配的字段
+		 * @param {number} val  待匹配的值
 		 * @param {boolean} like  是否使用模糊匹配
 		 * @returns {array}, 所有匹配的对象集合
 		 **/
@@ -1924,18 +1975,25 @@ window.Mtils = {
 	}
 };
 
-String.prototype.rtrim = Mtils.utils.rtrim;
-String.prototype.ltrim = Mtils.utils.ltrim;
-String.prototype.trim = Mtils.utils.trim;
+Object.prototype.rtrim = Mtils.utils.rtrim;
+Object.prototype.ltrim = Mtils.utils.ltrim;
+Object.prototype.trim = Mtils.utils.trim;
 
-Number.prototype.isNumber = String.prototype.isNumber = Mtils.validation.isNumber;
-Number.prototype.isDecimal = String.prototype.isDecimal = Mtils.validation.isDecimal;
-Number.prototype.isInteger = String.prototype.isInteger = Mtils.validation.isInteger;
+Object.prototype.isNumber = String.prototype.isNumber = Mtils.validation.isNumber;
+Object.prototype.isDecimal = String.prototype.isDecimal = Mtils.validation.isDecimal;
+Object.prototype.isInteger = String.prototype.isInteger = Mtils.validation.isInteger;
 
-String.prototype.getByteLength = Mtils.utils.getByteLength;
+Object.prototype.getByteLength = Mtils.utils.getByteLength;
 
-Object.prototype.isArray = Mtils.validation.isArray;
-Object.prototype.isObject = Mtils.validation.isObject;
+Object.prototype.isObject = Mtils.utils.isObject;
+Object.prototype.isArray = Mtils.utils.isArray;
+Object.prototype.isNumber = Mtils.utils.isNumber;
+Object.prototype.isString = Mtils.utils.isString;
+Object.prototype.isDate = Mtils.utils.isDate;
+Object.prototype.isEmpty = Mtils.utils.isEmpty;
+Object.prototype.isFunction = Mtils.utils.isFunction;
+
+
 
 window.getUrlParam = Mtils.utils.getUrlParam;
 
