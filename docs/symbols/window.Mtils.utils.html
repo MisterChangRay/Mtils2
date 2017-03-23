@@ -359,6 +359,24 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.getArrayObjectByFieldVal">getArrayObjectByFieldVal</a></b>(sourceArr, field, val, like)
+								</div>
+								<div class="description">根据指定的字段值在对象数组中找到匹配的对象集合</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.getArrayObjectValues">getArrayObjectValues</a></b>(sourceArr, properties, defaultVal)
+								</div>
+								<div class="description">获取对象数组中的对象指定属性值集合</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
 								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.getByteLength">getByteLength</a></b>(str_data)
 								</div>
 								<div class="description">获取字符串的字节长度</div>
@@ -389,6 +407,78 @@ ul.inheritsList
 								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.getUrlParam">getUrlParam</a></b>(Url)
 								</div>
 								<div class="description">获取URL中的请求参数</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.getVarType">getVarType</a></b>(varName)
+								</div>
+								<div class="description">获取变量的数据类型</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.isArray">isArray</a></b>(varName)
+								</div>
+								<div class="description">判断变量是否为数组</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.isDate">isDate</a></b>(varName)
+								</div>
+								<div class="description">判断变量是否为日期</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.isEmpty">isEmpty</a></b>(varName)
+								</div>
+								<div class="description">判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/''</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.isFunction">isFunction</a></b>(varName)
+								</div>
+								<div class="description">判断变量是否为函数</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.isNumber">isNumber</a></b>(varName)
+								</div>
+								<div class="description">判断变量是否为数字</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.isObject">isObject</a></b>(varName)
+								</div>
+								<div class="description">判断变量是否为对象</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.isSring">isSring</a></b>(varName)
+								</div>
+								<div class="description">判断变量是否为字符串</div>
 							</td>
 						</tr>
 					
@@ -1002,6 +1092,122 @@ ul.inheritsList
 
 					<hr />
 				
+					<a name=".getArrayObjectByFieldVal"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{array}</span>
+					<span class="light">window.Mtils.utils.</span><b>getArrayObjectByFieldVal</b>(sourceArr, field, val, like)
+					
+					</div>
+					<div class="description">
+						根据指定的字段值在对象数组中找到匹配的对象集合
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{array}</span> <b>sourceArr</b>
+									
+								</dt>
+								<dd>待查找的数组</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>field</b>
+									
+								</dt>
+								<dd>待匹配的字段</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>val</b>
+									
+								</dt>
+								<dd>待匹配的值</dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>like</b>
+									
+								</dt>
+								<dd>是否使用模糊匹配</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{array}</span> , 所有匹配的对象集合</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getArrayObjectValues"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Array}</span>
+					<span class="light">window.Mtils.utils.</span><b>getArrayObjectValues</b>(sourceArr, properties, defaultVal)
+					
+					</div>
+					<div class="description">
+						获取对象数组中的对象指定属性值集合
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{array}</span> <b>sourceArr</b>
+									
+								</dt>
+								<dd>待查找的数组</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>properties</b>
+									
+								</dt>
+								<dd>要获取的字段</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>defaultVal</b>
+									
+								</dt>
+								<dd>默认值</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Array}</span> , 指定属性的集合</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
 					<a name=".getByteLength"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
@@ -1178,6 +1384,350 @@ ul.inheritsList
 							<dt class="heading">Returns:</dt>
 							
 								<dd><span class="light fixedFont">{Object}</span> , 序列化后的参数对象 array[param_Key] = param_value</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getVarType"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{string}</span>
+					<span class="light">window.Mtils.utils.</span><b>getVarType</b>(varName)
+					
+					</div>
+					<div class="description">
+						获取变量的数据类型
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{varName}</span> <b>varName</b>
+									
+								</dt>
+								<dd>待取数据类型的变量</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{string}</span> , 变量的数据类型,只能为以下类型object,array,number,string,function,date,null,undefined</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isArray"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{boolean}</span>
+					<span class="light">window.Mtils.utils.</span><b>isArray</b>(varName)
+					
+					</div>
+					<div class="description">
+						判断变量是否为数组
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{varName}</span> <b>varName</b>
+									
+								</dt>
+								<dd>待判断数据类型的变量</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> , true/false</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isDate"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{boolean}</span>
+					<span class="light">window.Mtils.utils.</span><b>isDate</b>(varName)
+					
+					</div>
+					<div class="description">
+						判断变量是否为日期
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{varName}</span> <b>varName</b>
+									
+								</dt>
+								<dd>待判断数据类型的变量</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> , true/false</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isEmpty"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{boolean}</span>
+					<span class="light">window.Mtils.utils.</span><b>isEmpty</b>(varName)
+					
+					</div>
+					<div class="description">
+						判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/''
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{varName}</span> <b>varName</b>
+									
+								</dt>
+								<dd>待判断数据类型的变量</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> , true/false</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isFunction"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{boolean}</span>
+					<span class="light">window.Mtils.utils.</span><b>isFunction</b>(varName)
+					
+					</div>
+					<div class="description">
+						判断变量是否为函数
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{varName}</span> <b>varName</b>
+									
+								</dt>
+								<dd>待判断数据类型的变量</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> , true/false</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isNumber"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{boolean}</span>
+					<span class="light">window.Mtils.utils.</span><b>isNumber</b>(varName)
+					
+					</div>
+					<div class="description">
+						判断变量是否为数字
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{varName}</span> <b>varName</b>
+									
+								</dt>
+								<dd>待判断数据类型的变量</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> , true/false</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isObject"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{boolean}</span>
+					<span class="light">window.Mtils.utils.</span><b>isObject</b>(varName)
+					
+					</div>
+					<div class="description">
+						判断变量是否为对象
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{varName}</span> <b>varName</b>
+									
+								</dt>
+								<dd>待判断数据类型的变量</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> , true/false</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isSring"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{boolean}</span>
+					<span class="light">window.Mtils.utils.</span><b>isSring</b>(varName)
+					
+					</div>
+					<div class="description">
+						判断变量是否为字符串
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{varName}</span> <b>varName</b>
+									
+								</dt>
+								<dd>待判断数据类型的变量</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> , true/false</dd>
 							
 							</dl>
 						
@@ -1633,7 +2183,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Thu Dec 29 2016 16:02:58 GMT+0800 (CST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Thu Mar 23 2017 12:11:38 GMT+0800 (CST)
 		</div>
 	</body>
 </html>

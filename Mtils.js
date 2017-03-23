@@ -1219,7 +1219,8 @@ window.Mtils = {
 		 * @returns {boolean}, true/false
 		 **/
         isNumber : function(varName) {
-        	varName = varName || this;
+        	if(!JSON.stringify(varName))
+        		varName = varName || this;
         	return Mtils.utils.getVarType(varName) === 'number';
         },
         /**
@@ -1259,8 +1260,9 @@ window.Mtils = {
 		 * @returns {boolean}, true/false
 		 **/
         isEmpty : function(varName) {
-        	varName = varName || this;
-        	return (Mtils.utils.getVarType(varName) === 'undefined') || (Mtils.utils.getVarType(varName) === 'null') || 
+        	if(JSON.stringify(varName) !== '0')
+    			varName = varName || this;
+        	return (JSON.stringify(varName) === 'undefined') || (JSON.stringify(varName) === 'null') || 
         	(JSON.stringify(varName) === '[]') || (JSON.stringify(varName) === '{}') || varName === '';
         },
 
