@@ -1213,6 +1213,75 @@ window.Mtils = {
 	 * @description 提供一些辅助代码封装
 	 */
 	utils : {
+
+     	/**
+		 * @author Rui.Zhang
+		 * @description 获取对象数组中的对象指定属性值集合
+		 * @param {array} sourceArr  待查找的数组
+		 * @param {string} properties  要获取的字段
+		 * @param {string} defaultVal  默认值
+		 * @returns {Array}, 指定属性的集合 
+		 **/
+        getArrayObjectValues : function(sourceArr ,properties, defaultVal) {
+            var result = [];
+
+            if(sourceArr && Array.isArray(sourceArr)) {
+                for(var i= 0, item; i<sourceArr.length; i ++) {
+                    item = sourceArr[i];
+                    if(properties && "object" == typeof(item)) {
+                        if(item[properties]) {
+                            result.push(item[properties]);
+                        } else if(undefined != defaultVal) {
+                            result.push(defaultVal);
+                        }
+                    } else {
+                        if(item) {
+                            result.push(String(item));
+                        }else if(undefined != defaultVal) {
+                            result.push(defaultVal);
+                        }
+                    }
+                }
+            }
+            return result;
+        },
+
+
+     
+     	/**
+		 * @author Rui.Zhang
+		 * @description 根据指定的字段值在对象数组中找到匹配的对象集合
+		 * @param {array} sourceArr  待查找的数组
+		 * @param {number} field  匹配的字段
+		 * @param {number} val  匹配的值
+		 * @param {boolean} like  是否使用模糊匹配
+		 * @returns {array}, 所有匹配的对象集合
+		 **/
+        getArrayObjectByFieldVal : function(sourceArr ,field, val, like) {
+            var result = [];
+
+            if(val && sourceArr && Array.isArray(sourceArr)) {
+                for(var i= 0, item; i<sourceArr.length; i ++) {
+                    item = sourceArr[i];
+                    if(like) {
+                        if(-1 != item[field].indexOf(val) || -1 != val.indexOf(item[field])) {
+                            result.push(item);
+                        }
+                    } else {
+                        if(item[field] == val) {
+                            result.push(item);
+                        }
+                    }
+
+                }
+            }
+            return result;
+        },
+
+
+
+
+
 		/**
 		 * @author Rui.Zhang
 		 * @description 提供进制转换,最大为64进制
