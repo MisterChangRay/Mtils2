@@ -1183,6 +1183,92 @@ window.Mtils = {
 	 * @description 提供一些辅助代码封装
 	 */
 	utils : {
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 简单版本的链式语法函数调用
+		 * @param {none} 无参数
+		 * @returns {none}, 无返回值 
+		 * @example 此方案简单解决回调的解决方案,使用如下:
+		 * 
+		 * ChainCallManager() 返回一个链式调用对象,可以调用.then(fn)来注册需要调用的函数
+         * 当函数注册完毕后,调用.start()或.run(),方法启动函数链的调用
+         * .start()该函数需要你在函数中使用this.next()或this.callNext()方法来手动调用下一个函数,适用于函数之间有先后顺序的调用.比如异步且有顺序,.next()/.callNext()可以传递参数给下一个函数
+         * .run()函数则系统自动按注册顺序调用调用,适合于函数之间没有关联的调用.比如:函数中有异步请求,则系统不会消耗时间等待异步请求返回.会在发送异步请求后直接调用下一个函数
+		 * ChainCallManager().then(function(params) {
+	 	 *	 console.log('this is one function', params);
+	 	 *   this.next('call function2'); //请注意,如果这里不调用.next(),函数调用将在这里终止,.next()函数中的参数将会传递给下一个函数
+		 * }).then(function(params) {
+	     *   console.log('this is two function', params);
+		 * }).start('start');  //携带启动参数 start
+		 * 
+		 * 上面将会依次输出: 
+		 * line1: this is one function start
+		 * line2: this is two function call function2
+		 * 
+		 * 
+		 * ChainCallManager().then(function(params) {
+	 	 *	 console.log('this is one function', params);
+	 	 *   return 'call funtcion2';    //这里的返回值将会传递给下一个函数
+		 * }).then(function(params) {
+	     *   console.log('this is two function', params);
+		 * }).run('start'); //携带启动参数 start
+		 *
+		 *
+		 * 上面将会依次输出: 
+		 * line1: this is one function start
+		 * line2: this is two function call funtcion2
+		 *
+		 **/
+		 ChainCallManager : function () {
+		    var fn = function() {
+		        this.methodsRunIndex = 0;
+		        this.methods = [];
+		        this.autoCall = false;
+
+
+		        this.next = this.callNext = function(params) {
+		            if(!this.autoCall) {
+		                this.methodsRunIndex ++;
+		                if(this.methods[this.methodsRunIndex]) {
+		                    this.methods[this.methodsRunIndex].call(this, params);
+		                }
+		            }
+		            return this;
+		        };
+
+		        this.then = function(fn) {
+		            if(fn && "function" === typeof(fn)) {
+		                this.methods.push(fn);
+		            }
+		            return this;
+		        };
+
+		        this.start = function(params) {
+		            this.autoCall = false;
+
+		            this.methods[this.methodsRunIndex].call(this, params);
+		        };
+
+		        this.run = function(params) {
+		            var preResult = params || undefined;
+
+		            this.autoCall = true;
+
+		            for(var i=0; i<this.methods.length; i++) {
+		                this.methodsRunIndex = i;
+
+		                preResult = this.methods[this.methodsRunIndex].call(this, preResult);
+		            }
+		        };
+		    };
+
+   			return new fn();
+		},
+
+
+
 		/**
 		 * @author Rui.Zhang
 		 * @description 获取变量的数据类型
@@ -1996,7 +2082,7 @@ Object.prototype.isEmpty = Mtils.utils.isEmpty;
 Object.prototype.isFunction = Mtils.utils.isFunction;
 
 
-
+window.ChainCallManager = Mtils.utils.ChainCallManager;
 window.getUrlParam = Mtils.utils.getUrlParam;
 
 Math.accAdd = Mtils.utils.accAdd;
