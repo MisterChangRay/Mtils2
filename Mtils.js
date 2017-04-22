@@ -1355,13 +1355,13 @@ window.Mtils = {
 
      	/**
 		 * @author Rui.Zhang
-		 * @description 获取对象数组中的对象指定属性值集合
+		 * @description 根据对象属性在数组中抽取所有该对象属性的值组成新数组返回
 		 * @param {array} sourceArr  待查找的数组
 		 * @param {string} properties  要获取的字段
 		 * @param {string} defaultVal  默认值
 		 * @returns {Array}, 指定属性的集合 
 		 **/
-        getArrayObjectValues : function(sourceArr ,properties, defaultVal) {
+        extractPropertyValuesInArray : function(sourceArr ,properties, defaultVal) {
             var result = [];
 
             if(sourceArr && Array.isArray(sourceArr)) {
@@ -1389,14 +1389,14 @@ window.Mtils = {
      
      	/**
 		 * @author Rui.Zhang
-		 * @description 根据指定的字段值在对象数组中找到匹配的对象集合
+		 * @description 根据对象属性值在对象数组中过滤匹配对象到新的数组中
 		 * @param {array} sourceArr  待查找的数组
 		 * @param {number} field  待匹配的字段
 		 * @param {number} val  待匹配的值
 		 * @param {boolean} like  是否使用模糊匹配
 		 * @returns {array}, 所有匹配的对象集合
 		 **/
-        getArrayObjectByFieldVal : function(sourceArr ,field, val, like) {
+        filterArrayByObjectProperty : function(sourceArr ,field, val, like) {
             var result = [];
 
             if(val && sourceArr && Array.isArray(sourceArr)) {
@@ -1951,7 +1951,7 @@ window.Mtils = {
 		 **/
 		getByteLength : function(str_data) {
 			str_data = str_data || String(this);
-			if(Mtils.validate.isString(str_data)) {
+			if(Mtils.validation.isString(str_data)) {
 				var Zhlength = 0;// 全角
 		        var Enlength = 0;// 半角
 		        if(str_data) {

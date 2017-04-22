@@ -350,6 +350,24 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.extractPropertyValuesInArray">extractPropertyValuesInArray</a></b>(sourceArr, properties, defaultVal)
+								</div>
+								<div class="description">根据对象属性在数组中抽取所有该对象属性的值组成新数组返回</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.filterArrayByObjectProperty">filterArrayByObjectProperty</a></b>(sourceArr, field, val, like)
+								</div>
+								<div class="description">根据对象属性值在对象数组中过滤匹配对象到新的数组中</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
 								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.formatDate">formatDate</a></b>(timestamp, pattern)
 								</div>
 								<div class="description">时间格式化</div>
@@ -362,24 +380,6 @@ ul.inheritsList
 								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.formatMoney">formatMoney</a></b>(long_data, length)
 								</div>
 								<div class="description">格式化金额, 展示位银行金额格式</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.getArrayObjectByFieldVal">getArrayObjectByFieldVal</a></b>(sourceArr, field, val, like)
-								</div>
-								<div class="description">根据指定的字段值在对象数组中找到匹配的对象集合</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.getArrayObjectValues">getArrayObjectValues</a></b>(sourceArr, properties, defaultVal)
-								</div>
-								<div class="description">获取对象数组中的对象指定属性值集合</div>
 							</td>
 						</tr>
 					
@@ -1046,6 +1046,122 @@ ul.inheritsList
 
 					<hr />
 				
+					<a name=".extractPropertyValuesInArray"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Array}</span>
+					<span class="light">window.Mtils.utils.</span><b>extractPropertyValuesInArray</b>(sourceArr, properties, defaultVal)
+					
+					</div>
+					<div class="description">
+						根据对象属性在数组中抽取所有该对象属性的值组成新数组返回
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{array}</span> <b>sourceArr</b>
+									
+								</dt>
+								<dd>待查找的数组</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>properties</b>
+									
+								</dt>
+								<dd>要获取的字段</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>defaultVal</b>
+									
+								</dt>
+								<dd>默认值</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Array}</span> , 指定属性的集合</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".filterArrayByObjectProperty"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{array}</span>
+					<span class="light">window.Mtils.utils.</span><b>filterArrayByObjectProperty</b>(sourceArr, field, val, like)
+					
+					</div>
+					<div class="description">
+						根据对象属性值在对象数组中过滤匹配对象到新的数组中
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{array}</span> <b>sourceArr</b>
+									
+								</dt>
+								<dd>待查找的数组</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>field</b>
+									
+								</dt>
+								<dd>待匹配的字段</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>val</b>
+									
+								</dt>
+								<dd>待匹配的值</dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>like</b>
+									
+								</dt>
+								<dd>是否使用模糊匹配</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{array}</span> , 所有匹配的对象集合</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
 					<a name=".formatDate"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
@@ -1140,122 +1256,6 @@ ul.inheritsList
 							<dt class="heading">Returns:</dt>
 							
 								<dd><span class="light fixedFont">{String}</span> , 格式化后金额</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getArrayObjectByFieldVal"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{array}</span>
-					<span class="light">window.Mtils.utils.</span><b>getArrayObjectByFieldVal</b>(sourceArr, field, val, like)
-					
-					</div>
-					<div class="description">
-						根据指定的字段值在对象数组中找到匹配的对象集合
-						
-						<br /><i>Author: </i>Rui.Zhang.
-					</div>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<span class="light fixedFont">{array}</span> <b>sourceArr</b>
-									
-								</dt>
-								<dd>待查找的数组</dd>
-							
-								<dt>
-									<span class="light fixedFont">{number}</span> <b>field</b>
-									
-								</dt>
-								<dd>待匹配的字段</dd>
-							
-								<dt>
-									<span class="light fixedFont">{number}</span> <b>val</b>
-									
-								</dt>
-								<dd>待匹配的值</dd>
-							
-								<dt>
-									<span class="light fixedFont">{boolean}</span> <b>like</b>
-									
-								</dt>
-								<dd>是否使用模糊匹配</dd>
-							
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{array}</span> , 所有匹配的对象集合</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getArrayObjectValues"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Array}</span>
-					<span class="light">window.Mtils.utils.</span><b>getArrayObjectValues</b>(sourceArr, properties, defaultVal)
-					
-					</div>
-					<div class="description">
-						获取对象数组中的对象指定属性值集合
-						
-						<br /><i>Author: </i>Rui.Zhang.
-					</div>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<span class="light fixedFont">{array}</span> <b>sourceArr</b>
-									
-								</dt>
-								<dd>待查找的数组</dd>
-							
-								<dt>
-									<span class="light fixedFont">{string}</span> <b>properties</b>
-									
-								</dt>
-								<dd>要获取的字段</dd>
-							
-								<dt>
-									<span class="light fixedFont">{string}</span> <b>defaultVal</b>
-									
-								</dt>
-								<dd>默认值</dd>
-							
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Array}</span> , 指定属性的集合</dd>
 							
 							</dl>
 						
@@ -2239,7 +2239,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Thu Apr 20 2017 17:34:45 GMT+0800 (CST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Sat Apr 22 2017 09:50:50 GMT+0800 (CST)
 		</div>
 	</body>
 </html>
