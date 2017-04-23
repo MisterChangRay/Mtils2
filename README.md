@@ -23,3 +23,24 @@ Mtils2 is Mtils Upgraded version
 4. 封装精度更高的计算函数,链式函数调用(类promise),数组对象获取,对象属性设置、对象数组查找
 
 
+
+##### 使用示例
+1. 引入Mtils.js
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mtils use test</title>
+</head>
+<body>
+</body>
+<script type="text/javascript" src="Mtils.js"></script>
+</html>
+```
+
+2. 调用你想使用的函数，具体可以参照API
+<lable>身份证校验示例</lable>
+<input placeholder="身份证校验演示" type="text">&nbsp;
+<input type="button"  value="校验" onclick="function() {alert(111)}">
+
