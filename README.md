@@ -1,4 +1,5 @@
 # Mtils2
+Mtils是一套前端代码集合，提供常用的数据校验、数据加密、扩展函数、便捷函数。
 Mtils2 is Mtils Upgraded version
 
 
