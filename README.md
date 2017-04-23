@@ -72,7 +72,34 @@ Mtils2 is Mtils Upgraded version
   var result = Mtils.utils.filterArrayByObjectProperty(childrens, "name", "张", true);
   console.log(result); // result = [{id:1, name:'张三'}, {id:3, name:'张国立'}]
   
-  //更多方法，请参阅API文档使用...
+  //链式调用，解决回调的坑
+  //该函数已经扩展到window对象，即也可以直接使用ChainCallManager()。示例中的三个ajax将会依次执行。
+  Mtils.utils.ChainCallManager().then(function() {
+    var self = this;
+    ...
+    $.ajax(url, function() {
+      this.next();//当前函数执行完毕后调用下一个函数执行
+    });
+    ...
+  }).then(function() {
+    ...
+    var self = this;
+    $.ajax(url, function() {
+      this.next();
+    });
+    ...
+  }).then(function() {
+    ...
+    var self = this;
+    $.ajax(url, function() {
+      this.next();
+    });
+    ...
+  }).start(); 
+  
+  
+ 
+  //更多方法及语法，请结合API文档使用...
 </script>
 
 ```
