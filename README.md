@@ -7,21 +7,11 @@ Mtils2 is Mtils Upgraded version
 详情[参阅API文档](https://misterchangray.github.io/Mtils2/)。
 
 
-##### 如何使用
-1. 引入Mtils.js
-2. 根据API调用你想调用的方法
-
-##### 例子
-1. 引入Js
-2. Js域内使用Mtils对函数进行调用
-3. 由于某些函数扩展到Js原型中, 即可直接进行调用, 详情[参阅文档](https://misterchangray.github.io/Mtils2/)
-
 ##### 简介
 1. 提供身份证、银行卡、邮箱、手机、座机、QQ、URL、IP等常见的数据格式校验
 2. 提供年龄计算、进制转换、cookie操作、金额格式化、时间格式化、数据类型判断、数组去重、获取拼音等常见便捷方法
 3. 提供base64、md5、sha1、sha256、随机数等常见数据安全算法
 4. 封装精度更高的计算函数,链式函数调用(类promise),数组对象获取,对象属性设置、对象数组查找
-
 
 
 ##### 使用示例
@@ -39,8 +29,51 @@ Mtils2 is Mtils Upgraded version
 </html>
 ```
 
-2. 调用你想使用的函数，具体可以参照API
-<lable>身份证校验示例</lable>
-<input placeholder="身份证校验演示" type="text">&nbsp;
-<input type="button"  value="校验" onclick="function() {alert(111)}">
+2. 在Js域内使用Mtils调用你想使用的函数，具体可以[参阅API文档](https://misterchangray.github.io/Mtils2/)。
+```js
+<script type="text/javascript">
+  //校验身份证
+  if(tils.validation.isIdCard('510182199109217504')) {
+    alert('此身份证有效');  
+  } else {
+    alert('此身份证无效');
+  }
+  
+  //校验身份证是否为男性身份证
+  if(tils.validation.isIdCard('510182199109217504', Mtils.constant.MAN)) {
+    alert('此身份证为男性身份证');  
+  } else {
+    alert('此身份证无效');
+  }
+  
+  //MD5加密密码
+  var pw = Mtils.security.hex_md5('password');
+  console.log(pw); // pw = "5f4dcc3b5aa765d61d8327deb882cf99"
+  
+  //取汉字拼音
+  var py = Mtils.utils.makePy('Mtils 真是个好工具');
+  console.log(py);   // py = "Mtils ZhenShiGeHaoGongJu"
+  
+  //只取汉字首字母拼音
+  var py = Mtils.utils.makePy('Mtils 真是个好工具', true);
+  console.log(py);   // py = "Mtils ZSGHGJ"
+  
+  //便捷JS对象设置值
+  var obj = {}; 
+  Mtils.utils.setObjectPropertyVal(obj, 'a.b.c', 123, true);
+  console.log(obj.a.b.c);   // obj.a.b.c = 123
+  
+  //便捷获取JS对象值,也可以用下面的方法获取值。原生obj.a.b.c，如果a为空,则可能报错，而获取方法不会报错且可以设置默认值
+  var objVal = Mtils.utils.getObjectPropertyVal(obj, 'a.b.c');
+  console.log(objVal);   // objVal = 123
+  
+  //根据对象属性来过滤数组, 这里从儿童列表中提取出所有姓张的
+  var childrens = [{id:1, name:'张三'}, {id:2, name:'李四'}, {id:3, name:'张国立'}, {id:4, name:'赵武'}];
+  var result = Mtils.utils.filterArrayByObjectProperty(childrens, "name", "张", true);
+  console.log(result); // result = [{id:1, name:'张三'}, {id:3, name:'张国立'}]
+  
+  //更多方法，请参阅API文档使用...
+</script>
+
+```
 
