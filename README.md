@@ -92,21 +92,21 @@ Mtils2 is Mtils Upgraded version
     var self = this;
     ...
     $.ajax(url, function() {
-      this.next();//当前函数执行完毕后调用下一个函数执行
+      self.next();//当前函数执行完毕后调用下一个函数执行
     });
     ...
   }).then(function() {
     ...
     var self = this;
     $.ajax(url, function() {
-      this.next();
+      self.next();
     });
     ...
   }).then(function() {
     ...
     var self = this;
     $.ajax(url, function() {
-      this.next();
+      self.next();
     });
     ...
   }).start(); 
