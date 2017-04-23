@@ -84,7 +84,7 @@ Mtils2 is Mtils Upgraded version
   console.log(result); // result = [{id:1, name:'张三'}, {id:3, name:'张国立'}]
   
   
-  //链式调用，解决回调的坑
+  //链式调用，解决回调的坑(这个演示的是伪代码)
   //该函数已经扩展到window对象，即也可以直接使用ChainCallManager()。示例中的三个ajax将会依次执行。
   Mtils.utils.ChainCallManager().then(function() {
     var self = this;
