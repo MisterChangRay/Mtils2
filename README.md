@@ -26,6 +26,10 @@ Mtils2 is Mtils Upgraded version
 <body>
 </body>
    <script type="text/javascript" src="Mtils.js"></script>
+   <script type="text/javascript">
+      //在这里调用你想用的方法吧
+      ...
+   </script>
 </html>
 ```
 
