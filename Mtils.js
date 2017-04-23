@@ -1791,6 +1791,7 @@ window.Mtils = {
 		 * @returns {Int} 计算出的年龄
 		 **/
 		 calcAge : function(birth, now) {
+		 	now = now || new Date();
 	         if(birth && now) {
 	             try {
 	                 var birth, now, age;
@@ -1815,6 +1816,7 @@ window.Mtils = {
 	                 }
 	                 return age + "";
 	             } catch(e) {
+	             	 console.log("Invalid Date, please input like '1992-08-12' or '1992/12/12'");
 	                 return "";
 	             }
 	         }

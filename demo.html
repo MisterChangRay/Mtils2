@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mtils test page</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<style type="text/css">
+	.center {
+		width: 600px;
+		margin: 0px auto;
+	}
+	.center div {
+		margin-top: 5px;
+	}
+</style>
+<body>
+	<div class="center">
+		<div><h1>Mtils简单示例</h1></div>
+		<div>
+			<lable>身份证校验:</lable>
+			<input id="idcard" type="text">
+			<button onclick="demo.checkId()">校验身份证</button>
+		</div>
+		<div>
+			<lable>银行卡校验:</lable>
+			<input id="bankcard" type="text">
+			<button onclick="demo.checkBankcard()">校验银行卡</button>
+		</div>
+		<div>
+			<lable>Url校验:</lable>
+			<input id="url" type="text">
+			<button onclick="demo.checkBankcard()">校验URL</button>
+		</div>
+		<div>
+			<lable>生成MD5:</lable>
+			<input id="md5" type="text">
+			<button onclick="demo.createMD5()">生成MD5</button>
+		</div>
+		<div>
+			<lable>生成sha_256:</lable>
+			<input id="sha256" type="text">
+			<button onclick="demo.createSHA256()">生成sha256</button>
+		</div>
+		<div>
+			<lable>计算年龄:</lable>
+			<input id="calcAge" value="20170423" type="text">
+			<button onclick="demo.calcAge()">计算年龄</button>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var val = function(id) {
+		return document.getElementById(id).value;
+	}
+	var demo = {
+		checkId : function() {
+			if(Mtils.validation.isIdCard(val("idcard"))) {
+				alert(true);
+			} else {
+				alert(false);
+			}
+		},
+		checkBankcard : function() {
+			if(Mtils.validation.isBankCard(val("bankcard"))) {
+				alert(true);
+			} else {
+				alert(false);
+			}
+		},
+		checkUrl : function() {
+			if(Mtils.validation.isUrl(val("url"))) {
+				alert(true);
+			} else {
+				alert(false);
+			}
+		},
+		createMD5 : function() {
+			alert(val("md5") + "的加密码是：" + Mtils.security.hex_md5(val("md5")))
+		},
+		createSHA256 : function() {
+			alert(val("sha256") + "的加密码是：" + Mtils.security.hex_sha256(val("sha256")))
+		},
+		calcAge : function() {
+			alert("你今年" + Mtils.utils.calcAge(val("calcAge"), new Date()) + "岁")
+		}
+		
+
+	};
+	
+</script>
+<script type="text/javascript" src="Mtils.js"></script>
+</html>
