@@ -39,6 +39,7 @@ Mtils2 is Mtils Upgraded version
     alert('此身份证无效');
   }
   
+  
   //校验身份证是否为男性身份证
   if(tils.validation.isIdCard('510182199109217504', Mtils.constant.MAN)) {
     alert('此身份证为男性身份证');  
@@ -46,31 +47,38 @@ Mtils2 is Mtils Upgraded version
     alert('此身份证无效');
   }
   
+  
   //MD5加密密码
   var pw = Mtils.security.hex_md5('password');
   console.log(pw); // pw = "5f4dcc3b5aa765d61d8327deb882cf99"
+  
   
   //取汉字拼音
   var py = Mtils.utils.makePy('Mtils 真是个好工具');
   console.log(py);   // py = "Mtils ZhenShiGeHaoGongJu"
   
+  
   //只取汉字首字母拼音
   var py = Mtils.utils.makePy('Mtils 真是个好工具', true);
   console.log(py);   // py = "Mtils ZSGHGJ"
+  
   
   //便捷JS对象设置值
   var obj = {}; 
   Mtils.utils.setObjectPropertyVal(obj, 'a.b.c', 123, true);
   console.log(obj.a.b.c);   // obj.a.b.c = 123
   
+  
   //便捷获取JS对象值,也可以用下面的方法获取值。原生obj.a.b.c，如果a为空,则可能报错，而获取方法不会报错且可以设置默认值
   var objVal = Mtils.utils.getObjectPropertyVal(obj, 'a.b.c');
   console.log(objVal);   // objVal = 123
+  
   
   //根据对象属性来过滤数组, 这里从儿童列表中提取出所有姓张的
   var childrens = [{id:1, name:'张三'}, {id:2, name:'李四'}, {id:3, name:'张国立'}, {id:4, name:'赵武'}];
   var result = Mtils.utils.filterArrayByObjectProperty(childrens, "name", "张", true);
   console.log(result); // result = [{id:1, name:'张三'}, {id:3, name:'张国立'}]
+  
   
   //链式调用，解决回调的坑
   //该函数已经扩展到window对象，即也可以直接使用ChainCallManager()。示例中的三个ajax将会依次执行。
