@@ -21,11 +21,11 @@ Mtils2 is Mtils Upgraded version
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mtils use test</title>
+   <title>Mtils use test</title>
 </head>
 <body>
 </body>
-<script type="text/javascript" src="Mtils.js"></script>
+   <script type="text/javascript" src="Mtils.js"></script>
 </html>
 ```
 
