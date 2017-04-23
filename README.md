@@ -3,7 +3,8 @@ Mtils2 is Mtils Upgraded version
 
 
 ##### 这是什么
-这是一个js的工具集合，封装了常见的表单校验，算法合集，和一些其他的方法。详情[参阅文档](https://misterchangray.github.io/Mtils2/)。
+这是一个js的工具集合，封装了常见的表单校验，加密算法，原生函数扩展和一些其他的便捷方法。
+详情[参阅API文档](https://misterchangray.github.io/Mtils2/)。
 
 
 ##### 如何使用
