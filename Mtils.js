@@ -145,15 +145,20 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description   判断数据是否为网址(URL)
+		 * @description   判断数据是否为网址(URL),请传入满足标准http协议的链接
 		 * @param {String} str_data 待校验的数据
+		 * @param {Boolean} flag 是否使用严格模式,默认为false
 		 * @returns {Boolean}, true:是网址
 		 **/
-		isUrl : function (str_data) {
+		isUrl : function (str_data, flag = false) {
 			str_data = str_data || String(this);
 		    var regular = /^\b(((https?|ftp):\/\/)?[-a-z0-9]+(\.[-a-z0-9]+)*\.(?:com|edu|gov|int|mil|net|org|biz|info|name|museum|asia|coop|aero|[a-z][a-z]|((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d))\b(\/[-a-z0-9_:\@&?=+,.!\/~%\$]*)?)$/i
-		    if (regular.test(str_data)) {
+		    var regular2 = /^((https?|ftp):\/\/)(www\.)?\S{0,30}\.\S+$/i
+
+		    if (regular2.test(str_data) && !flag) {
 		        return true;
+		    } else if(regular.test(str_data) && flag) {
+		    	return true;
 		    } else {
 		        return false;
 		    }
