@@ -43,25 +43,10 @@ window.Mtils = {
 	 */
 	validation : {
 
-		/**
-		 * @author Rui.Zhang
-		 * @description 判断变量是否字符串
-		 * @param varname 待校验的变量名
-		 * @returns {Boolean}, true:为字符串
-		 **/
-		isString : function (varname) {
-			varname = varname || this;
-			if(-1 != Object.prototype.toString.call(varname).indexOf("String")){
-				return true;
-			} else {
-				return false;
-			}
-		},
-
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 判断数据是否为小数
+		 * @description 通过正则判断数据是否为小数, 该函数已扩展到Object和String对象中
 		 * @param {String} str_data 待校验的数据
 		 * @returns {Boolean}, true:是小数
 		 **/
@@ -75,7 +60,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 判断数据是否为整数
+		 * @description 通过正则来判断数据是否为整数, 该函数已扩展到Object和String对象中
 		 * @param {String} str_data 待校验的数据
 		 * @returns {Boolean}, true:是整数
 		 **/
@@ -89,7 +74,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 判断数据是否为数字(包括小数)
+		 * @description 通过正则来判断数据是否为数字(包括小数), 该函数已扩展到Object和String对象中
 		 * @param {String} str_data 待校验的数据
 		 * @returns {Boolean}, true:是数字
 		 **/
@@ -1192,10 +1177,20 @@ window.Mtils = {
 	 */
 	utils : {
 
+		/**
+		 * @author Rui.Zhang
+		 * @description 深复制, 该方法已扩展到Mtils对象上
+		 * @param {any} varName  待复制的数据
+		 * @returns {any},  返回深复制的新对象
+		 **/
+        copy : function(obj) {
+            return JSON.parse(JSON.stringify(obj));
+        },
+
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 简单版本的链式语法函数调用
+		 * @description 简单版本的链式语法函数调用,该对象已扩展到Window和Mtils对象中
 		 * @param {none} 无参数
 		 * @returns {none}, 无返回值 
 		 * @example 此方案简单解决回调的解决方案,使用如下:
@@ -1288,7 +1283,7 @@ window.Mtils = {
         },
         /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为对象
+		 * @description 判断变量是否为对象, 该函数已扩展到Object对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
@@ -1298,7 +1293,7 @@ window.Mtils = {
         },
         /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为数组
+		 * @description 判断变量是否为数组, 该函数已扩展到Object对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
@@ -1308,7 +1303,7 @@ window.Mtils = {
         },
         /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为数字
+		 * @description 通过数据类型判断变量是否为数字
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
@@ -1319,7 +1314,7 @@ window.Mtils = {
         },
         /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为函数
+		 * @description 判断变量是否为函数, 该函数已扩展到Object对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
@@ -1329,7 +1324,7 @@ window.Mtils = {
         },
         /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为日期
+		 * @description 判断变量是否为日期, 该函数已扩展到Object对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
@@ -1339,17 +1334,17 @@ window.Mtils = {
         },
         /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为字符串
+		 * @description 判断变量是否为字符串, 该函数已扩展到Object对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
-        isSring : function(varName) {
+        isString : function(varName) {
         	varName = varName || this;
         	return Mtils.utils.getVarType(varName) === 'string';
         },
         /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/''
+		 * @description 判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/'', 该函数已扩展到Object对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
@@ -1504,7 +1499,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 去除数组中的重复元素
+		 * @description 去除数组中的重复元素, 该函数已扩展到Array对象中
 		 * @param {Arr} array  待去重数组
 		 * @returns {Arr}, 去重后的数组
 		 **/
@@ -1522,7 +1517,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 获取URL中的请求参数
+		 * @description 获取URL中的请求参数,该函数已扩展到window和Mtils对象中
 		 * @param {String} [Url]  可选,带参数的URL, 默认为当前访问的URL
 		 * @returns {Object}, 序列化后的参数对象 array[param_Key] = param_value
 		 **/
@@ -1552,7 +1547,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 加法函数，用来得到精确的加法结果
+		 * @description 加法函数，用来得到精确的加法结果, 该函数已扩展到Math对象中
 		 * @param {Float/Int} arg1  数值1
 		 * @param {Float/Int} arg2  数值2
 		 * @returns {float/Int}
@@ -1593,7 +1588,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 减法函数，用来得到精确的减法结果
+		 * @description 减法函数，用来得到精确的减法结果, 该函数已扩展到Math对象中
 		 * @param {Float/Int} arg1  数值1
 		 * @param {Float/Int} arg2  数值2
 		 * @returns {float/Int}
@@ -1621,7 +1616,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 减法乘法，用来得到精确的乘法结果
+		 * @description 减法乘法，用来得到精确的乘法结果, 该函数已扩展到Math对象中
 		 * @param {Float/Int} arg1  数值1
 		 * @param {Float/Int} arg2  数值2
 		 * @returns {float/Int}
@@ -1645,7 +1640,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 除法函数，用来得到精确的除法结果
+		 * @description 除法函数，用来得到精确的除法结果, 该函数已扩展到Math对象中
 		 * @param {Float/Int} arg1  数值1
 		 * @param {Float/Int} arg2  数值2
 		 * @returns {float/Int}
@@ -1766,7 +1761,7 @@ window.Mtils = {
 				tmp = str.substr(i, 1);
 				flag = false;
 				for (key in PYMaps){
-		        	if (Mtils.validation.isString(PYMaps[key]) && PYMaps[key].indexOf(tmp) != -1) {
+		        	if (Mtils.utils.isString(PYMaps[key]) && PYMaps[key].indexOf(tmp) != -1) {
 		        	    firstChar = key.substr(0, 1).toUpperCase();
 
 		        		if(true == extractFirst) {
@@ -1930,13 +1925,13 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 获取字符串的字节长度
+		 * @description 获取字符串的字节长度, 该函数已扩展到Object对象中
 		 * @param {String} str_data 待获取长度的数据
 		 * @returns {Long}, 字符串长度 
 		 **/
 		getByteLength : function(str_data) {
 			str_data = str_data || String(this);
-			if(Mtils.validation.isString(str_data)) {
+			if(Mtils.utils.isString(str_data)) {
 				var Zhlength = 0;// 全角
 		        var Enlength = 0;// 半角
 		        if(str_data) {
@@ -1996,7 +1991,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description  清除文本右边的空白字符,包括空格/Tab/换行等
+		 * @description  清除文本右边的空白字符,包括空格/Tab/换行等, 该函数已扩展到String对象中
 		 * @param {String} str_data    欲清除的文本
 		 * @returns {String}, 清除空白字符后的文本
 		 **/
@@ -2009,7 +2004,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description  清除文本左边的空白字符,包括空格/Tab/换行等
+		 * @description  清除文本左边的空白字符,包括空格/Tab/换行等, 该函数已扩展到String对象中
 		 * @param {String} str_data    欲清除的文本
 		 * @returns {String}, 清除空白字符后的文本
 		 **/
@@ -2022,7 +2017,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description  清除文本中所有的空白字符,包括空格/Tab/换行等
+		 * @description  清除文本中所有的空白字符,包括空格/Tab/换行等, 该函数已扩展到String对象中
 		 * @param {String} str_data    欲清除的文本
 		 * @returns {String}, 清除空白字符后的文本
 		 **/
@@ -2060,15 +2055,14 @@ Object.prototype.getByteLength = Mtils.utils.getByteLength;
 
 Object.prototype.isObject = Mtils.utils.isObject;
 Object.prototype.isArray = Mtils.utils.isArray;
-Object.prototype.isNumber = Mtils.utils.isNumber;
 Object.prototype.isString = Mtils.utils.isString;
 Object.prototype.isDate = Mtils.utils.isDate;
 Object.prototype.isEmpty = Mtils.utils.isEmpty;
 Object.prototype.isFunction = Mtils.utils.isFunction;
 
 
-window.ChainCallManager = Mtils.utils.ChainCallManager;
-window.getUrlParam = Mtils.utils.getUrlParam;
+window.ChainCallManager = Mtils.ChainCallManager = Mtils.utils.ChainCallManager;
+window.getUrlParam = Mtils.getUrlParam = Mtils.utils.getUrlParam;
 
 Math.accAdd = Mtils.utils.accAdd;
 Math.accSub = Mtils.utils.accSub;
@@ -2076,3 +2070,4 @@ Math.accMul = Mtils.utils.accMul;
 Math.accDiv = Mtils.utils.accDiv;
 
 Array.prototype.unique = Mtils.utils.unique;
+Mtils.copy = Mtils.utils.copy;

@@ -5,4 +5,6 @@ append:Mtils.utils.unique 数组去重
 bugfix:修复Mtils.utils.getByteLength方法的调用问题
 append:重构数组元素抽取和过滤
 bugfix:Mtils.utils.calcAge更新不传参数报错问题
-
+bugfix:Mtils.utils.isString, Mtils.validation.isString 去重
+append:Mtils.utils.copy
+update:注释文档更新
