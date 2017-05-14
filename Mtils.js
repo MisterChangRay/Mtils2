@@ -5,7 +5,7 @@
  * @class 前端开发辅助工具类
  * @date 2016-09-04 22:32:09
  * @description Mtils 是 My Utils 的简写, 本工具提供前台常用的文本处理、 表单处理、 数据校验、 数据安全等函数。<br />
- * @description 除了基本的函数封装外, 本工具对原生的对象进行扩展, 更方便使用。
+ * @description 除了基本的函数封装外, 本工具还对原生的对象进行一定的扩展, 更方便使用。
  * @since version 2.0.0
  */
 window.Mtils = {
@@ -35,18 +35,15 @@ window.Mtils = {
 
 
 
-
 	/**
 	 * @author Rui.Zhang
 	 * @class 数据校验类
 	 * @description 提供一些数据校验函数
 	 */
 	validation : {
-
-
 		/**
 		 * @author Rui.Zhang
-		 * @description 通过正则判断数据是否为小数, 该函数已扩展到Object和String对象中
+		 * @description 通过正则判断数据是否为小数
 		 * @param {String} str_data 待校验的数据
 		 * @returns {Boolean}, true:是小数
 		 **/
@@ -60,7 +57,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 通过正则来判断数据是否为整数, 该函数已扩展到Object和String对象中
+		 * @description 通过正则来判断数据是否为整数
 		 * @param {String} str_data 待校验的数据
 		 * @returns {Boolean}, true:是整数
 		 **/
@@ -71,10 +68,9 @@ window.Mtils = {
 		},
 
 
-
 		/**
 		 * @author Rui.Zhang
-		 * @description 通过正则来判断数据是否为数字(包括小数), 该函数已扩展到Object和String对象中
+		 * @description 通过正则来判断数据是否为数字(包括小数)
 		 * @param {String} str_data 待校验的数据
 		 * @returns {Boolean}, true:是数字
 		 **/
@@ -83,7 +79,6 @@ window.Mtils = {
 		    var reg =  /^[0-9]+(\.[0-9]+)?$/;
 		    return reg.test(str_data);
 		},
-
 
 
 		/**
@@ -99,7 +94,6 @@ window.Mtils = {
 		},
 
 
-
 		/**
 		 * @author Rui.Zhang
 		 * @description 判断数据是否全为英文, 即全为字母
@@ -111,7 +105,6 @@ window.Mtils = {
 		    var reg =  /^[a-zA-Z]+$/;
 		    return reg.test(str_data);
 		},
-
 
 
 		/**
@@ -127,10 +120,9 @@ window.Mtils = {
 		},
 
 
-
 		/**
 		 * @author Rui.Zhang
-		 * @description   判断数据是否为网址(URL),请传入满足标准http协议的链接
+		 * @description   判断数据是否为网址(URL),请传入满足http标准协议的链接
 		 * @param {String} str_data 待校验的数据
 		 * @param {Boolean} flag 是否使用严格模式,默认为false
 		 * @returns {Boolean}, true:是网址
@@ -222,7 +214,6 @@ window.Mtils = {
 		    return /^[\u4E00-\u9FA5]*$/.test(str_data);
 		},
 
-		
 
 		/**
 		 * @author Rui.Zhang
@@ -301,7 +292,7 @@ window.Mtils = {
 		 * @author Rui.Zhang
 		 * @description 判断是否为身份证号码
 		 * @param {String} str_idCard 待校验的数据
-		 * @param {String} sex 同时校验性别,不加则不校验性别,此值只可能 constant.WOMAN(0) 或者 constant.MAN(1)
+		 * @param {String} [sex] 可选参数,传入时同时校验性别,不传则不校验性别,此值只可能 constant.WOMAN(0) 或者 constant.MAN(1)
 		 * @returns {Boolean}, true:是身份证
 		 **/
 		isIdCard : function (str_idCard, sex) {
@@ -397,20 +388,19 @@ window.Mtils = {
 	},
 
 
+
 	/**
 	 * @author Rui.Zhang
 	 * @class 数据安全类
 	 * @description 提供一些数据安全函数
 	 */
 	security : {
-
-
 		/**
 		 * @author Rui.Zhang
 		 * @description  密码强度检测
 		 * @param {String} str_psw  待签名数据
-		 * @returns {Object}, 检测结果,对象应为{"level":"2", "desc" : "检测提示：您的密码强度较差！"}, level为密码强度等级, desc为默认提示信息
-		 * @example 示例：Mtils.security.passwordStrengthMeter("asd##AS123")， 您可以通过如下方法来得到密码强度等级<br />
+		 * @returns {Object}, 检测结果,对象应为{"level":"2", "desc" : "检测提示：您的密码强度较差！"}, level为密码强度等级(1-5), desc为默认提示信息
+		 * @example 示例：Mtils.security.passwordStrengthMeter("asd##AS123")， 您可以通过如下方式来得到密码强度等级<br />
 		 * @example Mtils.security.passwordStrengthMeter("asd##AS123").level;
 		 * 也可以如下得到密码的检测信息：<br />
 		 * @example Mtils.security.checkerPasswordStrength("asd##AS123").level;
@@ -458,7 +448,6 @@ window.Mtils = {
 		},
 
 
-
 		/**
 		 * @author Rui.Zhang
 		 * @description 生成一个制定长度的随机数
@@ -489,7 +478,6 @@ window.Mtils = {
 		},
 
 
-
 		/**
 		 * @author Rui.Zhang
 		 * @description 生成一个随机数,并介于最小值和最大值之间(包括最小值和最大值). 如果不传参数, 则返回一个大于0的随机数
@@ -516,7 +504,6 @@ window.Mtils = {
 		        return result;
 		    }
 		},
-
 
 
 		/**
@@ -713,7 +700,6 @@ window.Mtils = {
 		},
 
 
-
 		/**
 		 * @author Rui.Zhang
 		 * @description 对给定数据进行 base64 解码
@@ -773,7 +759,6 @@ window.Mtils = {
 		},
 
 
-
 		/**
 		 * @author Rui.Zhang
 		 * @description 对给定数据进行 base64 编码
@@ -827,9 +812,7 @@ window.Mtils = {
 		        _keyStr.charAt(enc3) + _keyStr.charAt(enc4);
 		    }
 		    return output;
-
 		},
-
 
 
 		/**
@@ -948,7 +931,6 @@ window.Mtils = {
 
 		    return binb2hex(core_sha1(str2binb(str_data), str_data.length * chrsz));
 		},
-
 
 
 		/**
@@ -1165,7 +1147,453 @@ window.Mtils = {
 
 		    return binl2hex(core_md5(str2binl(str_data), str_data.length * chrsz));
 		}
+	},
 
+
+
+	/**
+	 * @author Rui.Zhang
+	 * @class 扩展类
+	 * @description 提供一些扩展加强的函数
+	 */
+	extention : {
+		/**
+		 * @author Rui.Zhang
+		 * @description 加法函数，用来得到精确的加法结果, 该函数已扩展到Math对象中
+		 * @param {Float/Int} arg1  数值1
+		 * @param {Float/Int} arg2  数值2
+		 * @returns {float/Int}
+		 **/
+		accAdd : function (arg1, arg2) {
+		    var r1, r2, m, c;
+		    try {
+		        r1 = arg1.toString().split(".")[1].length;
+		    }
+		    catch (e) {
+		        r1 = 0;
+		    }
+		    try {
+		        r2 = arg2.toString().split(".")[1].length;
+		    }
+		    catch (e) {
+		        r2 = 0;
+		    }
+		    c = Math.abs(r1 - r2);
+		    m = Math.pow(10, Math.max(r1, r2));
+		    if (c > 0) {
+		        var cm = Math.pow(10, c);
+		        if (r1 > r2) {
+		            arg1 = Number(arg1.toString().replace(".", ""));
+		            arg2 = Number(arg2.toString().replace(".", "")) * cm;
+		        } else {
+		            arg1 = Number(arg1.toString().replace(".", "")) * cm;
+		            arg2 = Number(arg2.toString().replace(".", ""));
+		        }
+		    } else {
+		        arg1 = Number(arg1.toString().replace(".", ""));
+		        arg2 = Number(arg2.toString().replace(".", ""));
+		    }
+		    return (arg1 + arg2) / m;
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 减法函数，用来得到精确的减法结果, 该函数已扩展到Math对象中
+		 * @param {Float/Int} arg1  数值1
+		 * @param {Float/Int} arg2  数值2
+		 * @returns {float/Int}
+		 **/
+		accSub : function (arg1, arg2) {
+		    var r1, r2, m, n;
+		    try {
+		        r1 = arg1.toString().split(".")[1].length;
+		    }
+		    catch (e) {
+		        r1 = 0;
+		    }
+		    try {
+		        r2 = arg2.toString().split(".")[1].length;
+		    }
+		    catch (e) {
+		        r2 = 0;
+		    }
+		    m = Math.pow(10, Math.max(r1, r2)); //last modify by deeka //动态控制精度长度
+		    n = (r1 >= r2) ? r1 : r2;
+		    return ((arg1 * m - arg2 * m) / m).toFixed(n);
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 减法乘法，用来得到精确的乘法结果, 该函数已扩展到Math对象中
+		 * @param {Float/Int} arg1  数值1
+		 * @param {Float/Int} arg2  数值2
+		 * @returns {float/Int}
+		 **/
+		accMul : function (arg1, arg2) {
+		    var m = 0, s1 = arg1.toString(), s2 = arg2.toString();
+		    try {
+		        m += s1.split(".")[1].length;
+		    }
+		    catch (e) {
+		    }
+		    try {
+		        m += s2.split(".")[1].length;
+		    }
+		    catch (e) {
+		    }
+		    return Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m);
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 除法函数，用来得到精确的除法结果, 该函数已扩展到Math对象中
+		 * @param {Float/Int} arg1  数值1
+		 * @param {Float/Int} arg2  数值2
+		 * @returns {float/Int}
+		 **/
+		accDiv : function (arg1, arg2) {
+		    var t1 = 0, t2 = 0, r1, r2;
+		    try {
+		        t1 = arg1.toString().split(".")[1].length;
+		    }
+		    catch (e) {
+		    }
+		    try {
+		        t2 = arg2.toString().split(".")[1].length;
+		    }
+		    catch (e) {
+		    }
+		    with (Math) {
+		        r1 = Number(arg1.toString().replace(".", ""));
+		        r2 = Number(arg2.toString().replace(".", ""));
+		        return (r1 / r2) * pow(10, t2 - t1);
+		    }
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 时间格式化,该函数已扩展到Date对象中
+		 * @param {String} timestamp  时间戳
+		 * @param {String} pattern 格式化字符串,如 "yy-MM-dd hh:mm:ss"
+		 * @returns {String}, 格式化后的时间
+		 * @example Mtils.text.formatDate(new Date().getTime(), "yy年MM月dd日  hh时mm分ss秒");
+		 * @example new Date().format("yy年MM月dd日  hh时mm分ss秒");
+		 **/
+		formatDate : function (timestamp, pattern) {
+			if(this !== Mtils.extention) {
+				pattern = timestamp || "yyyy-MM-dd";
+				timestamp = this;
+			} else {
+				pattern = pattern || "yyyy-MM-dd";
+			}
+
+
+		  	var tmp = new Date(timestamp);
+		    var o = {
+		        "M+": tmp.getMonth() + 1, //month
+		        "d+": tmp.getDate(), //day
+		        "h+": tmp.getHours(), //hour
+		        "m+": tmp.getMinutes(), //minute
+		        "s+": tmp.getSeconds(), //second
+		        "q+": Math.floor((tmp.getMonth() + 3) / 3), //quarter
+		        "S": tmp.getMilliseconds() //millisecond
+		    }
+
+		    if (/(y+)/.test(pattern)) {
+		        pattern = pattern.replace(RegExp.$1, (tmp.getFullYear() + "").substr(4 - RegExp.$1.length));
+		    }
+
+		    for (var k in o) {
+		        if (new RegExp("(" + k + ")").test(pattern)) {
+		            pattern = pattern.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+		        }
+		    }
+		    return pattern;
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 去除数组中的重复元素, 该函数已扩展到Array对象中
+		 * @param {Arr} array  待去重数组
+		 * @returns {Arr}, 去重后的数组
+		 **/
+		uniqueArray : function(arr) {
+            var _this = arr || this;
+            _this.sort();
+            var re=[_this[0]];
+            for(var i = 1; i < _this.length; i++) {
+                if( _this[i] !== re[re.length-1]) {
+                    re.push(_this[i]);
+                }
+            }
+            return re;
+        },
+
+        
+		/**
+		 * @author Rui.Zhang
+		 * @description  清除文本右边的空白字符,包括空格/Tab/换行等, 该函数已扩展到String对象中
+		 * @param {String} str_data    欲清除的文本
+		 * @returns {String}, 清除空白字符后的文本
+		 **/
+		rtrim : function (str_data) {
+			str_data = str_data || String(this);
+		    return str_data.replace(/(\s*|　*)$/, "");
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  清除文本左边的空白字符,包括空格/Tab/换行等, 该函数已扩展到String对象中
+		 * @param {String} str_data    欲清除的文本
+		 * @returns {String}, 清除空白字符后的文本
+		 **/
+		ltrim : function (str_data) {
+			str_data = str_data || String(this);
+		    return str_data.replace(/^(\s*|　*)/, "");
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  清除文本中所有的空白字符,包括空格/Tab/换行等, 该函数已扩展到String对象中
+		 * @param {String} str_data    欲清除的文本
+		 * @returns {String}, 清除空白字符后的文本
+		 **/
+		trim : function (str_data) {
+			str_data = str_data || String(this);
+		    return str_data.replace(/\s+/g, "");
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  替换源文本中的所有目标文本, 该函数已扩展到String对象中
+		 * @param {String} str_origin    被替换的文本
+		 * @param {String} str_target    欲替换的文本
+		 * @param {String} str_replace   用作替换的文本
+		 * @returns {String}, 替换后的文本
+		 **/
+		replaceAll : function (str_origin, str_target, str_replace) {
+			if(this !== Mtils.extention) {
+				str_replace = str_target;
+				str_target = str_origin;
+				str_origin = this;
+			}
+		    return str_origin.replace(new RegExp(str_target, "gm"), str_replace)
+		},
+
+
+		 /**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为对象, 该函数已扩展到Object对象中
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isObject : function(varName) {
+        	varName = varName || this;
+        	return Mtils.utils.getVarType(varName) === 'object';
+        },
+
+
+        /**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为数组, 该函数已扩展到Object对象中
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+		isArray : function(varName) {
+			varName = varName || this;
+			return Mtils.utils.getVarType(varName) === 'array';
+        },
+
+
+        /**
+		 * @author Rui.Zhang
+		 * @description 通过数据类型判断变量是否为数字
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isNumber : function(varName) {
+        	if(!JSON.stringify(varName))
+        		varName = varName || this;
+        	return Mtils.utils.getVarType(varName) === 'number';
+        },
+
+
+        /**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为函数, 该函数已扩展到Object对象中
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isFunction : function(varName) {
+        	varName = varName || this;
+        	return Mtils.utils.getVarType(varName) === 'function';
+        },
+
+
+        /**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为日期, 该函数已扩展到Object对象中
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isDate : function(varName) {
+        	varName = varName || this;
+        	return Mtils.utils.getVarType(varName) === 'date';
+        },
+
+
+        /**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为字符串, 该函数已扩展到Object对象中
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isString : function(varName) {
+        	varName = varName || this;
+        	return Mtils.utils.getVarType(varName) === 'string';
+        },
+	},
+
+
+
+	/**
+	 * @author Rui.Zhang
+	 * @class 浏览器类
+	 * @description 提供一些与当前运行环境相关的函数
+	 */
+	browser : {
+		/**
+		 * @author Rui.Zhang
+		 * @description 获取当前浏览器平台内核
+		 * @returns {Object}, 该对象描述了一系列可能的浏览器内核,他们依次为一下含义:trident: IE内核, presto: opera内核, webKit: 苹果、谷歌内核, gecko: 火狐内核Gecko, mobile: 是否为移动终端， ios: ios ,android: android, iPhone: iPhone, iPad: iPad, webApp: Safari
+		 **/
+		version : function (Url) {
+			var u = navigator.userAgent; 
+	        return { 
+	            trident: u.indexOf('Trident') > -1, //IE内核 
+	            presto: u.indexOf('Presto') > -1, //opera内核 
+	            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核 
+	            gecko: u.indexOf('Firefox') > -1, //火狐内核Gecko 
+	            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端 
+	            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios 
+	            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android 
+	            iPhone: u.indexOf('iPhone') > -1 , //iPhone 
+	            iPad: u.indexOf('iPad') > -1, //iPad 
+	            webApp: u.indexOf('Safari') > -1 //Safari 
+	        }; 
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 获取URL中的请求参数,该函数已扩展到window和Mtils对象中
+		 * @param {String} [Url]  可选,带参数的URL, 默认为当前访问的URL
+		 * @returns {Object}, 序列化后的参数对象 array[param_Key] = param_value
+		 **/
+		getUrlParam : function (Url) {
+		    var result = new Object();
+		    if(Url) {
+		        var tmp = Url.split("?")[1];
+		        if(tmp) {
+		            tmp = tmp.split("&");
+		            for(var j=0;j<tmp.length;j++) {
+		                result[tmp[j].split("=")[0]] = tmp[j].split("=")[1];
+		            }
+		        }
+		    } else {
+		        var tmp = location.search.substring(1);
+		        if(tmp) {
+		            tmp = tmp.split("&");
+		            for(var j=0;j<tmp.length;j++) {
+		                result[tmp[j].split("=")[0]] = tmp[j].split("=")[1];
+		            }
+		        }
+		    }
+		    return result;
+		},
+		
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  删除所有cookie
+		 * @returns {boolean}, true: 删除成功
+		 **/
+		delAllCookie : function () {
+		    try {
+		        var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+		        if (keys) {
+		            for (var i = 0; i < keys.length; i++) {
+		                document.cookie = keys[i] + '=null;path=/;expires=' + new Date(0).toGMTString();
+		            }
+		        }
+		    } catch (ae) {
+		        return false;
+		    }
+		    return true;
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  删除cookie
+		 * @param {String} str_name    欲删除的cookie名称
+		 * @returns {boolean}, true: 删除成功
+		 **/
+		delCookie : function (str_name) {
+		    try {
+		        var exp = new Date();
+		        exp.setTime(exp.getTime() - 10000);
+		        document.cookie = str_name + "=null;path=/;expires=" + exp.toGMTString() + ";";
+		    } catch (ae) {
+		        return false;
+		    }
+		    return true;
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  设置cookie
+		 * @param {String} str_name    欲设置的cookie名称
+		 * @param {String} value       cookie值
+		 * @param {String} [expires]   可选 , cookie过期时间，以分钟为单位
+		 * @returns {boolean}, true: 设置成功
+		 **/
+		setCookie : function (str_name, value, expires) {
+		    var exp = new Date();
+		    try {
+		        exp.setTime(exp.getTime() + expires * 60 * 1000);
+		        if (expires) {
+		            document.cookie = str_name + "=" + decodeURIComponent(value) + ";path=/;expires=" + exp.toGMTString() + ";";
+		        } else {
+		            document.cookie = str_name + "=" + decodeURIComponent(value) + ";path=/;";
+		        }
+		    } catch (ae) {
+		        return false;
+		    }
+		    return true;
+		},
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description  获取cookie值
+		 * @param {String} str_name    欲获取的cookie名称
+		 * @returns {String}, cookie值, null表示未找到
+		 **/
+		getCookie : function (str_name) {
+		    var arr = document.cookie.match(new RegExp("(^| )" + str_name + "=([^;]*)(;|$)"));
+		    if (arr != null) return decodeURI(arr[2]);
+		    return null;
+		},
 	},
 
 
@@ -1176,10 +1604,9 @@ window.Mtils = {
 	 * @description 提供一些辅助代码封装
 	 */
 	utils : {
-
 		/**
 		 * @author Rui.Zhang
-		 * @description 深复制, 该方法已扩展到Mtils对象上
+		 * @description 深复制, 该函数已扩展到Mtils对象上
 		 * @param {any} varName  待复制的数据
 		 * @returns {any},  返回深复制的新对象
 		 **/
@@ -1190,7 +1617,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 简单版本的链式语法函数调用,该对象已扩展到Window和Mtils对象中
+		 * @description 简单版本的链式语法函数调用,该函数已扩展到Window和Mtils对象中
 		 * @param {none} 无参数
 		 * @returns {none}, 无返回值 
 		 * @example 此方案简单解决回调的解决方案,使用如下:
@@ -1271,7 +1698,6 @@ window.Mtils = {
 		},
 
 
-
 		/**
 		 * @author Rui.Zhang
 		 * @description 获取变量的数据类型
@@ -1281,70 +1707,11 @@ window.Mtils = {
         getVarType : function(varName) {
             return Object.prototype.toString.call(varName).slice(8, -1).toLowerCase();
         },
+       
+
         /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为对象, 该函数已扩展到Object对象中
-		 * @param {varName} varName  待判断数据类型的变量
-		 * @returns {boolean}, true/false
-		 **/
-        isObject : function(varName) {
-        	varName = varName || this;
-        	return Mtils.utils.getVarType(varName) === 'object';
-        },
-        /**
-		 * @author Rui.Zhang
-		 * @description 判断变量是否为数组, 该函数已扩展到Object对象中
-		 * @param {varName} varName  待判断数据类型的变量
-		 * @returns {boolean}, true/false
-		 **/
-		isArray : function(varName) {
-			varName = varName || this;
-			return Mtils.utils.getVarType(varName) === 'array';
-        },
-        /**
-		 * @author Rui.Zhang
-		 * @description 通过数据类型判断变量是否为数字
-		 * @param {varName} varName  待判断数据类型的变量
-		 * @returns {boolean}, true/false
-		 **/
-        isNumber : function(varName) {
-        	if(!JSON.stringify(varName))
-        		varName = varName || this;
-        	return Mtils.utils.getVarType(varName) === 'number';
-        },
-        /**
-		 * @author Rui.Zhang
-		 * @description 判断变量是否为函数, 该函数已扩展到Object对象中
-		 * @param {varName} varName  待判断数据类型的变量
-		 * @returns {boolean}, true/false
-		 **/
-        isFunction : function(varName) {
-        	varName = varName || this;
-        	return Mtils.utils.getVarType(varName) === 'function';
-        },
-        /**
-		 * @author Rui.Zhang
-		 * @description 判断变量是否为日期, 该函数已扩展到Object对象中
-		 * @param {varName} varName  待判断数据类型的变量
-		 * @returns {boolean}, true/false
-		 **/
-        isDate : function(varName) {
-        	varName = varName || this;
-        	return Mtils.utils.getVarType(varName) === 'date';
-        },
-        /**
-		 * @author Rui.Zhang
-		 * @description 判断变量是否为字符串, 该函数已扩展到Object对象中
-		 * @param {varName} varName  待判断数据类型的变量
-		 * @returns {boolean}, true/false
-		 **/
-        isString : function(varName) {
-        	varName = varName || this;
-        	return Mtils.utils.getVarType(varName) === 'string';
-        },
-        /**
-		 * @author Rui.Zhang
-		 * @description 判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/'', 该函数已扩展到Object对象中
+		 * @description 判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/''
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
@@ -1388,7 +1755,6 @@ window.Mtils = {
             return result;
         },
 
-
      
      	/**
 		 * @author Rui.Zhang
@@ -1419,9 +1785,6 @@ window.Mtils = {
             }
             return result;
         },
-
-
-
 
 
 		/**
@@ -1467,286 +1830,6 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 时间格式化
-		 * @param {String} timestamp  时间戳
-		 * @param {String} pattern 格式化字符串,如 "yy-MM-dd hh:mm:ss"
-		 * @returns {String}, 格式化后的时间
-		 * @example Mtils.text.format(new Date().getTime(), "yy年MM月dd日  hh时mm分ss秒");
-		 **/
-		formatDate : function (timestamp, pattern) {
-		    var tmp = new Date(timestamp);
-		    var o = {
-		        "M+": tmp.getMonth() + 1, //month
-		        "d+": tmp.getDate(), //day
-		        "h+": tmp.getHours(), //hour
-		        "m+": tmp.getMinutes(), //minute
-		        "s+": tmp.getSeconds(), //second
-		        "q+": Math.floor((tmp.getMonth() + 3) / 3), //quarter
-		        "S": tmp.getMilliseconds() //millisecond
-		    }
-
-		    if (/(y+)/.test(pattern)) {
-		        pattern = pattern.replace(RegExp.$1, (tmp.getFullYear() + "").substr(4 - RegExp.$1.length));
-		    }
-
-		    for (var k in o) {
-		        if (new RegExp("(" + k + ")").test(pattern)) {
-		            pattern = pattern.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
-		        }
-		    }
-		    return pattern;
-		},
-
-		/**
-		 * @author Rui.Zhang
-		 * @description 去除数组中的重复元素, 该函数已扩展到Array对象中
-		 * @param {Arr} array  待去重数组
-		 * @returns {Arr}, 去重后的数组
-		 **/
-		uniqueArray : function(arr) {
-            var _this = arr || this;
-            _this.sort();
-            var re=[_this[0]];
-            for(var i = 1; i < _this.length; i++) {
-                if( _this[i] !== re[re.length-1]) {
-                    re.push(_this[i]);
-                }
-            }
-            return re;
-        },
-
-		/**
-		 * @author Rui.Zhang
-		 * @description 获取URL中的请求参数,该函数已扩展到window和Mtils对象中
-		 * @param {String} [Url]  可选,带参数的URL, 默认为当前访问的URL
-		 * @returns {Object}, 序列化后的参数对象 array[param_Key] = param_value
-		 **/
-		getUrlParam : function (Url) {
-		    var result = new Object();
-		    if(Url) {
-		        var tmp = Url.split("?")[1];
-		        if(tmp) {
-		            tmp = tmp.split("&");
-		            for(var j=0;j<tmp.length;j++) {
-		                result[tmp[j].split("=")[0]] = tmp[j].split("=")[1];
-		            }
-		        }
-		    } else {
-		        var tmp = location.search.substring(1);
-		        if(tmp) {
-		            tmp = tmp.split("&");
-		            for(var j=0;j<tmp.length;j++) {
-		                result[tmp[j].split("=")[0]] = tmp[j].split("=")[1];
-		            }
-		        }
-		    }
-		    return result;
-		},
-
-
-
-		/**
-		 * @author Rui.Zhang
-		 * @description 加法函数，用来得到精确的加法结果, 该函数已扩展到Math对象中
-		 * @param {Float/Int} arg1  数值1
-		 * @param {Float/Int} arg2  数值2
-		 * @returns {float/Int}
-		 **/
-		accAdd : function (arg1, arg2) {
-		    var r1, r2, m, c;
-		    try {
-		        r1 = arg1.toString().split(".")[1].length;
-		    }
-		    catch (e) {
-		        r1 = 0;
-		    }
-		    try {
-		        r2 = arg2.toString().split(".")[1].length;
-		    }
-		    catch (e) {
-		        r2 = 0;
-		    }
-		    c = Math.abs(r1 - r2);
-		    m = Math.pow(10, Math.max(r1, r2));
-		    if (c > 0) {
-		        var cm = Math.pow(10, c);
-		        if (r1 > r2) {
-		            arg1 = Number(arg1.toString().replace(".", ""));
-		            arg2 = Number(arg2.toString().replace(".", "")) * cm;
-		        } else {
-		            arg1 = Number(arg1.toString().replace(".", "")) * cm;
-		            arg2 = Number(arg2.toString().replace(".", ""));
-		        }
-		    } else {
-		        arg1 = Number(arg1.toString().replace(".", ""));
-		        arg2 = Number(arg2.toString().replace(".", ""));
-		    }
-		    return (arg1 + arg2) / m;
-		},
-
-
-
-		/**
-		 * @author Rui.Zhang
-		 * @description 减法函数，用来得到精确的减法结果, 该函数已扩展到Math对象中
-		 * @param {Float/Int} arg1  数值1
-		 * @param {Float/Int} arg2  数值2
-		 * @returns {float/Int}
-		 **/
-		accSub : function (arg1, arg2) {
-		    var r1, r2, m, n;
-		    try {
-		        r1 = arg1.toString().split(".")[1].length;
-		    }
-		    catch (e) {
-		        r1 = 0;
-		    }
-		    try {
-		        r2 = arg2.toString().split(".")[1].length;
-		    }
-		    catch (e) {
-		        r2 = 0;
-		    }
-		    m = Math.pow(10, Math.max(r1, r2)); //last modify by deeka //动态控制精度长度
-		    n = (r1 >= r2) ? r1 : r2;
-		    return ((arg1 * m - arg2 * m) / m).toFixed(n);
-		},
-
-
-
-		/**
-		 * @author Rui.Zhang
-		 * @description 减法乘法，用来得到精确的乘法结果, 该函数已扩展到Math对象中
-		 * @param {Float/Int} arg1  数值1
-		 * @param {Float/Int} arg2  数值2
-		 * @returns {float/Int}
-		 **/
-		accMul : function (arg1, arg2) {
-		    var m = 0, s1 = arg1.toString(), s2 = arg2.toString();
-		    try {
-		        m += s1.split(".")[1].length;
-		    }
-		    catch (e) {
-		    }
-		    try {
-		        m += s2.split(".")[1].length;
-		    }
-		    catch (e) {
-		    }
-		    return Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m);
-		},
-
-
-
-		/**
-		 * @author Rui.Zhang
-		 * @description 除法函数，用来得到精确的除法结果, 该函数已扩展到Math对象中
-		 * @param {Float/Int} arg1  数值1
-		 * @param {Float/Int} arg2  数值2
-		 * @returns {float/Int}
-		 **/
-		accDiv : function (arg1, arg2) {
-		    var t1 = 0, t2 = 0, r1, r2;
-		    try {
-		        t1 = arg1.toString().split(".")[1].length;
-		    }
-		    catch (e) {
-		    }
-		    try {
-		        t2 = arg2.toString().split(".")[1].length;
-		    }
-		    catch (e) {
-		    }
-		    with (Math) {
-		        r1 = Number(arg1.toString().replace(".", ""));
-		        r2 = Number(arg2.toString().replace(".", ""));
-		        return (r1 / r2) * pow(10, t2 - t1);
-		    }
-		},
-
-
-
-		/**
-		 * @author Rui.Zhang
-		 * @description  删除所有cookie
-		 * @returns {boolean}, true: 删除成功
-		 **/
-		delAllCookie : function () {
-		    try {
-		        var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
-		        if (keys) {
-		            for (var i = 0; i < keys.length; i++) {
-		                document.cookie = keys[i] + '=null;path=/;expires=' + new Date(0).toGMTString();
-		            }
-		        }
-		    } catch (ae) {
-		        return false;
-		    }
-		    return true;
-		},
-
-
-
-		/**
-		 * @author Rui.Zhang
-		 * @description  删除cookie
-		 * @param {String} str_name    欲删除的cookie名称
-		 * @returns {boolean}, true: 删除成功
-		 **/
-		delCookie : function (str_name) {
-		    try {
-		        var exp = new Date();
-		        exp.setTime(exp.getTime() - 10000);
-		        document.cookie = str_name + "=null;path=/;expires=" + exp.toGMTString() + ";";
-		    } catch (ae) {
-		        return false;
-		    }
-		    return true;
-		},
-
-
-
-		/**
-		 * @author Rui.Zhang
-		 * @description  设置cookie
-		 * @param {String} str_name    欲设置的cookie名称
-		 * @param {String} value       cookie值
-		 * @param {String} [expires]   可选 , cookie过期时间，以分钟为单位
-		 * @returns {boolean}, true: 设置成功
-		 **/
-		setCookie : function (str_name, value, expires) {
-		    var exp = new Date();
-		    try {
-		        exp.setTime(exp.getTime() + expires * 60 * 1000);
-		        if (expires) {
-		            document.cookie = str_name + "=" + decodeURIComponent(value) + ";path=/;expires=" + exp.toGMTString() + ";";
-		        } else {
-		            document.cookie = str_name + "=" + decodeURIComponent(value) + ";path=/;";
-		        }
-		    } catch (ae) {
-		        return false;
-		    }
-		    return true;
-		},
-
-
-
-		/**
-		 * @author Rui.Zhang
-		 * @description  获取cookie值
-		 * @param {String} str_name    欲获取的cookie名称
-		 * @returns {String}, cookie值, null表示未找到
-		 **/
-		getCookie : function (str_name) {
-		    var arr = document.cookie.match(new RegExp("(^| )" + str_name + "=([^;]*)(;|$)"));
-		    if (arr != null) return decodeURI(arr[2]);
-		    return null;
-		},
-
-
-
-		/**
-		 * @author Rui.Zhang
 		 * @description 获取汉字拼音或首字母
 		 * @param {String} str 待获取拼音的字符串,除汉字外其余字符会直接返回
 		 * @param {Boolean} extractFirst 只获取汉字拼音首字母
@@ -1780,7 +1863,6 @@ window.Mtils = {
 		    }
 		    return result;
 	    },
-
 
 
 		/**
@@ -1822,7 +1904,6 @@ window.Mtils = {
 	         }
 	         return "";
      	},
-
 
 
 	    /**
@@ -1870,7 +1951,6 @@ window.Mtils = {
 	            console.log("params error");
 	        }
 	    },
-
 
 
 	    /**
@@ -1922,10 +2002,9 @@ window.Mtils = {
 	    },
 
 
-
 		/**
 		 * @author Rui.Zhang
-		 * @description 获取字符串的字节长度, 该函数已扩展到Object对象中
+		 * @description 获取字符串的字节长度
 		 * @param {String} str_data 待获取长度的数据
 		 * @returns {Long}, 字符串长度 
 		 **/
@@ -1949,7 +2028,6 @@ window.Mtils = {
 		},
 
 
-
 		/**
 		 * @author Rui.Zhang
 		 * @description  格式化金额, 展示位银行金额格式
@@ -1971,7 +2049,6 @@ window.Mtils = {
 		},
 
 
-
 		/**
 		 * @author Rui.Zhang
 		 * @description  文本简介, 即截取字符串前几个字符
@@ -1987,87 +2064,29 @@ window.Mtils = {
 		    }
 		},
 
-
-
-		/**
-		 * @author Rui.Zhang
-		 * @description  清除文本右边的空白字符,包括空格/Tab/换行等, 该函数已扩展到String对象中
-		 * @param {String} str_data    欲清除的文本
-		 * @returns {String}, 清除空白字符后的文本
-		 **/
-		rtrim : function (str_data) {
-			str_data = str_data || String(this);
-		    return str_data.replace(/(\s*|　*)$/, "");
-		},
-
-
-
-		/**
-		 * @author Rui.Zhang
-		 * @description  清除文本左边的空白字符,包括空格/Tab/换行等, 该函数已扩展到String对象中
-		 * @param {String} str_data    欲清除的文本
-		 * @returns {String}, 清除空白字符后的文本
-		 **/
-		ltrim : function (str_data) {
-			str_data = str_data || String(this);
-		    return str_data.replace(/^(\s*|　*)/, "");
-		},
-
-
-
-		/**
-		 * @author Rui.Zhang
-		 * @description  清除文本中所有的空白字符,包括空格/Tab/换行等, 该函数已扩展到String对象中
-		 * @param {String} str_data    欲清除的文本
-		 * @returns {String}, 清除空白字符后的文本
-		 **/
-		trim : function (str_data) {
-			str_data = str_data || String(this);
-		    return str_data.replace(/\s+/g, "");
-		},
-
-
-
-		/**
-		 * @author Rui.Zhang
-		 * @description  替换源文本中的所有目标文本
-		 * @param {String} str_origin    被替换的文本
-		 * @param {String} str_target    欲替换的文本
-		 * @param {String} str_replace   用作替换的文本
-		 * @returns {String}, 替换后的文本
-		 **/
-		replaceAll : function (str_origin, str_target, str_replace) {
-		    return str_origin.replace(new RegExp(str_target, "gm"), str_replace)
-		}
-
 	}
 };
 
-Object.prototype.rtrim = Mtils.utils.rtrim;
-Object.prototype.ltrim = Mtils.utils.ltrim;
-Object.prototype.trim = Mtils.utils.trim;
 
-Object.prototype.isNumber = String.prototype.isNumber = Mtils.validation.isNumber;
-Object.prototype.isDecimal = String.prototype.isDecimal = Mtils.validation.isDecimal;
-Object.prototype.isInteger = String.prototype.isInteger = Mtils.validation.isInteger;
+Math.accAdd = Mtils.extention.accAdd;
+Math.accSub = Mtils.extention.accSub;
+Math.accMul = Mtils.extention.accMul;
+Math.accDiv = Mtils.extention.accDiv;
 
-Object.prototype.getByteLength = Mtils.utils.getByteLength;
+Date.prototype.formatDate = Date.prototype.format = Mtils.extention.formatDate;
 
-Object.prototype.isObject = Mtils.utils.isObject;
-Object.prototype.isArray = Mtils.utils.isArray;
-Object.prototype.isString = Mtils.utils.isString;
-Object.prototype.isDate = Mtils.utils.isDate;
-Object.prototype.isEmpty = Mtils.utils.isEmpty;
-Object.prototype.isFunction = Mtils.utils.isFunction;
+Array.prototype.uniqueArray = Array.prototype.unique = Mtils.extention.uniqueArray;
 
+String.prototype.rtrim = Mtils.extention.rtrim;
+String.prototype.ltrim = Mtils.extention.ltrim;
+String.prototype.trim = Mtils.extention.trim;
+String.prototype.replaceAll = Mtils.extention.replaceAll;
+Object.prototype.isObject = Mtils.extention.isObject;
+Object.prototype.isArray = Mtils.extention.isArray;
+Object.prototype.isString = Mtils.extention.isString;
+Object.prototype.isDate = Mtils.extention.isDate;
+Object.prototype.isFunction = Mtils.extention.isFunction;
+Object.prototype.isNumber = Mtils.extention.isNumber;
 
 window.ChainCallManager = Mtils.ChainCallManager = Mtils.utils.ChainCallManager;
-window.getUrlParam = Mtils.getUrlParam = Mtils.utils.getUrlParam;
-
-Math.accAdd = Mtils.utils.accAdd;
-Math.accSub = Mtils.utils.accSub;
-Math.accMul = Mtils.utils.accMul;
-Math.accDiv = Mtils.utils.accDiv;
-
-Array.prototype.unique = Mtils.utils.unique;
 Mtils.copy = Mtils.utils.copy;
