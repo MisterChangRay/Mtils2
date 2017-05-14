@@ -11,7 +11,7 @@
 window.Mtils = {
 	/**
 	 * @author Rui.Zhang
-	 * @class 定义一些常量
+	 * @class 常量类
 	 * @description 提供一些常量
 	 */
 	constant : {
