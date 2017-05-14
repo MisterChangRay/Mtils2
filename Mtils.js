@@ -1473,7 +1473,7 @@ window.Mtils = {
 		/**
 		 * @author Rui.Zhang
 		 * @description 获取当前浏览器平台内核
-		 * @returns {Object}, 该对象描述了一系列可能的浏览器内核,该对象包含一下属性:trident: IE内核, presto: opera内核, webKit: 苹果、谷歌内核, gecko: 火狐内核Gecko, mobile: 是否为移动终端， ios: ios ,android: android, iPhone: iPhone, iPad: iPad, webApp: Safari
+		 * @returns {Object}, 该对象描述了一系列可能的浏览器内核,该对象包含以下属性:trident: IE内核, presto: opera内核, webKit: 苹果、谷歌内核, gecko: 火狐内核Gecko, mobile: 是否为移动终端， ios: ios ,android: android, iPhone: iPhone, iPad: iPad, webApp: Safari
 		 **/
 		version : function (Url) {
 			var u = navigator.userAgent; 
