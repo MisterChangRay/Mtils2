@@ -1608,7 +1608,7 @@ window.Mtils = {
 	utils : {
 		/**
 		 * @author Rui.Zhang
-		 * @description 保存数据到localStorage中,该对象已扩展到Mtils对象中
+		 * @description 保存数据到localStorage中,该函数已扩展到Mtils对象中
 		 * @param {string} key 存取键值, key值重复会导致数据覆盖, 如果参数2为对象, key值可以为该对象属性
 		 * @param {String} data 欲存取数据
 		 * @param {String} [objKey] 可选项, 存取对象key, 当第二个参数传入为对象有效
