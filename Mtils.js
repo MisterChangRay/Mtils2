@@ -1470,12 +1470,13 @@ window.Mtils = {
 	 * @description 提供一些与当前运行环境相关的函数
 	 */
 	browser : {
+
 		/**
 		 * @author Rui.Zhang
 		 * @description 获取当前浏览器平台内核
-		 * @returns {Object}, 该对象描述了一系列可能的浏览器内核,它包含以下属性:trident: IE内核, presto: opera内核, webKit: 苹果、谷歌内核, gecko: 火狐内核Gecko, mobile: 是否为移动终端， ios: ios ,android: android, iPhone: iPhone, iPad: iPad, webApp: Safari
+		 * @returns {Object}, 该对象描述了一系列可能的浏览器内核,它包含以下属性:trident: IE内核, presto: opera内核, webKit: 苹果、谷歌内核, gecko: 火狐内核Gecko, mobile: 是否为移动终端， ios: ios ,android: android, iPhone: iPhone, iPad: iPad, webApp: Safari, weChat: 微信
 		 **/
-		version : function (Url) {
+		version : function () {
 			var u = navigator.userAgent; 
 	        return { 
 	            trident: u.indexOf('Trident') > -1, //IE内核 
@@ -1487,7 +1488,8 @@ window.Mtils = {
 	            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android 
 	            iPhone: u.indexOf('iPhone') > -1 , //iPhone 
 	            iPad: u.indexOf('iPad') > -1, //iPad 
-	            webApp: u.indexOf('Safari') > -1 //Safari 
+	            webApp: u.indexOf('Safari') > -1, //Safari 
+	            weChat: u.indexOf('MicroMessenger') > -1 //微信
 	        }; 
 		},
 
@@ -1604,6 +1606,40 @@ window.Mtils = {
 	 * @description 提供一些辅助代码封装
 	 */
 	utils : {
+		/**
+		 * @author Rui.Zhang
+		 * @description 保存数据到localStorage中,该对象已扩展到Mtils对象中
+		 * @param {string} key 存取键值, key值重复会导致数据覆盖, 如果参数2为对象, key值可以为该对象属性
+		 * @param {String} data 欲存取数据
+		 * @param {String} [objKey] 可选项, 存取对象key, 当第二个参数传入为对象有效
+		 * @returns {any}
+		 * @example 
+		 * 1: Mtils.cache("Authorization", "uc43d452bdb373e4a36c3efc0f91c928d7"), 这里存入了一个名为'Authorization'的数据, 取回方式:  Mtils.cache("Authorization")
+		 * 2: Mtils.cache("id", {id:235, name:'mr.zr', age:34}), 这里存入了一个对象, 取回方式如下:  Mtils.cache(235) 或者 Mtils.cache("id")
+		 * 3: Mtils.cache("man", {id:235, name:'mr.zr', age:34}, "id"), 这里存入了一个对象, 取回方式如下:  Mtils.cache(235) 或者 Mtils.cache("man")
+		 *
+		 **/
+		cache : function(key, data, obj_key) {
+			if(key && data && arguments.length > 1) {
+				var mtilsData = localStorage.mtilsData || '{}';
+				mtilsData = JSON.parse(mtilsData);
+
+				if(!obj_key && Mtils.utils.isObject(data) && data[key] && !mtilsData[data[key]]) {
+					mtilsData[data[key]] = data;
+				} else if(obj_key) {
+					mtilsData[data[obj_key]] = data;
+				}
+				mtilsData[key] = data;
+				
+				localStorage.mtilsData = JSON.stringify(mtilsData);
+			} else {
+				var mtilsData = localStorage.mtilsData || '{}';
+				mtilsData = JSON.parse(mtilsData);
+				return mtilsData[key];
+			}
+		},
+
+
 		/**
 		 * @author Rui.Zhang
 		 * @description 深复制, 该函数已扩展到Mtils对象上
@@ -2090,3 +2126,4 @@ Object.prototype.isNumber = Mtils.extention.isNumber;
 
 window.ChainCallManager = Mtils.ChainCallManager = Mtils.utils.ChainCallManager;
 Mtils.copy = Mtils.utils.copy;
+Mtils.cache = Mtils.utils.cache;
