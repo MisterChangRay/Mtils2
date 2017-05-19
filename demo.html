@@ -27,6 +27,11 @@
 			<button onclick="demo.checkBankcard()">校验银行卡</button>
 		</div>
 		<div>
+			<lable>社会信用代码:</lable>
+			<input id="creditCode" value="" type="text">
+			<button onclick="demo.checkCreditCode()">校验信用代码</button>
+		</div>
+		<div>
 			<lable>Url校验:</lable>
 			<input id="url" type="text">
 			<button onclick="demo.checkUrl()">校验URL</button>
@@ -62,6 +67,13 @@
 		},
 		checkBankcard : function() {
 			if(Mtils.validation.isBankCard(val("bankcard"))) {
+				alert(true);
+			} else {
+				alert(false);
+			}
+		},
+		checkCreditCode : function() {
+			if(Mtils.validation.isCreditCode(val("creditCode"))) {
 				alert(true);
 			} else {
 				alert(false);

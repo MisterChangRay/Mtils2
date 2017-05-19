@@ -8,3 +8,5 @@ bugfix:Mtils.utils.calcAge更新不传参数报错问题
 bugfix:Mtils.utils.isString, Mtils.validation.isString 去重
 append:Mtils.utils.copy
 update:注释文档更新
+2017-05-19 16:34:21
+append:Mtils.validation.isCreditCode
