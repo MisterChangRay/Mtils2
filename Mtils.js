@@ -1202,8 +1202,8 @@ window.Mtils = {
 	extention : {
 		/**
 		 * @author Rui.Zhang
-		 * @description 返回当前时间,默认返回时间戳. 该函数已扩展到Date和Mtils对象中
-		 * @param {String} format  格式化参数
+		 * @description 返回一个格式化后的当前时间,默认返回时间戳. 该函数已扩展到Date和Mtils对象中
+		 * @param {String} format  时间格式化参数
 		 * @returns {float/Int}
 		 **/
 		now : function (format) {
