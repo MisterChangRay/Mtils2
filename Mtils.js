@@ -1202,6 +1202,21 @@ window.Mtils = {
 	extention : {
 		/**
 		 * @author Rui.Zhang
+		 * @description 返回当前时间,默认返回时间戳. 该函数已扩展到Date和Mtils对象中
+		 * @param {String} format  格式化参数
+		 * @returns {float/Int}
+		 **/
+		now : function (format) {
+		    var timestamp = +new Date();
+		    if(format) 
+		    	return Mtils.extention.formatDate(timestamp, format);
+		    return timestamp;
+		},
+
+
+
+		/**
+		 * @author Rui.Zhang
 		 * @description 加法函数，用来得到精确的加法结果, 该函数已扩展到Math对象中
 		 * @param {Float/Int} arg1  数值1
 		 * @param {Float/Int} arg2  数值2
@@ -2166,6 +2181,8 @@ Object.prototype.isString = Mtils.extention.isString;
 Object.prototype.isDate = Mtils.extention.isDate;
 Object.prototype.isFunction = Mtils.extention.isFunction;
 Object.prototype.isNumber = Mtils.extention.isNumber;
+
+Date.now = Mtils.now = Mtils.extention.now;
 
 window.ChainCallManager = Mtils.ChainCallManager = Mtils.utils.ChainCallManager;
 Mtils.copy = Mtils.utils.copy;
