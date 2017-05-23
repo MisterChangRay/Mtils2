@@ -6,6 +6,7 @@
  * @date 2016-09-04 22:32:09
  * @description Mtils 是 My Utils 的简写, 本工具提供前台常用的文本处理、 表单处理、 数据校验、 数据安全等函数。<br />
  * @description 除了基本的函数封装外, 本工具还对原生的对象进行一定的扩展, 更方便使用。
+ * @site https://github.com/MisterChangRay/Mtils2
  * @since version 2.0.0
  */
 window.Mtils = {
