@@ -10,3 +10,11 @@ append:Mtils.utils.copy
 update:注释文档更新
 2017-05-19 16:34:21
 append:Mtils.validation.isCreditCode
+
+2017-05-27 09:56:28
+append:Mtils.utils.isDefined
+append:Mtils.extention.isWindow
+append:Mtils.extention.isFile
+append:Mtils.extention.isFormData
+append:Mtils.extention.isRegExp
+append:Mtils.extention.makeMap

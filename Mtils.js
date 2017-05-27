@@ -1203,7 +1203,7 @@ window.Mtils = {
 	extention : {
 		/**
 		 * @author Rui.Zhang
-		 * @description 返回一个格式化后的当前时间,默认返回时间戳. 该函数已扩展到Date和Mtils对象中
+		 * @description 返回一个格式化后的当前时间,默认返回时间戳. 该函数已扩展到Date/Mtils对象中
 		 * @param {String} format  时间格式化参数
 		 * @returns {float/Int}
 		 **/
@@ -1450,74 +1450,109 @@ window.Mtils = {
 
 		 /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为对象, 该函数已扩展到Object对象中
+		 * @description 判断变量是否为普通对象, 该函数已扩展到Mtils对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
         isObject : function(varName) {
-        	varName = varName || this;
-        	return Mtils.utils.getVarType(varName) === 'object';
+        	return varName !== null && typeof varName === 'object';
         },
 
 
-        /**
+		/**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为数组, 该函数已扩展到Object对象中
+		 * @description 判断变量是否为window对象, 该函数已扩展到Mtils对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
-		isArray : function(varName) {
-			varName = varName || this;
-			return Mtils.utils.getVarType(varName) === 'array';
+        isWindow : function(varName) {
+        	return varName && varName.window === varName;
+        },
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为文件, 该函数已扩展到Mtils对象中
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isFile : function(varName) {
+        	return Mtils.utils.getVarType(varName) === '[object File]';
+        },
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为表单数据, 该函数已扩展到Mtils对象中
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isFormData : function(varName) {
+        	return Mtils.utils.getVarType(varName) === '[object FormData]';
+        },
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为正则表达式, 该函数已扩展到Mtils对象中
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isRegExp : function(varName) {
+        	return Mtils.utils.getVarType(varName) === '[object RegExp]';
         },
 
 
         /**
 		 * @author Rui.Zhang
-		 * @description 通过数据类型判断变量是否为数字
+		 * @description 判断变量是否为数组, 该函数已扩展到Mtils对象中
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+		isArray : Array.isArray,
+
+
+        /**
+		 * @author Rui.Zhang
+		 * @description 通过数据类型判断变量是否为数字, 该函数已扩展到Mtils对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
         isNumber : function(varName) {
-        	if(!JSON.stringify(varName))
-        		varName = varName || this;
-        	return Mtils.utils.getVarType(varName) === 'number';
+        	return Mtils.utils.getVarType(varName) === '[object Number]';
         },
 
 
         /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为函数, 该函数已扩展到Object对象中
+		 * @description 判断变量是否为函数, 该函数已扩展到Mtils对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
         isFunction : function(varName) {
-        	varName = varName || this;
-        	return Mtils.utils.getVarType(varName) === 'function';
+        	return Mtils.utils.getVarType(varName) === '[object Function]';
         },
 
 
         /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为日期, 该函数已扩展到Object对象中
+		 * @description 判断变量是否为日期, 该函数已扩展到Mtils对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
         isDate : function(varName) {
-        	varName = varName || this;
-        	return Mtils.utils.getVarType(varName) === 'date';
+        	return Mtils.utils.getVarType(varName) === '[object Date]';
         },
 
 
         /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为字符串, 该函数已扩展到Object对象中
+		 * @description 判断变量是否为字符串, 该函数已扩展到Mtils对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
         isString : function(varName) {
-        	varName = varName || this;
-        	return Mtils.utils.getVarType(varName) === 'string';
+        	return Mtils.utils.getVarType(varName) === '[object String]';
         },
 	},
 
@@ -1555,7 +1590,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 获取URL中的请求参数,该函数已扩展到window和Mtils对象中
+		 * @description 获取URL中的请求参数,该函数已扩展到window/Mtils对象中
 		 * @param {String} [Url]  可选,带参数的URL, 默认为当前访问的URL
 		 * @returns {Object}, 序列化后的参数对象 array[param_Key] = param_value
 		 **/
@@ -1665,12 +1700,24 @@ window.Mtils = {
 	 * @description 提供一些辅助代码封装
 	 */
 	utils : {
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否定义, 该函数已扩展到Mtils/window对象中
+		 * @param {varName} varName  待判断的变量
+		 * @returns {boolean}, true/false
+		 **/
+        isDefined : function(varName) {
+        	return typeof varName !== 'undefined';
+        },
+
+
 		/**
 		 * @author Rui.Zhang
 		 * @description 保存数据到localStorage中,该函数已扩展到Mtils对象中
 		 * @param {string} key 存取键值, key值重复会导致数据覆盖, 如果参数2为对象, key值可以为该对象属性
 		 * @param {String} data 欲存取数据
-		 * @param {String} [objKey] 可选项, 存取对象key, 当第二个参数传入为对象有效
+		 * @param {String} [objKey] 可选项, 当存取数据为对象时, 指定此选项后, 可以通过data[objKey]的值来存取数据
 		 * @returns {any}
 		 * @example 
 		 * 1: Mtils.cache("Authorization", "uc43d452bdb373e4a36c3efc0f91c928d7"), 这里存入了一个名为'Authorization'的数据, 取回方式:  Mtils.cache("Authorization")
@@ -1712,7 +1759,7 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 简单版本的链式语法函数调用,该函数已扩展到Window和Mtils对象中
+		 * @description 简单版本的链式语法函数调用,该函数已扩展到Window/Mtils对象中
 		 * @param {none} 无参数
 		 * @returns {none}, 无返回值 
 		 * @example 此方案简单解决回调的解决方案,使用如下:
@@ -1793,28 +1840,48 @@ window.Mtils = {
 		},
 
 
+	 	/**
+		 * @author Rui.Zhang
+		 * @description 用字符串创建map, 该函数已扩展到Mtils对象中
+		 * @param {string} keys 主键字符串,使用','分隔多个key, 例如'key1, key2,...'
+		 * @param {any} defaultVal 创建对象时使用的默认值
+		 * @returns {object}, 返回创建完成的对象
+		 * @example Mtils.utils.makeMap('id,name,sex');  返回值: {id:true, name:true, sex:true}
+		 **/
+		 makeMap : function(str, defaultVal) {
+		  var obj = {}, items = Mtils.extention.trim(str).split(","), i;
+		  for (i = 0; i < items.length; i++)
+		    obj[ items[i] ] = defaultVal;
+		  return obj;
+		},
+
+
 		/**
 		 * @author Rui.Zhang
-		 * @description 获取变量的数据类型
+		 * @description 获取变量的数据类型, 推荐使用Mtils.extention下的数据类型校验方法
 		 * @param {varName} varName  待取数据类型的变量
-		 * @returns {string}, 变量的数据类型,只能为以下类型object,array,number,string,function,date,null,undefined
+		 * @returns {string}, 变量的数据类型,可能能为以下类型object,array,number,string,function,date,null,undefined
 		 **/
         getVarType : function(varName) {
-            return Object.prototype.toString.call(varName).slice(8, -1).toLowerCase();
+            return Object.prototype.toString.call(varName);
         },
        
 
         /**
 		 * @author Rui.Zhang
-		 * @description 判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/''
+		 * @description 判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/NaN/'', 该函数已扩展到Mtils/Window对象中
 		 * @param {varName} varName  待判断数据类型的变量
 		 * @returns {boolean}, true/false
 		 **/
         isEmpty : function(varName) {
-        	if(JSON.stringify(varName) !== '0')
-    			varName = varName || this;
-        	return (JSON.stringify(varName) === 'undefined') || (JSON.stringify(varName) === 'null') || 
-        	(JSON.stringify(varName) === '[]') || (JSON.stringify(varName) === '{}') || varName === '';
+        	if(typeof varName === "undefined") return true;
+        	if(typeof varName === null) return true;
+        	if(Number.isNaN(varName)) return true;
+        	if(Mtils.isString(varName) && 0 === varName.length) return true;
+        	if(Mtils.isArray(varName) && 0 === varName.length) return true;
+        	if(Mtils.isObject(varName) && 0 === Object.keys(varName).length) return true;
+
+        	return false;
         },
 
 
@@ -2176,15 +2243,27 @@ String.prototype.rtrim = Mtils.extention.rtrim;
 String.prototype.ltrim = Mtils.extention.ltrim;
 String.prototype.trim = Mtils.extention.trim;
 String.prototype.replaceAll = Mtils.extention.replaceAll;
-Object.prototype.isObject = Mtils.extention.isObject;
-Object.prototype.isArray = Mtils.extention.isArray;
-Object.prototype.isString = Mtils.extention.isString;
-Object.prototype.isDate = Mtils.extention.isDate;
-Object.prototype.isFunction = Mtils.extention.isFunction;
-Object.prototype.isNumber = Mtils.extention.isNumber;
+
+
 
 Date.now = Mtils.now = Mtils.extention.now;
 
 window.ChainCallManager = Mtils.ChainCallManager = Mtils.utils.ChainCallManager;
+window.isDefined = Mtils.isDefined = Mtils.utils.isDefined;
+window.isEmpty = Mtils.isEmpty = Mtils.utils.isEmpty;
+
 Mtils.copy = Mtils.utils.copy;
 Mtils.cache = Mtils.utils.cache;
+Mtils.makeMap = Mtils.utils.makeMap;
+
+Mtils.isObject = Mtils.extention.isObject;
+Mtils.isArray = Mtils.extention.isArray;
+Mtils.isString = Mtils.extention.isString;
+Mtils.isDate = Mtils.extention.isDate;
+Mtils.isFunction = Mtils.extention.isFunction;
+Mtils.isNumber = Mtils.extention.isNumber;
+Mtils.isWindow = Mtils.extention.isWindow;
+Mtils.isFile = Mtils.extention.isFile;
+Mtils.isFormData = Mtils.extention.isFormData;
+Mtils.isRegExp = Mtils.extention.isRegExp;
+

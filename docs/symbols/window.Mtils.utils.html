@@ -293,7 +293,7 @@ ul.inheritsList
 							<td class="nameDescription">
 								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.ChainCallManager">ChainCallManager</a></b>(无参数)
 								</div>
-								<div class="description">简单版本的链式语法函数调用,该函数已扩展到Window和Mtils对象中</div>
+								<div class="description">简单版本的链式语法函数调用,该函数已扩展到Window/Mtils对象中</div>
 							</td>
 						</tr>
 					
@@ -365,7 +365,16 @@ ul.inheritsList
 							<td class="nameDescription">
 								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.getVarType">getVarType</a></b>(varName)
 								</div>
-								<div class="description">获取变量的数据类型</div>
+								<div class="description">获取变量的数据类型, 推荐使用Mtils.extention下的数据类型校验方法</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.isDefined">isDefined</a></b>(varName)
+								</div>
+								<div class="description">判断变量是否定义, 该函数已扩展到Mtils/window对象中</div>
 							</td>
 						</tr>
 					
@@ -374,7 +383,16 @@ ul.inheritsList
 							<td class="nameDescription">
 								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.isEmpty">isEmpty</a></b>(varName)
 								</div>
-								<div class="description">判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/''</div>
+								<div class="description">判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/NaN/'', 该函数已扩展到Mtils/Window对象中</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.makeMap">makeMap</a></b>(keys, defaultVal)
+								</div>
+								<div class="description">用字符串创建map, 该函数已扩展到Mtils对象中</div>
 							</td>
 						</tr>
 					
@@ -492,7 +510,7 @@ ul.inheritsList
 									<span class="light fixedFont">{String}</span> <b>objKey</b>
 									<i>Optional</i>
 								</dt>
-								<dd>可选项, 存取对象key, 当第二个参数传入为对象有效</dd>
+								<dd>可选项, 当存取数据为对象时, 指定此选项后, 可以通过data[objKey]的值来存取数据</dd>
 							
 							</dl>
 						
@@ -569,7 +587,7 @@ ul.inheritsList
 					
 					</div>
 					<div class="description">
-						简单版本的链式语法函数调用,该函数已扩展到Window和Mtils对象中
+						简单版本的链式语法函数调用,该函数已扩展到Window/Mtils对象中
 						
 						<br /><i>Author: </i>Rui.Zhang.
 					</div>
@@ -981,7 +999,7 @@ ul.inheritsList
 					
 					</div>
 					<div class="description">
-						获取变量的数据类型
+						获取变量的数据类型, 推荐使用Mtils.extention下的数据类型校验方法
 						
 						<br /><i>Author: </i>Rui.Zhang.
 					</div>
@@ -1007,7 +1025,50 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{string}</span> , 变量的数据类型,只能为以下类型object,array,number,string,function,date,null,undefined</dd>
+								<dd><span class="light fixedFont">{string}</span> , 变量的数据类型,可能能为以下类型object,array,number,string,function,date,null,undefined</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isDefined"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{boolean}</span>
+					<span class="light">window.Mtils.utils.</span><b>isDefined</b>(varName)
+					
+					</div>
+					<div class="description">
+						判断变量是否定义, 该函数已扩展到Mtils/window对象中
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{varName}</span> <b>varName</b>
+									
+								</dt>
+								<dd>待判断的变量</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> , true/false</dd>
 							
 							</dl>
 						
@@ -1024,7 +1085,7 @@ ul.inheritsList
 					
 					</div>
 					<div class="description">
-						判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/''
+						判断变量是否为空值,请注意以下对象会被判断为空值:空数组/空对象/null/undefined/NaN/'', 该函数已扩展到Mtils/Window对象中
 						
 						<br /><i>Author: </i>Rui.Zhang.
 					</div>
@@ -1051,6 +1112,59 @@ ul.inheritsList
 							<dt class="heading">Returns:</dt>
 							
 								<dd><span class="light fixedFont">{boolean}</span> , true/false</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".makeMap"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{object}</span>
+					<span class="light">window.Mtils.utils.</span><b>makeMap</b>(keys, defaultVal)
+					
+					</div>
+					<div class="description">
+						用字符串创建map, 该函数已扩展到Mtils对象中
+						
+						<br /><i>Author: </i>Rui.Zhang.
+					</div>
+					
+					
+					
+					<pre class="code">Mtils.utils.makeMap('id,name,sex');  返回值: {id:true, name:true, sex:true}</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>keys</b>
+									
+								</dt>
+								<dd>主键字符串,使用','分隔多个key, 例如'key1, key2,...'</dd>
+							
+								<dt>
+									<span class="light fixedFont">{any}</span> <b>defaultVal</b>
+									
+								</dt>
+								<dd>创建对象时使用的默认值</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{object}</span> , 返回创建完成的对象</dd>
 							
 							</dl>
 						
@@ -1230,7 +1344,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Tue May 23 2017 09:14:08 GMT+0800 (CST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Sat May 27 2017 10:46:21 GMT+0800 (CST)
 		</div>
 	</body>
 </html>
