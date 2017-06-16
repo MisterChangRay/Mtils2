@@ -1203,6 +1203,17 @@ window.Mtils = {
 	extention : {
 		/**
 		 * @author Rui.Zhang
+		 * @description 将非严格模式的JSON字符串转换为JSON对象, 也可用于字符串转普通数据类型, 如'true'转为true, 该函数已扩展到window/Mtils对象中;
+		 * @param {String} str  待转换的JSON字符串
+		 * @returns {any}
+		 **/
+		strToJson : function (str) {
+		    return (new Function("return " + str))();
+		},
+
+
+		/**
+		 * @author Rui.Zhang
 		 * @description 返回一个格式化后的当前时间,默认返回时间戳. 该函数已扩展到Date/Mtils对象中
 		 * @param {String} format  时间格式化参数
 		 * @returns {float/Int}
@@ -1213,7 +1224,6 @@ window.Mtils = {
 		    	return Mtils.extention.formatDate(timestamp, format);
 		    return timestamp;
 		},
-
 
 
 		/**
@@ -2266,4 +2276,4 @@ Mtils.isWindow = Mtils.extention.isWindow;
 Mtils.isFile = Mtils.extention.isFile;
 Mtils.isFormData = Mtils.extention.isFormData;
 Mtils.isRegExp = Mtils.extention.isRegExp;
-
+Mtils.strToJson = window.strToJson = Mtils.extention.strToJson;

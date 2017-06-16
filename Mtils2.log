@@ -18,3 +18,7 @@ append:Mtils.extention.isFile
 append:Mtils.extention.isFormData
 append:Mtils.extention.isRegExp
 append:Mtils.extention.makeMap
+
+
+2017-06-16 11:30:49
+append: Mtils.extention.strToJson
