@@ -128,8 +128,10 @@ window.Mtils = {
 		 * @param {Boolean} flag 是否使用严格模式,默认为false
 		 * @returns {Boolean}, true:是网址
 		 **/
-		isUrl : function (str_data, flag = false) {
+		isUrl : function (str_data, flag) {
 			str_data = str_data || String(this);
+			flag = flag || false;
+
 		    var regular = /^\b(((https?|ftp):\/\/)?[-a-z0-9]+(\.[-a-z0-9]+)*\.(?:com|edu|gov|int|mil|net|org|biz|info|name|museum|asia|coop|aero|[a-z][a-z]|((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d))\b(\/[-a-z0-9_:\@&?=+,.!\/~%\$]*)?)$/i
 		    var regular2 = /^((https?|ftp):\/\/)(www\.)?\S{0,30}\.\S+$/i
 
@@ -2007,9 +2009,10 @@ window.Mtils = {
 		 * @param {Boolean} extractFirst 只获取汉字拼音首字母
 		 * @returns {String} 目标的拼音字符串
 		 **/
-	    makePy : function (str, extractFirst = false) {
+	    makePy : function (str, extractFirst) {
 	    	var i, tmp, key, result = '', flag, firstChar, PYMaps;
 
+	    	extractFirst = extractFirst || false;
 	    	PYMaps = Mtils.constant.PY_MAPS;
 
 			for(i=0; i<str.length; i++) {
