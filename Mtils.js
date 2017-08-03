@@ -1395,6 +1395,7 @@ window.Mtils = {
 		 **/
 		uniqueArray : function(arr) {
             var _this = arr || this;
+            if(undefined === _this || null === _this || 0 === _this.length) return [];
             _this.sort();
             var re=[_this[0]];
             for(var i = 1; i < _this.length; i++) {
