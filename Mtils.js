@@ -1437,7 +1437,7 @@ window.Mtils = {
 		 * @param {String} str_data    欲清除的文本
 		 * @returns {String}, 清除空白字符后的文本
 		 **/
-		trim : function (str_data) {
+		atrim : function (str_data) {
 			str_data = str_data || String(this);
 		    return str_data.replace(/\s+/g, "");
 		},
@@ -2321,7 +2321,7 @@ Array.prototype.uniqueArray = Array.prototype.unique = Mtils.extention.uniqueArr
 
 String.prototype.rtrim = Mtils.extention.rtrim;
 String.prototype.ltrim = Mtils.extention.ltrim;
-String.prototype.trim = Mtils.extention.trim;
+String.prototype.atrim = Mtils.extention.atrim;
 String.prototype.replaceAll = Mtils.extention.replaceAll;
 
 

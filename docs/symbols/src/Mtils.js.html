@@ -1444,7 +1444,7 @@
 <span class='line'>1437</span> 		 * @param {String} str_data    欲清除的文本
 <span class='line'>1438</span> 		 * @returns {String}, 清除空白字符后的文本
 <span class='line'>1439</span> 		 **/</span><span class="WHIT">
-<span class='line'>1440</span> </span><span class="WHIT">		</span><span class="NAME">trim</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">str_data</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>1440</span> </span><span class="WHIT">		</span><span class="NAME">atrim</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">str_data</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>1441</span> </span><span class="WHIT">			</span><span class="NAME">str_data</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">str_data</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">String</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>1442</span> </span><span class="WHIT">		    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">str_data.replace</span><span class="PUNC">(</span><span class="REGX">/\s+/g</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>1443</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
@@ -2328,7 +2328,7 @@
 <span class='line'>2321</span> 
 <span class='line'>2322</span> </span><span class="NAME">String.prototype.rtrim</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.extention.rtrim</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>2323</span> </span><span class="NAME">String.prototype.ltrim</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.extention.ltrim</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>2324</span> </span><span class="NAME">String.prototype.trim</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.extention.trim</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>2324</span> </span><span class="NAME">String.prototype.atrim</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.extention.atrim</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>2325</span> </span><span class="NAME">String.prototype.replaceAll</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Mtils.extention.replaceAll</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>2326</span> 
 <span class='line'>2327</span> 
