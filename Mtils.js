@@ -1714,6 +1714,72 @@ window.Mtils = {
 	 */
 	utils : {
 
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 在数组中根据ID获取对象, 该函数已扩展到Array对象中
+		 * @param {string} id   欲获取的ID值
+		 * @param {varName} arr  数据源
+		 * @returns {array} result 符合条件的返回结果集
+		 **/
+		getById : function(search) {
+        	var result = [], keys = Object.keys(search), arr = this;
+        	if(undefined === search) result = arr;
+
+        	if(Mtils.isObject(search)) {
+        		result = Mtils.findInArray(search, arr);
+        	}
+        	if(Mtils.isString(search) || Mtils.isNumber(search)) {
+        		result = Mtils.findInArray({"id":search}, arr);	
+        	}
+        	
+        	return result [0];
+        },
+
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 在数组中根据根据条件进行过滤, 该函数已扩展到Mtils对象中
+		 * @param {obj} serch   查询条件
+		 * @param {varName} arr  数据源
+		 * @param {boolean} regular  是否启用正则,启用正则后,查询条件中的值将转化为正则表达式
+		 * @returns {array} result 符合条件的返回结果集
+		 **/
+        findInArray : function(search, arr, regular) {
+        	var result = [], keys , reg;
+        	arr = arr || this;
+        	if(undefined === search) result = arr;
+        	if(Mtils.isObject(search)) keys = Object.keys(search);
+ 
+        	if(Array.isArray(arr)) {
+        		result = arr.filter(function(item) {
+        			if(typeof(item) === typeof(search)) {
+        				if(Mtils.isString(search)) {
+        					if(true === regular) {
+								reg = new RegExp(search);
+	        					if(reg.test(item)) return true;
+        					} else {
+        						if(item === search) return true;
+        					}
+        				}
+
+        				if(Mtils.isObject(search)) {
+							if(keys.every(function(key) {
+		        				if(true === regular) {
+		        					reg = new RegExp(search[key]);
+		        					if(reg.test(item[key])) return true;
+		        				} else {
+			        				if(item[key] === search[key]) return true;
+		        				}
+		        			})) return true;
+        				}
+        			}
+        		})
+        	}
+        	return result;
+        },
+
+
 		/**
 		 * @author Rui.Zhang
 		 * @description 判断变量是否定义, 该函数已扩展到Mtils/window对象中
@@ -2269,6 +2335,9 @@ window.isEmpty = Mtils.isEmpty = Mtils.utils.isEmpty;
 Mtils.copy = Mtils.utils.copy;
 Mtils.cache = Mtils.utils.cache;
 Mtils.makeMap = Mtils.utils.makeMap;
+
+Mtils.findInArray = Mtils.utils.findInArray;
+Array.prototype.getById = Mtils.utils.getById;
 
 Mtils.isObject = Mtils.extention.isObject;
 Mtils.isArray = Mtils.extention.isArray;
