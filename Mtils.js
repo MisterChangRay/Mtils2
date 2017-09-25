@@ -1723,8 +1723,10 @@ window.Mtils = {
 		 * @returns {array} result 符合条件的返回结果集
 		 **/
 		getById : function(search) {
-        	var result = [], keys = Object.keys(search), arr = this;
-        	if(undefined === search) result = arr;
+        	var result = [], keys, arr = this;
+        	if(Mtils.isEmpty(search)) return result[0];
+
+        	keys = Object.keys(search);
 
         	if(Mtils.isObject(search)) {
         		result = Mtils.findInArray(search, arr);
@@ -1953,8 +1955,8 @@ window.Mtils = {
 		 * @returns {boolean}, true/false
 		 **/
         isEmpty : function(varName) {
-        	if(typeof varName === "undefined") return true;
-        	if(typeof varName === null) return true;
+        	if(varName === undefined) return true;
+        	if(varName === null) return true;
         	if(Number.isNaN(varName)) return true;
         	if(Mtils.isString(varName) && 0 === varName.length) return true;
         	if(Mtils.isArray(varName) && 0 === varName.length) return true;
