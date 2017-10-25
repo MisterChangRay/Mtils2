@@ -1525,6 +1525,16 @@ window.Mtils = {
 		isArray : Array.isArray,
 
 
+		/**
+		 * @author Rui.Zhang
+		 * @description 判断变量是否为NaN
+		 * @param {varName} varName  待判断数据类型的变量
+		 * @returns {boolean}, true/false
+		 **/
+		isNaN : function(val) {
+			return Mtils.isNumber(val) && val !== val; 
+		},
+
         /**
 		 * @author Rui.Zhang
 		 * @description 通过数据类型判断变量是否为数字, 该函数已扩展到Mtils对象中
@@ -1957,7 +1967,7 @@ window.Mtils = {
         isEmpty : function(varName) {
         	if(varName === undefined) return true;
         	if(varName === null) return true;
-        	if(Number.isNaN(varName)) return true;
+        	if(Mtils.isNaN(varName)) return true;
         	if(Mtils.isString(varName) && 0 === varName.length) return true;
         	if(Mtils.isArray(varName) && 0 === varName.length) return true;
         	if(Mtils.isObject(varName) && 0 === Object.keys(varName).length) return true;
@@ -2343,6 +2353,7 @@ Array.prototype.getById = Mtils.utils.getById;
 
 Mtils.isObject = Mtils.extention.isObject;
 Mtils.isArray = Mtils.extention.isArray;
+Mtils.isNaN = Mtils.extention.isNaN;
 Mtils.isString = Mtils.extention.isString;
 Mtils.isDate = Mtils.extention.isDate;
 Mtils.isFunction = Mtils.extention.isFunction;
