@@ -17,6 +17,15 @@ window.Mtils = {
 	 */
 	constant : {
 		/**
+		 * @description 常用键盘控制键常量
+		 */
+		CONTROL_KEY : {
+			BACK_SPACE:8, TAB:9, ENTER:13, SHIFT:16, CTRL:17, ALT:18, CAPS_LOCK:20, ESC:27,
+			SPACE:32, END:35, HOME:36, INSERT:45, PAGE_UP:33, PAGE_DOWN:34, DELETE:46, CONTEXT_MENU:93,
+			8: "BACK_SPACE", 9 : "TAB", 13 : "ENTER", 16 : "SHIFT", 17 : "CTRL", 18 : "ALT", 20:"CAPS_LOCK", 27:"ESC",
+			32:"SPACE", 35:"END", 36:"HOME", 45:"INSERT", 33:"PAGE_UP", 34:"PAGE_DOWN", 46:"DELETE", 93:"CONTEXT_MENU",
+		},
+		/**
 		 * @description 性别常量女(0)
 		 */
 		WOMAN : 0,
@@ -42,6 +51,9 @@ window.Mtils = {
 	 * @description 提供一些数据校验函数
 	 */
 	validation : {
+
+	
+
 		/**
 		 * @author Rui.Zhang
 		 * @description 通过正则判断数据是否为小数
@@ -1203,6 +1215,24 @@ window.Mtils = {
 	 * @description 提供一些扩展加强的函数
 	 */
 	extention : {
+		
+		/**
+		 * @author Rui.Zhang
+		 * @description 判断数据中是否包含指定数据,该对象已经扩展到Array,String.
+		 * @param {any} param  被搜寻的数据
+		 * @param {any} include  欲搜寻的数据
+		 * @returns {boolean}
+		 **/
+		includes : function (param, include) {
+			if(1 == arguments.length && Mtils.extention !== this) {
+				include = param;
+				return -1 !== this.indexOf(include);
+			} else if(2 === arguments.length) {
+				return -1 !== param.indexOf(include);
+			}
+		},
+
+
 		/**
 		 * @author Rui.Zhang
 		 * @description 将非严格模式的JSON字符串转换为JSON对象, 也可用于字符串转普通数据类型, 如'true'转为true, 该函数已扩展到window/Mtils对象中;
@@ -2327,19 +2357,6 @@ Math.accSub = Mtils.extention.accSub;
 Math.accMul = Mtils.extention.accMul;
 Math.accDiv = Mtils.extention.accDiv;
 
-Date.prototype.formatDate = Date.prototype.format = Mtils.extention.formatDate;
-
-Array.prototype.uniqueArray = Array.prototype.unique = Mtils.extention.uniqueArray;
-
-String.prototype.rtrim = Mtils.extention.rtrim;
-String.prototype.ltrim = Mtils.extention.ltrim;
-String.prototype.atrim = Mtils.extention.atrim;
-String.prototype.replaceAll = Mtils.extention.replaceAll;
-
-
-
-Date.now = Mtils.now = Mtils.extention.now;
-
 window.ChainCallManager = Mtils.ChainCallManager = Mtils.utils.ChainCallManager;
 window.isDefined = Mtils.isDefined = Mtils.utils.isDefined;
 window.isEmpty = Mtils.isEmpty = Mtils.utils.isEmpty;
@@ -2349,7 +2366,7 @@ Mtils.cache = Mtils.utils.cache;
 Mtils.makeMap = Mtils.utils.makeMap;
 
 Mtils.findInArray = Mtils.utils.findInArray;
-Array.prototype.getById = Mtils.utils.getById;
+if(Mtils.isEmpty(Array.prototype.getById)) Array.prototype.getById = Mtils.utils.getById;
 
 Mtils.isObject = Mtils.extention.isObject;
 Mtils.isArray = Mtils.extention.isArray;
@@ -2363,3 +2380,17 @@ Mtils.isFile = Mtils.extention.isFile;
 Mtils.isFormData = Mtils.extention.isFormData;
 Mtils.isRegExp = Mtils.extention.isRegExp;
 Mtils.strToJson = window.strToJson = Mtils.extention.strToJson;
+
+if(Mtils.isEmpty(Date.prototype.formatDate)) Date.prototype.formatDate = Date.prototype.format = Mtils.extention.formatDate;
+if(Mtils.isEmpty(Array.prototype.uniqueArray)) Array.prototype.uniqueArray = Array.prototype.unique = Mtils.extention.uniqueArray;
+if(Mtils.isEmpty(Array.prototype.includes)) Array.prototype.includes = Mtils.extention.includes;
+
+if(Mtils.isEmpty(String.prototype.rtrim)) String.prototype.rtrim = Mtils.extention.rtrim;
+if(Mtils.isEmpty(String.prototype.ltrim)) String.prototype.ltrim = Mtils.extention.ltrim;
+if(Mtils.isEmpty(String.prototype.atrim)) String.prototype.atrim = Mtils.extention.atrim;
+if(Mtils.isEmpty(String.prototype.replaceAll)) String.prototype.replaceAll = Mtils.extention.replaceAll;
+if(Mtils.isEmpty(String.prototype.includes)) String.prototype.includes = Mtils.extention.includes;
+
+if(Mtils.isEmpty(Date.prototype.now)) Date.prototype.now = Mtils.now = Mtils.extention.now;
+
+
