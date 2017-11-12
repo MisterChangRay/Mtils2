@@ -240,34 +240,34 @@ window.Mtils = {
 			var patrn = /^[0-9A-Z]+$/;
 			//18位校验及大写校验
 			if ((str_data.length != 18) || (patrn.test(str_data) == false)) { 
-		　　　　　　return false;
-		　　　　 } else { 
-		　　　　var Ancode;//统一社会信用代码的每一个值
-		　　　　var Ancodevalue;//统一社会信用代码每一个值的权重 
-		　　　　var total = 0; 
-		　　　　var weightedfactors = [1, 3, 9, 27, 19, 26, 16, 17, 20, 29, 25, 13, 8, 24, 10, 30, 28];//加权因子 
-		　　　　var str = '0123456789ABCDEFGHJKLMNPQRTUWXY';
-		　　　　//不用I、O、S、V、Z 
-		　　　　for (var i = 0; i < str_data.length - 1; i++) 
-		　　　　{
-		　　　　Ancode = str_data.substring(i, i + 1); 
-		　　　　Ancodevalue = str.indexOf(Ancode); 
-		　　　　total = total + Ancodevalue * weightedfactors[i];
-		　　　　//权重与加权因子相乘之和 
-		　　　　}
-		　　　　var logiccheckcode = 31 - total % 31;
-		　　　　if (logiccheckcode == 31) {
-		　　　　　　logiccheckcode = 0;
-		　　　　}
-		　　　　var Str = "0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,J,K,L,M,N,P,Q,R,T,U,W,X,Y";
-		　　　　var Array_Str = Str.split(',');
-		　　　　logiccheckcode = Array_Str[logiccheckcode];
+				return false;
+			} else { 
+			var Ancode;//统一社会信用代码的每一个值
+			var Ancodevalue;//统一社会信用代码每一个值的权重 
+			var total = 0; 
+			var weightedfactors = [1, 3, 9, 27, 19, 26, 16, 17, 20, 29, 25, 13, 8, 24, 10, 30, 28];//加权因子 
+			var str = '0123456789ABCDEFGHJKLMNPQRTUWXY';
+			//不用I、O、S、V、Z 
+			for (var i = 0; i < str_data.length - 1; i++) 
+			{
+			Ancode = str_data.substring(i, i + 1); 
+			Ancodevalue = str.indexOf(Ancode); 
+			total = total + Ancodevalue * weightedfactors[i];
+			//权重与加权因子相乘之和 
+			}
+			var logiccheckcode = 31 - total % 31;
+			if (logiccheckcode == 31) {
+			logiccheckcode = 0;
+			}
+			var Str = "0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,J,K,L,M,N,P,Q,R,T,U,W,X,Y";
+			var Array_Str = Str.split(',');
+			logiccheckcode = Array_Str[logiccheckcode];
 
 
-		　　　　var checkcode = str_data.substring(17, 18);
-		　　　　if (logiccheckcode != checkcode) { 
-		　　　　　　return false;
-		　　　　}
+			var checkcode = str_data.substring(17, 18);
+			if (logiccheckcode != checkcode) { 
+				return false;
+			}
 				return true;
 			}
 		},
@@ -1215,6 +1215,71 @@ window.Mtils = {
 	 * @description 提供一些扩展加强的函数
 	 */
 	extention : {
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 将一个对象进行拷贝,可以传入多个对象,第一个参数会覆盖第二个参数的属性.该对象已扩展到Mtils
+		 * @param {any} arg1  欲拷贝属性的对象1,若为true则为深拷贝
+		 * @param {any} arg2  欲拷贝属性的对象2
+		 * @returns {boolean}
+		 **/
+		extend : function() {
+		    var src, copyIsArray, copy, name, options, clone,
+		        target = arguments[0] || {},
+		        i = 1,
+		        length = arguments.length,
+		        deep = false;
+
+		    // Handle a deep copy situation
+		    if ( typeof target === "boolean" ) {
+		        deep = target;
+		        target = arguments[1] || {};
+		        // skip the boolean and the target
+		        i = 2;
+		    }
+
+		    // Handle case when target is a string or something (possible in deep copy)
+		    if ( !Mtils.isObject(target)) {
+		        target = {};
+		    }
+
+		    for ( ; i < length; i++ ) {
+		        // Only deal with non-null/undefined values
+		        if ( (options = arguments[ i ]) != null ) {
+		            // Extend the base object
+		            for ( name in options ) {
+		                src = target[ name ];
+		                copy = options[ name ];
+
+		                // Prevent never-ending loop
+		                if ( target === copy ) {
+		                    continue;
+		                }
+
+		                // Recurse if we're merging plain objects or arrays
+		                if ( deep && copy && ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {
+		                    if ( copyIsArray ) {
+		                        copyIsArray = false;
+		                        clone = src && jQuery.isArray(src) ? src : [];
+
+		                    } else {
+		                        clone = src && jQuery.isPlainObject(src) ? src : {};
+		                    }
+
+		                    // Never move original objects, clone them
+		                    target[ name ] = jQuery.extend( deep, clone, copy );
+
+		                // Don't bring in undefined values
+		                } else if ( copy !== undefined ) {
+		                    target[ name ] = copy;
+		                }
+		            }
+		        }
+		    }
+
+		    // Return the modified object
+		    return target;
+		},
 		
 		/**
 		 * @author Rui.Zhang
@@ -2364,6 +2429,7 @@ window.isEmpty = Mtils.isEmpty = Mtils.utils.isEmpty;
 Mtils.copy = Mtils.utils.copy;
 Mtils.cache = Mtils.utils.cache;
 Mtils.makeMap = Mtils.utils.makeMap;
+Mtils.extend = Mtils.extention.extend;
 
 Mtils.findInArray = Mtils.utils.findInArray;
 if(Mtils.isEmpty(Array.prototype.getById)) Array.prototype.getById = Mtils.utils.getById;
