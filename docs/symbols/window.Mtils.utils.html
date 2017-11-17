@@ -327,15 +327,6 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.filterArrayByObjectProperty">filterArrayByObjectProperty</a></b>(sourceArr, field, val, like)
-								</div>
-								<div class="description">根据对象属性值在对象数组中过滤匹配对象到新的数组中</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
 								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.findInArray">findInArray</a></b>(serch, arr, regular)
 								</div>
 								<div class="description">在数组中根据根据条件进行过滤, 该函数已扩展到Mtils对象中</div>
@@ -354,7 +345,7 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.getById">getById</a></b>(id, arr)
+								<div class="fixedFont">window.Mtils.utils.<b><a href="../symbols/window.Mtils.utils.html#.getById">getById</a></b>(id, arr, key)
 								</div>
 								<div class="description">在数组中根据ID获取对象, 该函数已扩展到Array对象中</div>
 							</td>
@@ -801,67 +792,6 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name=".filterArrayByObjectProperty"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{array}</span>
-					<span class="light">window.Mtils.utils.</span><b>filterArrayByObjectProperty</b>(sourceArr, field, val, like)
-					
-					</div>
-					<div class="description">
-						根据对象属性值在对象数组中过滤匹配对象到新的数组中
-						
-						<br /><i>Author: </i>Rui.Zhang.
-					</div>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<span class="light fixedFont">{array}</span> <b>sourceArr</b>
-									
-								</dt>
-								<dd>待查找的数组</dd>
-							
-								<dt>
-									<span class="light fixedFont">{number}</span> <b>field</b>
-									
-								</dt>
-								<dd>待匹配的字段</dd>
-							
-								<dt>
-									<span class="light fixedFont">{number}</span> <b>val</b>
-									
-								</dt>
-								<dd>待匹配的值</dd>
-							
-								<dt>
-									<span class="light fixedFont">{boolean}</span> <b>like</b>
-									
-								</dt>
-								<dd>是否使用模糊匹配</dd>
-							
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{array}</span> , 所有匹配的对象集合</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
 					<a name=".findInArray"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
@@ -882,13 +812,13 @@ ul.inheritsList
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{obj}</span> <b>serch</b>
+									<span class="light fixedFont">{any}</span> <b>serch</b>
 									
 								</dt>
-								<dd>查询条件</dd>
+								<dd>查询条件,可以为字符串,也可以用数组一次查询多个</dd>
 							
 								<dt>
-									<span class="light fixedFont">{varName}</span> <b>arr</b>
+									<span class="light fixedFont">{array}</span> <b>arr</b>
 									
 								</dt>
 								<dd>数据源</dd>
@@ -897,7 +827,7 @@ ul.inheritsList
 									<span class="light fixedFont">{boolean}</span> <b>regular</b>
 									
 								</dt>
-								<dd>是否启用正则,启用正则后,查询条件中的值将转化为正则表达式</dd>
+								<dd>在匹配字符串时是否启用正则,启用正则后,查询条件中的值将转化为正则表达式</dd>
 							
 							</dl>
 						
@@ -970,7 +900,7 @@ ul.inheritsList
 					<div class="fixedFont">&lt;static&gt; 
 					
 					<span class="light">{array}</span>
-					<span class="light">window.Mtils.utils.</span><b>getById</b>(id, arr)
+					<span class="light">window.Mtils.utils.</span><b>getById</b>(id, arr, key)
 					
 					</div>
 					<div class="description">
@@ -986,16 +916,22 @@ ul.inheritsList
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{string}</span> <b>id</b>
+									<span class="light fixedFont">{string|number|array}</span> <b>id</b>
 									
 								</dt>
 								<dd>欲获取的ID值</dd>
 							
 								<dt>
-									<span class="light fixedFont">{varName}</span> <b>arr</b>
+									<span class="light fixedFont">{array}</span> <b>arr</b>
 									
 								</dt>
 								<dd>数据源</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>key</b>
+									
+								</dt>
+								<dd>如指定此参数则使用此参数为key进行查询</dd>
 							
 							</dl>
 						
@@ -1006,7 +942,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{array}</span> result 符合条件的返回结果集</dd>
+								<dd><span class="light fixedFont">{array}</span> result 符合条件的返回结果集,如果传入的不是数组则返回结果集中的第一个元素</dd>
 							
 							</dl>
 						
@@ -1466,7 +1402,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Sun Nov 12 2017 22:55:35 GMT+0800 (CST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Fri Nov 17 2017 13:44:26 GMT+0800 (CST)
 		</div>
 	</body>
 </html>

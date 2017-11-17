@@ -1823,43 +1823,66 @@ window.Mtils = {
 		/**
 		 * @author Rui.Zhang
 		 * @description 在数组中根据ID获取对象, 该函数已扩展到Array对象中
-		 * @param {string} id   欲获取的ID值
-		 * @param {varName} arr  数据源
-		 * @returns {array} result 符合条件的返回结果集
+		 * @param {string|number|array} id   欲获取的ID值
+		 * @param {array} arr  数据源
+		 * @param {string} key  如指定此参数则使用此参数为key进行查询
+		 * @returns {array} result 符合条件的返回结果集,如果传入的不是数组则返回结果集中的第一个元素
 		 **/
-		getById : function(search) {
-        	var result = [], keys, arr = this;
+		getById : function(search, key) {
+        	var result = [], arr = this, searchs = [], querys = [], key = key || "id", tmp;
+
         	if(Mtils.isEmpty(search)) return result[0];
 
-        	keys = Object.keys(search);
+        	if(Mtils.isArray(search)) {
+        		searchs = searchs.concat(search);
+        	} else {
+        		searchs.push(search);
+        	}
+        	searchs.forEach(function(item) {
+        		tmp = {};
 
-        	if(Mtils.isObject(search)) {
-        		result = Mtils.findInArray(search, arr);
-        	}
-        	if(Mtils.isString(search) || Mtils.isNumber(search)) {
-        		result = Mtils.findInArray({"id":search}, arr);	
-        	}
-        	
-        	return result [0];
+	        	if(Mtils.isObject(item) && item[key]) {
+	        		tmp[key] = item[key];
+	        		querys.push(tmp);
+	        	}
+	        	if(Mtils.isString(item) || Mtils.isNumber(item)) {
+	        		tmp[key] = item;
+	        		querys.push(tmp);
+	        	}
+        	});
+			result = Mtils.findInArray(querys, arr);
+			if(!Mtils.isArray(search)) {
+	        	return result [0];
+			}
+			return result;
         },
 
 
 		/**
 		 * @author Rui.Zhang
 		 * @description 在数组中根据根据条件进行过滤, 该函数已扩展到Mtils对象中
-		 * @param {obj} serch   查询条件
-		 * @param {varName} arr  数据源
-		 * @param {boolean} regular  是否启用正则,启用正则后,查询条件中的值将转化为正则表达式
+		 * @param {any} serch   查询条件,可以为字符串,也可以用数组一次查询多个
+		 * @param {array} arr  数据源
+		 * @param {boolean} regular  在匹配字符串时是否启用正则,启用正则后,查询条件中的值将转化为正则表达式
 		 * @returns {array} result 符合条件的返回结果集
 		 **/
         findInArray : function(search, arr, regular) {
-        	var result = [], keys , reg;
+        	var result = [], keys , reg, searchs = [];
         	arr = arr || this;
         	if(undefined === search) result = arr;
-        	if(Mtils.isObject(search)) keys = Object.keys(search);
- 
-        	if(Array.isArray(arr)) {
-        		result = arr.filter(function(item) {
+        	if(!Array.isArray(arr)) return result;
+
+        	if(Mtils.isArray(search)) {
+        		searchs = searchs.concat(search);
+        	} else {
+        		searchs.push(search);
+        	}
+	        	
+
+        	searchs.forEach(function(search) {
+        		if(Mtils.isObject(search)) keys = Object.keys(search);
+
+        		result = result.concat(arr.filter(function(item) {
         			if(typeof(item) === typeof(search)) {
         				if(Mtils.isString(search)) {
         					if(true === regular) {
@@ -1868,21 +1891,21 @@ window.Mtils = {
         					} else {
         						if(item === search) return true;
         					}
-        				}
-
+        				} else
         				if(Mtils.isObject(search)) {
 							if(keys.every(function(key) {
-		        				if(true === regular) {
+		        				if(true === regular && Mtils.isString(item[key]) && Mtils.isString(search[key])) {
 		        					reg = new RegExp(search[key]);
 		        					if(reg.test(item[key])) return true;
 		        				} else {
 			        				if(item[key] === search[key]) return true;
 		        				}
 		        			})) return true;
-        				}
+        				} else
+        				if(item === search) return true;
         			}
-        		})
-        	}
+        		}))
+        	});
         	return result;
         },
 
@@ -2098,37 +2121,6 @@ window.Mtils = {
                             result.push(defaultVal);
                         }
                     }
-                }
-            }
-            return result;
-        },
-
-     
-     	/**
-		 * @author Rui.Zhang
-		 * @description 根据对象属性值在对象数组中过滤匹配对象到新的数组中
-		 * @param {array} sourceArr  待查找的数组
-		 * @param {number} field  待匹配的字段
-		 * @param {number} val  待匹配的值
-		 * @param {boolean} like  是否使用模糊匹配
-		 * @returns {array}, 所有匹配的对象集合
-		 **/
-        filterArrayByObjectProperty : function(sourceArr ,field, val, like) {
-            var result = [];
-
-            if(val && sourceArr && Array.isArray(sourceArr)) {
-                for(var i= 0, item; i<sourceArr.length; i ++) {
-                    item = sourceArr[i];
-                    if(like) {
-                        if(-1 != item[field].indexOf(val) || -1 != val.indexOf(item[field])) {
-                            result.push(item);
-                        }
-                    } else {
-                        if(item[field] == val) {
-                            result.push(item);
-                        }
-                    }
-
                 }
             }
             return result;
