@@ -1432,11 +1432,9 @@ window.Mtils = {
 		    }
 		    catch (e) {
 		    }
-		    with (Math) {
-		        r1 = Number(arg1.toString().replace(".", ""));
-		        r2 = Number(arg2.toString().replace(".", ""));
-		        return (r1 / r2) * pow(10, t2 - t1);
-		    }
+	        r1 = Math.Number(arg1.toString().replace(".", ""));
+	        r2 = Math.Number(arg2.toString().replace(".", ""));
+	        return (r1 / r2) * pow(10, t2 - t1);
 		},
 
 
@@ -2266,11 +2264,9 @@ window.Mtils = {
 
 	                    if(isCreate) {
 	                        try {
-	                            with(obj) {
-	                                if(undefined == eval(varStr)) {
-	                                    eval(varStr + "={}");
-	                                }
-	                            }
+                                if(undefined == eval(varStr)) {
+                                    eval(varStr + "={}");
+                                }
 	                        } catch(e) {
 	                            console.log(e)
 	                        }
@@ -2279,9 +2275,7 @@ window.Mtils = {
 	                varStr += "=propVal";
 
 	                try {
-	                    with(obj) {
-	                        eval(varStr);
-	                    }
+                        eval(varStr);
 	                } catch(e) {
 	                    console.log(e)
 	                }
@@ -2311,11 +2305,9 @@ window.Mtils = {
 
 	                    if(null != defaultVal || undefined != defaultVal) {
 	                        try {
-	                            with(obj) {
-	                                if(undefined == eval(varStr)) {
-	                                   return defaultVal;
-	                                }
-	                            }
+                                if(undefined == eval(varStr)) {
+                                   return defaultVal;
+                                }
 	                        } catch(e) {
 	                            console.log(e)
 	                        }
@@ -2323,14 +2315,12 @@ window.Mtils = {
 	                }
 
 	                try {
-	                    with(obj) {
-	                        var tmp = eval(varStr);
-	                        if(null == tmp || undefined == tmp) {
-	                            return defaultVal;
-	                        } else {
-	                            return tmp;
-	                        }
-	                    }
+                        var tmp = eval(varStr);
+                        if(null == tmp || undefined == tmp) {
+                            return defaultVal;
+                        } else {
+                            return tmp;
+                        }
 	                } catch(e) {
 	                    console.log(e)
 	                }
