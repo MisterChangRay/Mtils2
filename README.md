@@ -82,8 +82,14 @@ Mtils2 is Mtils Upgraded version
   
   //根据对象属性来过滤数组, 这里从儿童列表中提取出所有姓张的
   var childrens = [{id:1, name:'张三'}, {id:2, name:'李四'}, {id:3, name:'张国立'}, {id:4, name:'赵武'}];
-  var result = Mtils.utils.filterArrayByObjectProperty(childrens, "name", "张", true);
+  var result = Mtils.utils.findInArray({"name":"张"}, childrens, true);
   console.log(result); // result = [{id:1, name:'张三'}, {id:3, name:'张国立'}]
+
+
+  //也扩展了数组根据Key快速获取对象的方法
+  var childrens = [{id:1, name:'张三'}, {id:2, name:'李四'}, {id:3, name:'张国立'}, {id:4, name:'赵武'}];
+  var result = childrens.getById(1);
+  console.log(result); // result = {id:1, name:'张三'}
   
   
   //链式调用，解决回调的坑(这个演示的是伪代码)
