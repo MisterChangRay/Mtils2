@@ -1561,7 +1561,7 @@ window.Mtils = {
 		 * @returns {boolean}, true/false
 		 **/
         isObject : function(varName) {
-        	return varName !== null && typeof varName === 'object';
+			return varName !== null && Mtils.utils.getVarType(varName) === '[object Object]';
         },
 
 
@@ -1816,6 +1816,44 @@ window.Mtils = {
 	 * @description 提供一些辅助代码封装
 	 */
 	utils : {
+
+		/**
+		 * @author Rui.Zhang
+		 * @description 清除数组或者对象中的Empty属性,以下会被判断为Empty:空数组/空对象/null/undefined/NaN/'', 该函数已扩展到Mtils,Array,Object对象中
+		 * @param {Array|Object} param 欲清除的目标对象
+		 * @returns {any} result  已清除empty属性的对象
+		 **/
+		clearEmpty : function() {
+			var target = arguments[0] || this, key, i, length, tmpArray = [];
+
+			if(!Mtils.isObject(target) && !Mtils.isArray(target)) return target;
+
+			if(Mtils.isObject(target)) {
+				for(key in target) {
+					if(Mtils.isEmpty(target[key])) {
+						if(Reflect && Reflect.deleteProperty) {
+							Reflect.deleteProperty(target, key);
+						} else {
+							delete target[key];
+						}
+					} else if(Mtils.isObject(target) || Mtils.isArray(target)) {
+						Mtils.utils.clearEmpty(target[key])
+					}
+					
+				}
+			}
+
+			if(Mtils.isArray(target)) {
+				tmpArray = [];
+				for(i=0,length=target.length; i<length; i++) {
+					if(!Mtils.isEmpty(target[i])) tmpArray.push(target[i]);
+				}
+				target = tmpArray;
+			}
+
+			return target;
+
+		},
 
 
 		/**
@@ -2442,3 +2480,8 @@ if(Mtils.isEmpty(String.prototype.includes)) String.prototype.includes = Mtils.e
 if(Mtils.isEmpty(Date.prototype.now)) Date.prototype.now = Mtils.now = Mtils.extention.now;
 
 
+
+
+if(Mtils.isEmpty(Array.prototype.clearEmpty)) Array.prototype.clearEmpty = Mtils.utils.clearEmpty;
+if(Mtils.isEmpty(Object.prototype.clearEmpty)) Object.prototype.clearEmpty = Mtils.utils.clearEmpty;
+Mtils.clearEmpty = Mtils.utils.clearEmpty;
