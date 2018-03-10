@@ -2221,7 +2221,7 @@ window.Mtils = {
 				tmp = str.substr(i, 1);
 				flag = false;
 				for (key in PYMaps){
-		        	if (Mtils.utils.isString(PYMaps[key]) && PYMaps[key].indexOf(tmp) != -1) {
+		        	if (Mtils.extention.isString(PYMaps[key]) && PYMaps[key].indexOf(tmp) != -1) {
 		        	    firstChar = key.substr(0, 1).toUpperCase();
 
 		        		if(true == extractFirst) {
