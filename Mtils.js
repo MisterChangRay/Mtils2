@@ -455,6 +455,42 @@ window.Mtils = {
 	security : {
 		/**
 		 * @author Rui.Zhang
+		 * @description 生成uuid, 该函数已扩展至Mtils对象中
+		 * @param {int} [len]   可选,生成uuid的长度,默认36位,建议20位以上
+		 * @param {int} [radix]   可选,生成的进制基数，8是8进制,10是10进制等等
+		 * @returns {String}, 生成的UUID
+		 **/
+		uuid : function (len, radix) {
+		  var uuid;
+		  var chars, i, r, uuid;
+		  chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+		  uuid = [];
+		  i = void 0;
+		  radix = radix || chars.length;
+		  if (len) {
+		    i = 0;
+		    while (i < len) {
+		      uuid[i] = chars[0 | Math.random() * radix];
+		      i++;
+		    }
+		  } else {
+		    r = void 0;
+		    uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+		    uuid[14] = '4';
+		    i = 0;
+		    while (i < 36) {
+		      if (!uuid[i]) {
+		        r = 0 | Math.random() * 16;
+		        uuid[i] = chars[i === 19 ? r & 0x3 | 0x8 : r];
+		      }
+		      i++;
+		    }
+		  }
+		  return uuid.join('');
+		},
+
+		/**
+		 * @author Rui.Zhang
 		 * @description  密码强度检测
 		 * @param {String} str_psw  待签名数据
 		 * @returns {Object}, 检测结果,对象应为{"level":"2", "desc" : "检测提示：您的密码强度较差！"}, level为密码强度等级(1-5), desc为默认提示信息
@@ -2485,3 +2521,6 @@ if(Mtils.isEmpty(Date.prototype.now)) Date.prototype.now = Mtils.now = Mtils.ext
 if(Mtils.isEmpty(Array.prototype.clearEmpty)) Array.prototype.clearEmpty = Mtils.utils.clearEmpty;
 if(Mtils.isEmpty(Object.prototype.clearEmpty)) Object.prototype.clearEmpty = Mtils.utils.clearEmpty;
 Mtils.clearEmpty = Mtils.utils.clearEmpty;
+
+
+Mtils.uuid = Mtils.security.uuid;

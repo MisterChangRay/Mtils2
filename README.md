@@ -58,6 +58,11 @@ Mtils2 is Mtils Upgraded version
   var pw = Mtils.security.hex_md5('password');
   console.log(pw); // pw = "5f4dcc3b5aa765d61d8327deb882cf99"
   
+
+  //生成UUID
+  var uuid = Mtils.security.uuid();
+  console.log(uuid); // uuid = "A0CBA9E7-EF50-41A8-B762-49C43C85121A"
+
   
   //取汉字拼音
   var py = Mtils.utils.makePy('Mtils 真是个好工具');
