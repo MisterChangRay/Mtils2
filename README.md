@@ -39,7 +39,7 @@ Mtils2 is Mtils Upgraded version
 ```js
 <script type="text/javascript">
   //校验身份证
-  if(tils.validation.isIdCard('510182199109217504')) {
+  if(Mtils.validation.isIdCard('510182199109217504')) {
     alert('此身份证有效');  
   } else {
     alert('此身份证无效');
@@ -47,7 +47,7 @@ Mtils2 is Mtils Upgraded version
   
   
   //校验身份证是否为男性身份证
-  if(tils.validation.isIdCard('510182199109217504', Mtils.constant.MAN)) {
+  if(Mtils.validation.isIdCard('510182199109217504', Mtils.constant.MAN)) {
     alert('此身份证为男性身份证');  
   } else {
     alert('此身份证无效');
