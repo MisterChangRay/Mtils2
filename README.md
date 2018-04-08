@@ -62,7 +62,12 @@ Mtils2 is Mtils Upgraded version
   //生成UUID
   var uuid = Mtils.security.uuid();
   console.log(uuid); // uuid = "A0CBA9E7-EF50-41A8-B762-49C43C85121A"
-
+  
+  
+  //生成介于1-99的随机数
+  var randomNum = Mtils.security.randomBetween(1, 99)
+  console.log(randomNum); // randomNum = 22
+  
   
   //取汉字拼音
   var py = Mtils.utils.makePy('Mtils 真是个好工具');
@@ -72,6 +77,27 @@ Mtils2 is Mtils Upgraded version
   //只取汉字首字母拼音
   var py = Mtils.utils.makePy('Mtils 真是个好工具', true);
   console.log(py);   // py = "Mtils ZSGHGJ"
+  
+  
+  //将10进制的4转为2进制
+  var result = Mtils.utils.decimalConversion(4, 10, 2);
+  console.log(result);   // result = 100
+  
+  
+  //数组去除重复元素
+  var result = Mtils.extention.uniqueArray([1,2,3,4,4,3]);
+  console.log(result);   // result = [1,2,3,4]
+  
+  
+  //对象属性克隆, 从右到左;
+  var a = {a:1}, b = {b:2}, c ={c:3}, d= {a:4};
+  var result = Mtils.extention.extend(a,b,c,d); //将d,c,b这三个对象的属性复制到a对象中
+  console.log(result);   // result = {a: 4, b: 2, c: 3}
+  
+  
+  //格式化时间
+  var result = Mtils.extention.formatDate(Mtils.now(), "yyyy-MM-dd");
+  console.log(result);   // result = "2018-04-08"
   
   
   //便捷JS对象设置值
