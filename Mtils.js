@@ -1347,8 +1347,8 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 返回一个格式化后的时间,来自服务器的当前时间,默认返回时间戳. 该函数已扩展到Date/Mtils对象中
-		 * @description 注意：当在本地使用时候,此函数返回的时本地时间
+		 * @description 返回服务器的当前时间时间,可以格式化后返回,默认返回时间戳. 该函数已扩展到Date/Mtils对象中
+		 * @description 注意：当在本地使用此函数将会返回本地时间,服务器请求地址为：location.href
 		 * @param {String} format  时间格式化参数
 		 * @returns {float/Int}
 		 **/
