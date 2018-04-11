@@ -1,0 +1,1 @@
+java -jar ./yuicompressor-2.4.8.jar ../Mtils.js -o ../Mtils.min.js
