@@ -14,11 +14,11 @@
   "engines": {
     "node":  ">=0.6"
   },
-  "author": "grarm",
+  "author": "zhangrui",
   "licenses": [
     {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/mit-license.php"
+      "type": "BSD 3-Clause License",
+      "url": "https://github.com/MisterChangRay/Mtils2/blob/master/LICENSE"
     }
   ],
   "bugs": {
