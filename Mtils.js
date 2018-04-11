@@ -1347,15 +1347,38 @@ window.Mtils = {
 
 		/**
 		 * @author Rui.Zhang
-		 * @description 返回一个格式化后的当前时间,默认返回时间戳. 该函数已扩展到Date/Mtils对象中
+		 * @description 返回一个格式化后的时间,来自服务器的当前时间,默认返回时间戳. 该函数已扩展到Date/Mtils对象中
+		 * @description 注意：当在本地使用时候,此函数返回的时本地时间
 		 * @param {String} format  时间格式化参数
 		 * @returns {float/Int}
 		 **/
 		now : function (format) {
-		    var timestamp = +new Date();
+		    var timestamp = null;
+			var ajax = null;
+			if("file:" != location.protocol) {
+				try{
+			    	ajax = new ActiveXObject("microsoft.xmlhttp");
+				}catch(e1){
+				    try{
+				        ajax = new XMLHttpRequest();
+				    }catch(e2){
+				        console.log("你的浏览器中不支持异步对象，请换浏览器");
+				    }
+				}
+				ajax.open("HEAD", location.href, false);
+				ajax.send(null);
+				timestamp = ajax.getResponseHeader("Date");
+			} else {
+				timestamp = new Date().getTime();
+			}
+			
+
+			if(!timestamp) return null;
+			timestamp = new Date(timestamp).getTime();
+
 		    if(format) 
 		    	return Mtils.extention.formatDate(timestamp, format);
-		    return timestamp;
+		    return timestamp;	
 		},
 
 
