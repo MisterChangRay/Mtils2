@@ -10,8 +10,8 @@ Mtils2 is Mtils Upgraded version
 
 
 ##### 如何下载
-- github上克隆下载
-- npm 安装,`npm install mtils --save-dev`
+- github 上直接下载 released 版本
+- npm 命令直接安装;`npm install mtils --save-dev`
 
 
 ##### 简介
