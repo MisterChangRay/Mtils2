@@ -9,6 +9,11 @@ Mtils2 is Mtils Upgraded version
 详情[参阅API文档](https://misterchangray.github.io/Mtils2/)。
 
 
+##### 如何下载
+- github上克隆下载
+- npm 安装,`npm install mtils --save-dev`
+
+
 ##### 简介
 1. 提供身份证、银行卡、社会信用代码、邮箱、手机、座机、QQ、URL、IP等常见的数据格式校验
 2. 提供年龄计算、进制转换、cookie操作、金额格式化、时间格式化、数据类型判断、数组去重、获取拼音等常见便捷方法
