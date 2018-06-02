@@ -1,9 +1,8 @@
-#!/usr/bin/env node
-
-/*
-    BSD 3-Clause License https://github.com/MisterChangRay/Mtils2/blob/master/LICENSE
-    Author zhangrui
-*/
+/**
+ *
+ *  BSD 3-Clause License https://github.com/MisterChangRay/Mtils2/blob/master/LICENSE
+ *   Author zhangrui
+ */
 ;'use strict';
 
 ;(function(){
@@ -18,6 +17,15 @@
 	 * @since version 2.0.0
 	 */
     function Mtils() {
+		/**
+		 * @author Rui.Zhang
+		 * @class 前端开发辅助工具类
+		 * @date 2016-09-04 22:32:09
+		 * @description Mtils 是 My Utils 的简写, 本工具提供前台常用的文本处理、 表单处理、 数据校验、 数据安全等函数。<br />
+		 * @description 除了基本的函数封装外, 本工具还对原生的对象进行一定的扩展, 更方便使用。
+		 * @site https://github.com/MisterChangRay/Mtils2
+		 * @since version 2.0.0
+		 */
 		var Mtils = {
 			/**
 			 * @author Rui.Zhang
@@ -1550,7 +1558,7 @@
 
 				/**
 				 * @author Rui.Zhang
-				 * @description 去除数组中的重复元素, 该函数已扩展到Array对象中
+				 * @description 去除数组中的重复元素, 该函数已扩展到Mtils对象中
 				 * @param {Arr} array  待去重数组
 				 * @returns {Arr}, 去重后的数组
 				 **/
@@ -1887,7 +1895,7 @@
 
 				/**
 				 * @author Rui.Zhang
-				 * @description 清除数组或者对象中的Empty属性,以下会被判断为Empty:空数组/空对象/null/undefined/NaN/'', 该函数已扩展到Mtils,Array,Object对象中
+				 * @description 清除数组或者对象中的Empty属性,以下会被判断为Empty:空数组/空对象/null/undefined/NaN/'', 该函数已扩展到Mtils对象中
 				 * @param {Array|Object} param 欲清除的目标对象
 				 * @returns {any} result  已清除empty属性的对象
 				 **/
@@ -1926,7 +1934,7 @@
 
 				/**
 				 * @author Rui.Zhang
-				 * @description 在数组中根据ID获取对象, 该函数已扩展到Array对象中
+				 * @description 在数组中根据ID获取对象, 该函数已扩展到Mtils对象中
 				 * @param {string|number|array} id   欲获取的ID值
 				 * @param {array} arr  数据源
 				 * @param {string} key  如指定此参数则使用此参数为key进行查询
@@ -2505,14 +2513,12 @@
 		};
 
 
-		Math.accAdd = Mtils.extention.accAdd;
-		Math.accSub = Mtils.extention.accSub;
-		Math.accMul = Mtils.extention.accMul;
-		Math.accDiv = Mtils.extention.accDiv;
 
-		global.ChainCallManager = Mtils.ChainCallManager = Mtils.utils.ChainCallManager;
-		global.isDefined = Mtils.isDefined = Mtils.utils.isDefined;
-		global.isEmpty = Mtils.isEmpty = Mtils.utils.isEmpty;
+
+		window.ChainCallManager = Mtils.ChainCallManager = Mtils.utils.ChainCallManager;
+		window.isDefined = Mtils.isDefined = Mtils.utils.isDefined;
+		window.isEmpty = Mtils.isEmpty = Mtils.utils.isEmpty;
+		window.strToJson = Mtils.strToJson = Mtils.extention.strToJson;
 
 		Mtils.copy = Mtils.utils.copy;
 		Mtils.cache = Mtils.utils.cache;
@@ -2520,7 +2526,7 @@
 		Mtils.extend = Mtils.extention.extend;
 
 		Mtils.findInArray = Mtils.utils.findInArray;
-		if(Mtils.isEmpty(Array.prototype.getById)) Array.prototype.getById = Mtils.utils.getById;
+		Mtils.getById = Mtils.utils.getById;
 
 		Mtils.isObject = Mtils.extention.isObject;
 		Mtils.isArray = Mtils.extention.isArray;
@@ -2533,30 +2539,25 @@
 		Mtils.isFile = Mtils.extention.isFile;
 		Mtils.isFormData = Mtils.extention.isFormData;
 		Mtils.isRegExp = Mtils.extention.isRegExp;
-		Mtils.strToJson = global.strToJson = Mtils.extention.strToJson;
+		Mtils.unique = Mtils.extention.uniqueArray;
+		Mtils.includes = Mtils.extention.includes;
+		Mtils.clearEmpty = Mtils.utils.clearEmpty;
+		Mtils.uuid = Mtils.security.uuid;
+
+
+		if(!Mtils.isEmpty(Math)) Math.accAdd = Mtils.extention.accAdd;
+		if(!Mtils.isEmpty(Math)) Math.accSub = Mtils.extention.accSub;
+		if(!Mtils.isEmpty(Math)) Math.accMul = Mtils.extention.accMul;
+		if(!Mtils.isEmpty(Math)) Math.accDiv = Mtils.extention.accDiv;
 
 		if(Mtils.isEmpty(Date.prototype.formatDate)) Date.prototype.formatDate = Date.prototype.format = Mtils.extention.formatDate;
-		if(Mtils.isEmpty(Array.prototype.uniqueArray)) Array.prototype.uniqueArray = Array.prototype.unique = Mtils.extention.uniqueArray;
-		if(Mtils.isEmpty(Array.prototype.includes)) Array.prototype.includes = Mtils.extention.includes;
+		if(Mtils.isEmpty(Date.prototype.now)) Date.prototype.now = Mtils.now = Mtils.extention.now;
 
 		if(Mtils.isEmpty(String.prototype.rtrim)) String.prototype.rtrim = Mtils.extention.rtrim;
 		if(Mtils.isEmpty(String.prototype.ltrim)) String.prototype.ltrim = Mtils.extention.ltrim;
 		if(Mtils.isEmpty(String.prototype.atrim)) String.prototype.atrim = Mtils.extention.atrim;
 		if(Mtils.isEmpty(String.prototype.replaceAll)) String.prototype.replaceAll = Mtils.extention.replaceAll;
 		if(Mtils.isEmpty(String.prototype.includes)) String.prototype.includes = Mtils.extention.includes;
-
-		if(Mtils.isEmpty(Date.prototype.now)) Date.prototype.now = Mtils.now = Mtils.extention.now;
-
-
-
-
-		if(Mtils.isEmpty(Array.prototype.clearEmpty)) Array.prototype.clearEmpty = Mtils.utils.clearEmpty;
-		if(Mtils.isEmpty(Object.prototype.clearEmpty)) Object.prototype.clearEmpty = Mtils.utils.clearEmpty;
-		Mtils.clearEmpty = Mtils.utils.clearEmpty;
-
-
-		Mtils.uuid = Mtils.security.uuid;
-
 
 
 		return Mtils;
