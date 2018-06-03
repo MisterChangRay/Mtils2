@@ -1293,17 +1293,17 @@ window.Mtils = {
 		                }
 
 		                // Recurse if we're merging plain objects or arrays
-		                if ( deep && copy && ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {
+		                if ( deep && copy && ( Mtils.isEmpty(copy) || (copyIsArray = Mtils.extend(copy)) ) ) {
 		                    if ( copyIsArray ) {
 		                        copyIsArray = false;
-		                        clone = src && jQuery.isArray(src) ? src : [];
+		                        clone = src && Mtils.isArray(src) ? src : [];
 
 		                    } else {
-		                        clone = src && jQuery.isPlainObject(src) ? src : {};
+		                        clone = src && Mtils.isEmpty(src) ? src : {};
 		                    }
 
 		                    // Never move original objects, clone them
-		                    target[ name ] = jQuery.extend( deep, clone, copy );
+		                    target[ name ] = Mtils.extend( deep, clone, copy );
 
 		                // Don't bring in undefined values
 		                } else if ( copy !== undefined ) {
