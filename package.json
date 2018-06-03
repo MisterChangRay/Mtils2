@@ -1,6 +1,6 @@
 {
   "name": "mtils",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "一套前端辅助代码集合",
   "main": "index.js",
   "bin": "index.js",
