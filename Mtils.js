@@ -1253,14 +1253,14 @@ window.Mtils = {
 	extention : {
 		/**
 		 * @author Rui.Zhang
-		 * @description 对象数组;根据对象的指定属性进行排序; 
-		 * @description 例如;根据年龄排序一下数组. var arr = [{name:"张三", age:11}, {name:"李四", age:13}]; arr.sort(sortBy("age", false));
-		 * @description 排序结果为 [{name:"李四", age:13}, {name:"张三", age:11}];
-		 * @param {string} arg1  欲排序的属性
+		 * @description 数组排序;可以排序简单数组或对象数组;
+		 * @description 例如;根据年龄排序以下对象数组. <br> var arr = [{name:"张三", age:11}, {name:"李四", age:13}]; <br> result = arr.sort(sortBy("age", false)); <br> 排序结果为 [{name:"李四", age:13}, {name:"张三", age:11}];<br> 又例如排序简单数组 arr = [1,2,3,4,5];<br>正序排序调用 arr.sort(Mtils.extention.sortBy(true); <br> 逆序排序用 arr.sort(Mtils.extention.sortBy(false);
+		 * @param {string} arg1  排序对象数组时;此参数为欲排序的属性;当排序简单数组时,此参数含义与第二个参数相同
 		 * @param {boolean} arg2  true/升序;false/降序
 		 * @returns {boolean}
 		 **/
-		sortByObjectPropertie : function(attr, rev) {
+		sortBy : function(attr, rev) {
+			if(!Mtils.isString(attr)) rev = attr;
 		    //第二个参数没有传递 默认升序排列
 	        if(rev ==  undefined){
 	            rev = 1;
@@ -1269,8 +1269,11 @@ window.Mtils = {
 	        }
 
 	        return function(a,b){
-	            a = a[attr];
-	            b = b[attr];
+	        	if(Mtils.isString(attr)) {
+					if(Mtils.isObject(a)) a = a[attr];
+		            if(Mtils.isObject(b)) b = b[attr];
+	        	}
+	        
 	            if(a < b){
 	                return rev * -1;
 	            }
