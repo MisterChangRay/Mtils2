@@ -1251,6 +1251,36 @@ window.Mtils = {
 	 * @description 提供一些扩展加强的函数
 	 */
 	extention : {
+		/**
+		 * @author Rui.Zhang
+		 * @description 对象数组;根据对象的指定属性进行排序; 
+		 * @description 例如;根据年龄排序一下数组. var arr = [{name:"张三", age:11}, {name:"李四", age:13}]; arr.sort(sortBy("age", false));
+		 * @description 排序结果为 [{name:"李四", age:13}, {name:"张三", age:11}];
+		 * @param {string} arg1  欲排序的属性
+		 * @param {boolean} arg2  true/升序;false/降序
+		 * @returns {boolean}
+		 **/
+		sortByObjectPropertie : function(attr, rev) {
+		    //第二个参数没有传递 默认升序排列
+	        if(rev ==  undefined){
+	            rev = 1;
+	        }else{
+	            rev = (rev) ? 1 : -1;
+	        }
+
+	        return function(a,b){
+	            a = a[attr];
+	            b = b[attr];
+	            if(a < b){
+	                return rev * -1;
+	            }
+	            if(a > b){
+	                return rev * 1;
+	            }
+	            return 0;
+	        }
+		},
+		
 
 		/**
 		 * @author Rui.Zhang

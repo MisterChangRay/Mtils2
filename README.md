@@ -126,6 +126,12 @@ Mtils2 is Mtils Upgraded version
   var childrens = [{id:1, name:'张三'}, {id:2, name:'李四'}, {id:3, name:'张国立'}, {id:4, name:'赵武'}];
   var result = childrens.getById(1);
   console.log(result); // result = {id:1, name:'张三'}
+
+
+  //排序数组中的所有对象;根据年龄倒序排序数组 childrens
+  var childrens = [{age:12, name:'张三'}, {age:21, name:'李四'}, {age:31, name:'张国立'}, {age:41, name:'赵武'}];
+  var result = childrens.sort(Mtils.extention.sortByObjectPropertie("age", false));
+  console.log(result); // result =  [{age:41, name:'赵武'},{age:31, name:'张国立'},{age:21, name:'李四'},{age:12, name:'张三'}]
   
   
   //链式调用，解决回调的坑(这个演示的是伪代码)
