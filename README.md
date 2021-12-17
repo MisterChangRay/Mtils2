@@ -1,7 +1,10 @@
 # Mtils2
 Mtils是一套前端代码集合，提供常用的数据校验、数据加密、扩展函数、便捷函数。  <br />
 Mtils2 is Mtils Upgraded version
-
+[![GitHub (pre-)release](https://img.shields.io/github/release/misterchangray/Mtils2/all.svg)](https://github.com/misterchangray/Mtils2) 
+[![GitHub issues](https://img.shields.io/github/issues/misterchangray/Mtils2.svg)](https://github.com/misterchangray/Mtils2/issues) 
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/misterchangray/Mtils2.svg)](https://github.com/misterchangray/Mtils2/issues?q=is%3Aissue+is%3Aclosed) 
+[![GitHub](https://img.shields.io/github/license/misterchangray/Mtils2.svg)](./LICENSE)
 
 
 ##### 这是什么
